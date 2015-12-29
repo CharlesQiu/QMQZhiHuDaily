@@ -11,10 +11,10 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
-UIImage *iconWithInfo(NSString *string, UIColor *color, CGFloat fontSize) {
+UIImage *iconWithInfo(NSString *string, UIColor *color, NSString *fontName, CGFloat fontSize) {
     CGFloat scale = [UIScreen mainScreen].scale;
     CGFloat realSize = fontSize * scale;
-    UIFont *font = [UIFont fontWithName:ICON_FONT_ICOMOON size:fontSize];
+    UIFont *font = [UIFont fontWithName:fontName size:realSize];
     
     UIGraphicsBeginImageContext(CGSizeMake(realSize, realSize));
     CGContextRef context = UIGraphicsGetCurrentContext();

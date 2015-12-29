@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.title = @"热门新闻";
+    self.title = @"热门新闻";
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
     label.font = [UIFont fontWithName:@"icomoon" size:100];
@@ -31,7 +31,7 @@
     [self.view addSubview:label];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:iconWithInfo(@"\U0000e9a9", [UIColor redColor], 20) forState:UIControlStateNormal];
+    [button setImage:iconWithInfo(@"\U0000e9a9", [UIColor redColor], ICON_FONT_ICOMOON, 20) forState:UIControlStateNormal];
 //    [button.titleLabel setFont:[UIFont fontWithName:@"icomoon" size:100]];
 //    [button setTitle:@"\U0000e9a9" forState:UIControlStateNormal];
 //    [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
@@ -41,9 +41,10 @@
 //    [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 200, 50, 50)];
-    imageView.backgroundColor = [UIColor orangeColor];
-    imageView.image = iconWithInfo(@"\U0000e9a9", [UIColor redColor], 20);
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:iconWithInfo(@"\U0000e9a9", [UIColor redColor], ICON_FONT_ICOMOON, 50)];
+    imageView.center = CGPointMake(100, 100);
+//    imageView.backgroundColor = [UIColor orangeColor];
+//    imageView.image = iconWithInfo(@"\U0000e9a9", [UIColor redColor], 20);
     [self.view addSubview:imageView];
 }
 

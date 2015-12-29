@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QMQOldNewsViewController : UIViewController
+@interface QMQHistoryNewsViewController : UIViewController
 
 @end

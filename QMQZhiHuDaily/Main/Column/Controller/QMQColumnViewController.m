@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.title = @"专栏文章";
+    self.title = @"专栏文章";
 
 }
 

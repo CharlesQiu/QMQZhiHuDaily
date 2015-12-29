@@ -6,20 +6,20 @@
 //  Copyright © 2015 Charles.Qiu. All rights reserved.
 //
 
-#import "QMQOldNewsViewController.h"
+#import "QMQHistoryNewsViewController.h"
 
-@interface QMQOldNewsViewController ()
+@interface QMQHistoryNewsViewController ()
 
 @end
 
-@implementation QMQOldNewsViewController
+@implementation QMQHistoryNewsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.title = @"历史新闻";
+    self.title = @"历史新闻";
 
 }
 

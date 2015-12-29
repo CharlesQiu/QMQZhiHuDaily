@@ -14,7 +14,7 @@ extern "C" {
 #endif
     
     /// iconFont转图片
-    UIImage *iconWithInfo(NSString *string, UIColor *color, CGFloat fontSize);
+    UIImage *iconWithInfo(NSString *string, UIColor *color, NSString *fontName, CGFloat fontSize);
     
 #ifdef __cplusplus
 }

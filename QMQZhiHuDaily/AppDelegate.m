@@ -10,12 +10,21 @@
 #import "QMQHotNewsViewController.h"
 #import "QMQColumnViewController.h"
 #import "QMQLatestNewsViewController.h"
-#import "QMQOldNewsViewController.h"
+#import "QMQHistoryNewsViewController.h"
 #import "QMQThemesViewController.h"
+#import "QMQUIImageUtils.h"
 
 @interface AppDelegate ()
 
 @end
+
+#define COLOR_HOT_NEWS     HexRGBA(221, 67, 72, 255)
+#define COLOR_LATEST_NEWS  HexRGBA(147, 200, 103, 255)
+#define COLOR_COLUMN       HexRGBA(0, 175, 202, 255)
+#define COLOR_THEMES       HexRGBA(252, 210, 10, 255)
+#define COLOR_HISTORY_NEWS HexRGBA(210, 143, 91, 255)
+
+static CGFloat const kTabBarImageSize = 25.0f;
 
 @implementation AppDelegate
 
@@ -28,44 +37,34 @@
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     self.window.rootViewController = tabBarController;
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"icomoon" size:20.0f],
-                                                        NSForegroundColorAttributeName : [UIColor redColor]
-                                                        } forState:UIControlStateNormal];
-    
+
     QMQHotNewsViewController *hotNewsVC = [[QMQHotNewsViewController alloc] init];
     UINavigationController *hotNewsNAV = [[UINavigationController alloc] initWithRootViewController:hotNewsVC];
-//    hotNewsNAV.tabBarItem.title = @"ssss";
-    hotNewsNAV.tabBarItem.title = @"\U0000e9a9";
-    
+    hotNewsNAV.tabBarItem.image = [iconWithInfo(@"\U0000e9a9", COLOR_HOT_NEWS, ICON_FONT_ICOMOON, kTabBarImageSize) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    hotNewsNAV.tabBarItem.title = @"热门新闻";
+
     QMQLatestNewsViewController *latestVC = [[QMQLatestNewsViewController alloc] init];
     UINavigationController *latestNAV = [[UINavigationController alloc] initWithRootViewController:latestVC];
-//    [latestNAV.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"normal" size:20.0f]}
-//                                         forState:UIControlStateNormal];
-//    latestNAV.tabBarItem.title = @"\U0000e9a9";
+    latestNAV.tabBarItem.image = [iconWithInfo(@"\U0000e91d", COLOR_LATEST_NEWS, ICON_FONT_ICOMOON, kTabBarImageSize) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    latestNAV.tabBarItem.title = @"最新新闻";
 
     
     QMQColumnViewController *columnVC = [[QMQColumnViewController alloc] init];
     UINavigationController *columnNAV = [[UINavigationController alloc] initWithRootViewController:columnVC];
-//    [columnNAV.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"normal" size:20.0f]}
-//                                         forState:UIControlStateNormal];
-//    columnNAV.tabBarItem.title = @"\U0000e9a9";
-
+    columnNAV.tabBarItem.image = [iconWithInfo(@"\U0000e92e", COLOR_COLUMN, ICON_FONT_ICOMOON, kTabBarImageSize)imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    columnNAV.tabBarItem.title = @"专栏文章";
     
     QMQThemesViewController *themesVC = [[QMQThemesViewController alloc] init];
     UINavigationController *themesNAV = [[UINavigationController alloc] initWithRootViewController:themesVC];
-//    [themesNAV.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"normal" size:20.0f]}
-//                                         forState:UIControlStateNormal];
-//    themesNAV.tabBarItem.title = @"\U0000e9a9";
-
+    themesNAV.tabBarItem.image = [iconWithInfo(@"\U0000e920", COLOR_THEMES, ICON_FONT_ICOMOON, kTabBarImageSize) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    themesNAV.tabBarItem.title = @"主题文章";
     
-    QMQOldNewsViewController *oldNewsVC = [[QMQOldNewsViewController alloc] init];
-    UINavigationController *oldNewsNAV = [[UINavigationController alloc] initWithRootViewController:oldNewsVC];
-//    [oldNewsNAV.tabBarItem setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"normal" size:20.0f]}
-//                                         forState:UIControlStateNormal];
-//    oldNewsNAV.tabBarItem.title = @"\U0000e9a9";
+    QMQHistoryNewsViewController *historyNewsVC = [[QMQHistoryNewsViewController alloc] init];
+    UINavigationController *historyNewsNAV = [[UINavigationController alloc] initWithRootViewController:historyNewsVC];
+    historyNewsNAV.tabBarItem.image = [iconWithInfo(@"\U0000e94e", COLOR_HISTORY_NEWS, ICON_FONT_ICOMOON, kTabBarImageSize) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    historyNewsNAV.tabBarItem.title = @"历史新闻";
     
-    tabBarController.viewControllers = @[hotNewsNAV, latestNAV, columnNAV, themesNAV, oldNewsNAV];
+    tabBarController.viewControllers = @[hotNewsNAV, latestNAV, columnNAV, themesNAV, historyNewsNAV];
     
     return YES;
 }
