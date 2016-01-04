@@ -46,6 +46,7 @@
 //    imageView.backgroundColor = [UIColor orangeColor];
 //    imageView.image = iconWithInfo(@"\U0000e9a9", [UIColor redColor], 20);
     [self.view addSubview:imageView];
+    // XXX: ssss
 }
 
 - (void)tapButton:sender {

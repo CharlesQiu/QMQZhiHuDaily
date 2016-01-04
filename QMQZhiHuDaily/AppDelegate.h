@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+extern int const ddLogLevel;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 
 @end
 

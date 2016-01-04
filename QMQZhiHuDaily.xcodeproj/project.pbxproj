@@ -12,10 +12,10 @@
 		5609E8AC1C301CA100B72BCC /* QMQLatestNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8AB1C301CA100B72BCC /* QMQLatestNewsViewController.m */; };
 		5609E8B21C301CDC00B72BCC /* QMQThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8B11C301CDC00B72BCC /* QMQThemesViewController.m */; };
 		5609E8B81C301D1E00B72BCC /* QMQColumnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8B71C301D1E00B72BCC /* QMQColumnViewController.m */; };
+		5611873F1C337C680055661A /* QMQHttpBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5611873A1C337C680055661A /* QMQHttpBaseResponse.m */; };
+		561187401C337C680055661A /* QMQHttpBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5611873C1C337C680055661A /* QMQHttpBaseService.m */; };
+		561187411C337C680055661A /* QMQHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5611873E1C337C680055661A /* QMQHttpService.m */; };
 		569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */; };
-		569A5AEE1C32DC800092ABA3 /* QMQHttpBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AED1C32DC800092ABA3 /* QMQHttpBaseResponse.m */; };
-		569A5AF11C32F0660092ABA3 /* QMQHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AF01C32F0660092ABA3 /* QMQHttpService.m */; };
-		569A5AF41C32F07C0092ABA3 /* QMQHttpBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AF31C32F07C0092ABA3 /* QMQHttpBaseService.m */; };
 		569A5AF61C32F11C0092ABA3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569A5AF51C32F11C0092ABA3 /* AFNetworking.framework */; };
 		56CFA0221C2F9BC7000779CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0211C2F9BC7000779CF /* main.m */; };
 		56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0241C2F9BC7000779CF /* AppDelegate.m */; };
@@ -57,14 +57,14 @@
 		5609E8B11C301CDC00B72BCC /* QMQThemesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemesViewController.m; sourceTree = "<group>"; };
 		5609E8B61C301D1E00B72BCC /* QMQColumnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnViewController.h; sourceTree = "<group>"; };
 		5609E8B71C301D1E00B72BCC /* QMQColumnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnViewController.m; sourceTree = "<group>"; };
+		561187391C337C680055661A /* QMQHttpBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpBaseResponse.h; sourceTree = "<group>"; };
+		5611873A1C337C680055661A /* QMQHttpBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpBaseResponse.m; sourceTree = "<group>"; };
+		5611873B1C337C680055661A /* QMQHttpBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpBaseService.h; sourceTree = "<group>"; };
+		5611873C1C337C680055661A /* QMQHttpBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpBaseService.m; sourceTree = "<group>"; };
+		5611873D1C337C680055661A /* QMQHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpService.h; sourceTree = "<group>"; };
+		5611873E1C337C680055661A /* QMQHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpService.m; sourceTree = "<group>"; };
 		569A5AE71C32CF400092ABA3 /* QMQHistoryNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsViewController.h; sourceTree = "<group>"; };
 		569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsViewController.m; sourceTree = "<group>"; };
-		569A5AEC1C32DC800092ABA3 /* QMQHttpBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpBaseResponse.h; sourceTree = "<group>"; };
-		569A5AED1C32DC800092ABA3 /* QMQHttpBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpBaseResponse.m; sourceTree = "<group>"; };
-		569A5AEF1C32F0660092ABA3 /* QMQHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpService.h; sourceTree = "<group>"; };
-		569A5AF01C32F0660092ABA3 /* QMQHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpService.m; sourceTree = "<group>"; };
-		569A5AF21C32F07C0092ABA3 /* QMQHttpBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpBaseService.h; sourceTree = "<group>"; };
-		569A5AF31C32F07C0092ABA3 /* QMQHttpBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpBaseService.m; sourceTree = "<group>"; };
 		569A5AF51C32F11C0092ABA3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
 		56CFA01D1C2F9BC7000779CF /* QMQZhiHuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QMQZhiHuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CFA0211C2F9BC7000779CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,19 +117,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5609E88D1C3015C700B72BCC /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-				569A5AEC1C32DC800092ABA3 /* QMQHttpBaseResponse.h */,
-				569A5AED1C32DC800092ABA3 /* QMQHttpBaseResponse.m */,
-				569A5AF21C32F07C0092ABA3 /* QMQHttpBaseService.h */,
-				569A5AF31C32F07C0092ABA3 /* QMQHttpBaseService.m */,
-				569A5AEF1C32F0660092ABA3 /* QMQHttpService.h */,
-				569A5AF01C32F0660092ABA3 /* QMQHttpService.m */,
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		5609E8931C3018F100B72BCC /* Column */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +249,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		561187381C337C680055661A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				561187391C337C680055661A /* QMQHttpBaseResponse.h */,
+				5611873A1C337C680055661A /* QMQHttpBaseResponse.m */,
+				5611873B1C337C680055661A /* QMQHttpBaseService.h */,
+				5611873C1C337C680055661A /* QMQHttpBaseService.m */,
+				5611873D1C337C680055661A /* QMQHttpService.h */,
+				5611873E1C337C680055661A /* QMQHttpService.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		569A5AE51C32CF400092ABA3 /* HistoryNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +386,7 @@
 		56CFA04F1C2F9C7E000779CF /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				5609E88D1C3015C700B72BCC /* Networking */,
+				561187381C337C680055661A /* Network */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -449,6 +449,7 @@
 				56CFA01B1C2F9BC7000779CF /* Resources */,
 				8A085364D2D2B868C5A9526E /* Embed Pods Frameworks */,
 				E54AC602E8FE7AE4A2652562 /* Copy Pods Resources */,
+				566CAB831C3A58A10085D76C /* TODO as warning */,
 			);
 			buildRules = (
 			);
@@ -568,6 +569,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		566CAB831C3A58A10085D76C /* TODO as warning */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "TODO as warning";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "KEYWORDS=\"TODO:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
+		};
 		5E55A88939FA45FCEE3E52FD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -620,13 +635,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				561187401C337C680055661A /* QMQHttpBaseService.m in Sources */,
 				5609E8B81C301D1E00B72BCC /* QMQColumnViewController.m in Sources */,
 				569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */,
 				5609E8AC1C301CA100B72BCC /* QMQLatestNewsViewController.m in Sources */,
-				569A5AF11C32F0660092ABA3 /* QMQHttpService.m in Sources */,
-				569A5AEE1C32DC800092ABA3 /* QMQHttpBaseResponse.m in Sources */,
+				561187411C337C680055661A /* QMQHttpService.m in Sources */,
 				56D628761C31B262001B77FB /* QMQPublicUtils.m in Sources */,
-				569A5AF41C32F07C0092ABA3 /* QMQHttpBaseService.m in Sources */,
+				5611873F1C337C680055661A /* QMQHttpBaseResponse.m in Sources */,
 				5609E8B21C301CDC00B72BCC /* QMQThemesViewController.m in Sources */,
 				56D6287A1C31B335001B77FB /* QMQUIImageUtils.m in Sources */,
 				56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */,
@@ -714,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -751,7 +766,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -764,10 +779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -782,10 +794,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

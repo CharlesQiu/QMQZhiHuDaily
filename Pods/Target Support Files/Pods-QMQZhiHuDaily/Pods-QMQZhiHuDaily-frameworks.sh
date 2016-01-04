@@ -85,7 +85,9 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-QMQZhiHuDaily/AFNetworking.framework"
+  install_framework "Pods-QMQZhiHuDaily/CocoaLumberjack.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-QMQZhiHuDaily/AFNetworking.framework"
+  install_framework "Pods-QMQZhiHuDaily/CocoaLumberjack.framework"
 fi
