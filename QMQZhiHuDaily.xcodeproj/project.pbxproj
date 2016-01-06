@@ -15,6 +15,9 @@
 		5611873F1C337C680055661A /* QMQHttpBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5611873A1C337C680055661A /* QMQHttpBaseResponse.m */; };
 		561187401C337C680055661A /* QMQHttpBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5611873C1C337C680055661A /* QMQHttpBaseService.m */; };
 		561187411C337C680055661A /* QMQHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 5611873E1C337C680055661A /* QMQHttpService.m */; };
+		5620A4481C3D73AE00EDDD27 /* QMQHotNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A4471C3D73AE00EDDD27 /* QMQHotNewsListModel.m */; };
+		5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */; };
+		5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */; };
 		569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */; };
 		569A5AF61C32F11C0092ABA3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569A5AF51C32F11C0092ABA3 /* AFNetworking.framework */; };
 		56CFA0221C2F9BC7000779CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0211C2F9BC7000779CF /* main.m */; };
@@ -63,6 +66,13 @@
 		5611873C1C337C680055661A /* QMQHttpBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpBaseService.m; sourceTree = "<group>"; };
 		5611873D1C337C680055661A /* QMQHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpService.h; sourceTree = "<group>"; };
 		5611873E1C337C680055661A /* QMQHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpService.m; sourceTree = "<group>"; };
+		5620A4451C3D6E8E00EDDD27 /* QMQApiDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QMQApiDefine.h; sourceTree = "<group>"; };
+		5620A4461C3D73AE00EDDD27 /* QMQHotNewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsListModel.h; sourceTree = "<group>"; };
+		5620A4471C3D73AE00EDDD27 /* QMQHotNewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsListModel.m; sourceTree = "<group>"; };
+		5620A4491C3D740400EDDD27 /* QMQHotNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsModel.h; sourceTree = "<group>"; };
+		5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsModel.m; sourceTree = "<group>"; };
+		5620A44C1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsListViewModel.h; sourceTree = "<group>"; };
+		5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsListViewModel.m; sourceTree = "<group>"; };
 		569A5AE71C32CF400092ABA3 /* QMQHistoryNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsViewController.h; sourceTree = "<group>"; };
 		569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsViewController.m; sourceTree = "<group>"; };
 		569A5AF51C32F11C0092ABA3 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
@@ -153,6 +163,7 @@
 		5609E8971C3018F100B72BCC /* HotNews */ = {
 			isa = PBXGroup;
 			children = (
+				5620A4441C3D4DB900EDDD27 /* ViewModel */,
 				5609E8981C3018F100B72BCC /* Controller */,
 				5609E8991C3018F100B72BCC /* Model */,
 				5609E89A1C3018F100B72BCC /* View */,
@@ -172,6 +183,10 @@
 		5609E8991C3018F100B72BCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5620A4461C3D73AE00EDDD27 /* QMQHotNewsListModel.h */,
+				5620A4471C3D73AE00EDDD27 /* QMQHotNewsListModel.m */,
+				5620A4491C3D740400EDDD27 /* QMQHotNewsModel.h */,
+				5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +277,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		5620A4441C3D4DB900EDDD27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5620A44C1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.h */,
+				5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		569A5AE51C32CF400092ABA3 /* HistoryNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,13 +358,14 @@
 			children = (
 				56CFA0231C2F9BC7000779CF /* AppDelegate.h */,
 				56CFA0241C2F9BC7000779CF /* AppDelegate.m */,
+				56D628701C31AB49001B77FB /* QMQDefine.h */,
+				5620A4451C3D6E8E00EDDD27 /* QMQApiDefine.h */,
+				56D628711C31AC08001B77FB /* QMQZhiHuDaily-Prefix.pch */,
 				56CFA0261C2F9BC7000779CF /* Assets.xcassets */,
 				56CFA0281C2F9BC7000779CF /* LaunchScreen.storyboard */,
 				56CFA02B1C2F9BC7000779CF /* Info.plist */,
 				56CFA0211C2F9BC7000779CF /* main.m */,
 				5609E88B1C2FBA0600B72BCC /* ProductAPI.plist */,
-				56D628701C31AB49001B77FB /* QMQDefine.h */,
-				56D628711C31AC08001B77FB /* QMQZhiHuDaily-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -638,8 +663,11 @@
 				561187401C337C680055661A /* QMQHttpBaseService.m in Sources */,
 				5609E8B81C301D1E00B72BCC /* QMQColumnViewController.m in Sources */,
 				569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */,
+				5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */,
 				5609E8AC1C301CA100B72BCC /* QMQLatestNewsViewController.m in Sources */,
 				561187411C337C680055661A /* QMQHttpService.m in Sources */,
+				5620A4481C3D73AE00EDDD27 /* QMQHotNewsListModel.m in Sources */,
+				5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */,
 				56D628761C31B262001B77FB /* QMQPublicUtils.m in Sources */,
 				5611873F1C337C680055661A /* QMQHttpBaseResponse.m in Sources */,
 				5609E8B21C301CDC00B72BCC /* QMQThemesViewController.m in Sources */,

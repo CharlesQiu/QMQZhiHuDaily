@@ -36,7 +36,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 static const int ddLogLevel = LOG_LEVEL_OFF;
 #endif
 #define COLOR_DDLogVerbose HexRGBA(58, 129, 195, 255)
-#define COLOR_DDLogInfo    HexRGBA(71, 164, 71,        255)
+#define COLOR_DDLogInfo    HexRGBA(71, 164, 71, 255)
 #define COLOR_DDLogDebug   HexRGBA(252, 210, 10, 255)
 
 /**

@@ -8,6 +8,8 @@
 
 #import "QMQHotNewsViewController.h"
 #import "QMQUIImageUtils.h"
+#import "UIImageView+AFNetworking.h"
+#import "QMQHotNewsListModel.h"
 
 @interface QMQHotNewsViewController ()
 
@@ -22,31 +24,22 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"热门新闻";
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-    label.font = [UIFont fontWithName:@"icomoon" size:100];
-    label.text = @"\U0000e9a9";
-    label.textColor = [UIColor orangeColor];
-    [label sizeToFit];
-    label.center = self.view.center;
-    [self.view addSubview:label];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:iconWithInfo(@"\U0000e9a9", [UIColor redColor], ICON_FONT_ICOMOON, 20) forState:UIControlStateNormal];
-//    [button.titleLabel setFont:[UIFont fontWithName:@"icomoon" size:100]];
-//    [button setTitle:@"\U0000e9a9" forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-//    [button setTitleColor:[UIColor blueColor] forState:UIControlStateSelected];
-//    [button sizeToFit];
-//    button.center = CGPointMake(100, 150);
-//    [button addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    [self loadDatas];
+}
 
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:iconWithInfo(@"\U0000e9a9", [UIColor redColor], ICON_FONT_ICOMOON, 50)];
-    imageView.center = CGPointMake(100, 100);
-//    imageView.backgroundColor = [UIColor orangeColor];
-//    imageView.image = iconWithInfo(@"\U0000e9a9", [UIColor redColor], 20);
-    [self.view addSubview:imageView];
-    // XXX: ssss
+- (void)loadDatas {
+    [QMQHttpService getWithUrl:API_HOT_NEWS param:nil responseBlock:^(QMQHttpBaseResponse *response) {
+        if (!response.success) {
+            return;
+        }
+        QMQHotNewsListModel *listModel = [[QMQHotNewsListModel alloc] initWithDic:response.originalDict];
+        
+        [listModel.recentArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            QMQHotNewsModel *newsModel = obj;
+            DDLogError(@"%li", newsModel.newsId);
+        }];
+    }];
 }
 
 - (void)tapButton:sender {

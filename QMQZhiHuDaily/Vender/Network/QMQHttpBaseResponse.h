@@ -10,10 +10,10 @@
 
 @interface QMQHttpBaseResponse : NSObject
 
-@property (nonatomic, readonly, assign) BOOL         success;
-@property (nonatomic, readonly, copy  ) NSString     *message;
+@property (nonatomic, assign) BOOL      success;
+@property (nonatomic, assign) NSInteger statusCode;
 /// 原始数据
-@property (nonatomic, readonly, copy  ) NSDictionary *originalDict;
+@property (nonatomic, readonly, copy) NSDictionary *originalDict;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

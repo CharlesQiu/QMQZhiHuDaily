@@ -15,5 +15,7 @@
 #import <UIKit/UIKit.h>
 #import "DDLog.h"
 #import "QMQDefine.h"
+#import "QMQApiDefine.h"
 #import "DDTTYLogger.h"
+#import "QMQHttpService.h"
 #endif

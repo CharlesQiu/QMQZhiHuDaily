@@ -10,9 +10,7 @@
 
 @interface QMQHttpBaseResponse()
 
-@property (nonatomic, assign) BOOL         success;
-@property (nonatomic, copy  ) NSString     *message;
-@property (nonatomic, copy  ) NSDictionary *originalDict;
+@property (nonatomic, copy) NSDictionary *originalDict;
 
 @end
 
@@ -21,6 +19,7 @@
 - (instancetype)initWithDic:(NSDictionary *)dic {
     self = [super init];
     if (self) {
+        self.originalDict = dic;
         
         
     }

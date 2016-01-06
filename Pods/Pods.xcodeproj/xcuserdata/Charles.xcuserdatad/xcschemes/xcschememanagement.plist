@@ -14,7 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-QMQZhiHuDaily.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Result.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,7 +42,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>197DEAD8B5E17916C97644139BCF77AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6E778E5034D97F00A75AF8EA541EFCBF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FA91080CDBD5691EA7597CB6F3B96092</key>
+		<key>A9A83F63385AA43314397B8DD375464B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C19EAE985F2C4CFD9AFA2361182E21AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CEBF54EB31CEB01F7C3F5B73D52F4E88</key>
 		<dict>
 			<key>primary</key>
 			<true/>

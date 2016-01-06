@@ -46,21 +46,13 @@
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-+ (void)printHttpWithOperation:(NSURLSessionDataTask *)task
-                      response:(id)response
-                       manager:(AFHTTPSessionManager *)manager {
-    // Request url
-    DDLogDebug(@"\n---------\nRequest url:%@\n---------", manager.baseURL);
-    
-    // Response
-    if (response) {
-        NSString *jsonStr = [self formatJsonData:response];
-        DDLogVerbose(@"\n---------\nResponse:%@\n---------", jsonStr);
++ (void)printUrlResponse:(NSHTTPURLResponse *)urlResponse response:(id)response {
+    if ([response isKindOfClass:[NSError class]]) {
+        NSError *error = (NSError *)response;
+        DDLogError(@"\n++++++++++\nDomain : %@\nError Description : %@\nError Code : %li\nHeaders : %@\n---------", urlResponse.URL, error.localizedDescription, error.code, [self formatJsonData:urlResponse.allHeaderFields]);
+    } else {
+        DDLogVerbose(@"\n++++++++++\nDomain : %@\nHeaders : %@\nSuccess Response : %@\n---------", urlResponse.URL, [self formatJsonData:urlResponse.allHeaderFields], response ? [self formatJsonData:response] : @"No Response");
     }
-    
-    // Headers
-    NSDictionary *dict = manager.requestSerializer.HTTPRequestHeaders;
-    DDLogDebug(@"\n---------\nHeaders:%@\n---------", dict);
 }
 
 #pragma mark - Request(get/post/put/delete)
@@ -73,15 +65,20 @@
         !failureBlock ? : failureBlock(nil);
         return;
     }
-    [manager GET:url parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self printHttpWithOperation:task response:responseObject manager:manager];
-        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task;
-        !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        !failureBlock ? : failureBlock(error);
-    }];
+    
+    [manager GET:url
+      parameters:params
+        progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+            [self printUrlResponse:urlResponse response:responseObject];
+            !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+            [self printUrlResponse:urlResponse response:error];
+            !failureBlock ? : failureBlock(error);
+        }];
 }
 
 + (void)post:(NSString *)url
@@ -96,10 +93,12 @@
     [manager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self printHttpWithOperation:task response:responseObject manager:manager];
-        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task;
+        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+        [self printUrlResponse:urlResponse response:responseObject];
         !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+        [self printUrlResponse:urlResponse response:error];
         !failureBlock ? : failureBlock(error);
     }];
 }
@@ -114,10 +113,12 @@
         return;
     }
     [manager PUT:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self printHttpWithOperation:task response:responseObject manager:manager];
-        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task;
+        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+        [self printUrlResponse:urlResponse response:responseObject];
         !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+        [self printUrlResponse:urlResponse response:error];
         !failureBlock ? : failureBlock(error);
     }];
 }
@@ -134,16 +135,16 @@
     
     [manager DELETE:url
          parameters:params
-            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-     {
-         [self printHttpWithOperation:task response:responseObject manager:manager];
-         NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task;
-         !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
-     }
-            failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error)
-     {
-         !failureBlock ? : failureBlock(error);
-     }];
+            success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+                [self printUrlResponse:urlResponse response:responseObject];
+                !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
+            }
+            failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+                [self printUrlResponse:urlResponse response:error];
+                !failureBlock ? : failureBlock(error);
+            }];
 }
 
 

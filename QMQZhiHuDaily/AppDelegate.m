@@ -36,12 +36,6 @@ static CGFloat const kTabBarImageSize = 25.0f;
     [[DDTTYLogger sharedInstance] setForegroundColor:COLOR_DDLogInfo backgroundColor:nil forFlag:LOG_FLAG_INFO];
     [[DDTTYLogger sharedInstance] setForegroundColor:COLOR_DDLogVerbose backgroundColor:nil forFlag:LOG_FLAG_VERBOSE];
     [[DDTTYLogger sharedInstance] setForegroundColor:COLOR_DDLogDebug backgroundColor:nil forFlag:LOG_FLAG_DEBUG];
-    
-    DebugLog(@"QMQDebugLog")
-    VerboseLog(@"QMQVerboseLog")
-    InfoLog(@"QMQInfoLog")
-    WarnLog(@"QMQWarnLog")
-    ErrorLog(@"QMQErrorLog")
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
