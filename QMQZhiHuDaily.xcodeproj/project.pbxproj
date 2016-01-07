@@ -19,17 +19,23 @@
 		5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */; };
 		5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */; };
 		569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */; };
-		569A5AF61C32F11C0092ABA3 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 569A5AF51C32F11C0092ABA3 /* AFNetworking.framework */; };
 		56CFA0221C2F9BC7000779CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0211C2F9BC7000779CF /* main.m */; };
 		56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0241C2F9BC7000779CF /* AppDelegate.m */; };
-		56CFA0271C2F9BC7000779CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56CFA0261C2F9BC7000779CF /* Assets.xcassets */; };
 		56CFA02A1C2F9BC7000779CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56CFA0281C2F9BC7000779CF /* LaunchScreen.storyboard */; };
 		56CFA0351C2F9BC7000779CF /* QMQZhiHuDailyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0341C2F9BC7000779CF /* QMQZhiHuDailyTests.m */; };
 		56CFA0401C2F9BC7000779CF /* QMQZhiHuDailyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA03F1C2F9BC7000779CF /* QMQZhiHuDailyUITests.m */; };
 		56D6286F1C31A890001B77FB /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56D6286E1C31A822001B77FB /* icomoon.ttf */; };
 		56D628761C31B262001B77FB /* QMQPublicUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D628751C31B262001B77FB /* QMQPublicUtils.m */; };
 		56D6287A1C31B335001B77FB /* QMQUIImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D628791C31B335001B77FB /* QMQUIImageUtils.m */; };
-		DDF52D78EE56D38C32885232 /* Pods_QMQZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21E8C8CF1CD47BEB34FA83F6 /* Pods_QMQZhiHuDaily.framework */; };
+		56F48C921C3DFB310072822F /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F48C911C3DFB310072822F /* UIView+Layout.m */; };
+		56F48C941C3E018D0072822F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F48C931C3E018D0072822F /* Images.xcassets */; };
+		56F48C9B1C3E4EF00072822F /* ZMTrimImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F48C9A1C3E4EF00072822F /* ZMTrimImageViewController.m */; };
+		56F48CA51C3E67510072822F /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F48CA41C3E67510072822F /* CocoaLumberjack.framework */; };
+		56F48CA71C3E67550072822F /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F48CA61C3E67550072822F /* AFNetworking.framework */; };
+		56F48CA91C3E67590072822F /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F48CA81C3E67590072822F /* Masonry.framework */; };
+		56F48CAB1C3E675C0072822F /* Pods_QMQZhiHuDaily.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F48CAA1C3E675C0072822F /* Pods_QMQZhiHuDaily.framework */; };
+		56F48CAD1C3E67620072822F /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F48CAC1C3E67620072822F /* ReactiveCocoa.framework */; };
+		56F48CAF1C3E67670072822F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56F48CAE1C3E67670072822F /* SDWebImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +86,6 @@
 		56CFA0211C2F9BC7000779CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56CFA0231C2F9BC7000779CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		56CFA0241C2F9BC7000779CF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		56CFA0261C2F9BC7000779CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56CFA0291C2F9BC7000779CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56CFA02B1C2F9BC7000779CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56CFA0301C2F9BC7000779CF /* QMQZhiHuDailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QMQZhiHuDailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +101,19 @@
 		56D628751C31B262001B77FB /* QMQPublicUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQPublicUtils.m; sourceTree = "<group>"; };
 		56D628781C31B335001B77FB /* QMQUIImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQUIImageUtils.h; sourceTree = "<group>"; };
 		56D628791C31B335001B77FB /* QMQUIImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQUIImageUtils.m; sourceTree = "<group>"; };
+		56F48C901C3DFB310072822F /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		56F48C911C3DFB310072822F /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
+		56F48C931C3E018D0072822F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		56F48C971C3E16CB0072822F /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "Pods/../build/Debug-iphoneos/Masonry.framework"; sourceTree = "<group>"; };
+		56F48C991C3E4EF00072822F /* ZMTrimImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMTrimImageViewController.h; sourceTree = "<group>"; };
+		56F48C9A1C3E4EF00072822F /* ZMTrimImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMTrimImageViewController.m; sourceTree = "<group>"; };
+		56F48CA21C3E66E60072822F /* Pods_QMQZhiHuDaily.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QMQZhiHuDaily.framework; path = "Pods/../build/Debug-iphoneos/Pods_QMQZhiHuDaily.framework"; sourceTree = "<group>"; };
+		56F48CA41C3E67510072822F /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = "Pods/../build/Debug-iphoneos/CocoaLumberjack.framework"; sourceTree = "<group>"; };
+		56F48CA61C3E67550072822F /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
+		56F48CA81C3E67590072822F /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Masonry.framework; path = "Pods/../build/Debug-iphoneos/Masonry.framework"; sourceTree = "<group>"; };
+		56F48CAA1C3E675C0072822F /* Pods_QMQZhiHuDaily.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_QMQZhiHuDaily.framework; path = "Pods/../build/Debug-iphoneos/Pods_QMQZhiHuDaily.framework"; sourceTree = "<group>"; };
+		56F48CAC1C3E67620072822F /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = "Pods/../build/Debug-iphoneos/ReactiveCocoa.framework"; sourceTree = "<group>"; };
+		56F48CAE1C3E67670072822F /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = "Pods/../build/Debug-iphoneos/SDWebImage.framework"; sourceTree = "<group>"; };
 		D936204439DC15459B3891A0 /* Pods-QMQZhiHuDaily.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QMQZhiHuDaily.release.xcconfig"; path = "Pods/Target Support Files/Pods-QMQZhiHuDaily/Pods-QMQZhiHuDaily.release.xcconfig"; sourceTree = "<group>"; };
 		E110F875CB1FBE1DEE29DA02 /* Pods-QMQZhiHuDaily.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QMQZhiHuDaily.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QMQZhiHuDaily/Pods-QMQZhiHuDaily.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,8 +123,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				569A5AF61C32F11C0092ABA3 /* AFNetworking.framework in Frameworks */,
-				DDF52D78EE56D38C32885232 /* Pods_QMQZhiHuDaily.framework in Frameworks */,
+				56F48CAF1C3E67670072822F /* SDWebImage.framework in Frameworks */,
+				56F48CAD1C3E67620072822F /* ReactiveCocoa.framework in Frameworks */,
+				56F48CAB1C3E675C0072822F /* Pods_QMQZhiHuDaily.framework in Frameworks */,
+				56F48CA91C3E67590072822F /* Masonry.framework in Frameworks */,
+				56F48CA71C3E67550072822F /* AFNetworking.framework in Frameworks */,
+				56F48CA51C3E67510072822F /* CocoaLumberjack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +185,9 @@
 		5609E8971C3018F100B72BCC /* HotNews */ = {
 			isa = PBXGroup;
 			children = (
-				5620A4441C3D4DB900EDDD27 /* ViewModel */,
 				5609E8981C3018F100B72BCC /* Controller */,
 				5609E8991C3018F100B72BCC /* Model */,
+				5620A4441C3D4DB900EDDD27 /* ViewModel */,
 				5609E89A1C3018F100B72BCC /* View */,
 			);
 			path = HotNews;
@@ -176,6 +198,8 @@
 			children = (
 				5609E8A71C30190900B72BCC /* QMQHotNewsViewController.h */,
 				5609E8A81C30190900B72BCC /* QMQHotNewsViewController.m */,
+				56F48C991C3E4EF00072822F /* ZMTrimImageViewController.h */,
+				56F48C9A1C3E4EF00072822F /* ZMTrimImageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,6 +371,7 @@
 				56CFA04D1C2F9C7E000779CF /* Main */,
 				56CFA04E1C2F9C7E000779CF /* Resource */,
 				56CFA04F1C2F9C7E000779CF /* Vender */,
+				56F48C8B1C3DF9E50072822F /* Category */,
 				56D628721C31B1F1001B77FB /* Utils */,
 				56CFA0201C2F9BC7000779CF /* Supporting Files */,
 			);
@@ -361,7 +386,6 @@
 				56D628701C31AB49001B77FB /* QMQDefine.h */,
 				5620A4451C3D6E8E00EDDD27 /* QMQApiDefine.h */,
 				56D628711C31AC08001B77FB /* QMQZhiHuDaily-Prefix.pch */,
-				56CFA0261C2F9BC7000779CF /* Assets.xcassets */,
 				56CFA0281C2F9BC7000779CF /* LaunchScreen.storyboard */,
 				56CFA02B1C2F9BC7000779CF /* Info.plist */,
 				56CFA0211C2F9BC7000779CF /* main.m */,
@@ -404,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				56D6286E1C31A822001B77FB /* icomoon.ttf */,
+				56F48C931C3E018D0072822F /* Images.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -443,9 +468,34 @@
 			path = UIImageUtils;
 			sourceTree = "<group>";
 		};
+		56F48C8B1C3DF9E50072822F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				56F48C8C1C3DFA050072822F /* UIView */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		56F48C8C1C3DFA050072822F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				56F48C901C3DFB310072822F /* UIView+Layout.h */,
+				56F48C911C3DFB310072822F /* UIView+Layout.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		704AA5954408A680F129E2C4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56F48CAE1C3E67670072822F /* SDWebImage.framework */,
+				56F48CAC1C3E67620072822F /* ReactiveCocoa.framework */,
+				56F48CAA1C3E675C0072822F /* Pods_QMQZhiHuDaily.framework */,
+				56F48CA81C3E67590072822F /* Masonry.framework */,
+				56F48CA61C3E67550072822F /* AFNetworking.framework */,
+				56F48CA41C3E67510072822F /* CocoaLumberjack.framework */,
+				56F48CA21C3E66E60072822F /* Pods_QMQZhiHuDaily.framework */,
+				56F48C971C3E16CB0072822F /* Masonry.framework */,
 				569A5AF51C32F11C0092ABA3 /* AFNetworking.framework */,
 				21E8C8CF1CD47BEB34FA83F6 /* Pods_QMQZhiHuDaily.framework */,
 			);
@@ -571,7 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56D6286F1C31A890001B77FB /* icomoon.ttf in Resources */,
-				56CFA0271C2F9BC7000779CF /* Assets.xcassets in Resources */,
+				56F48C941C3E018D0072822F /* Images.xcassets in Resources */,
 				5609E88C1C2FBA0600B72BCC /* ProductAPI.plist in Resources */,
 				56CFA02A1C2F9BC7000779CF /* LaunchScreen.storyboard in Resources */,
 			);
@@ -671,7 +721,9 @@
 				56D628761C31B262001B77FB /* QMQPublicUtils.m in Sources */,
 				5611873F1C337C680055661A /* QMQHttpBaseResponse.m in Sources */,
 				5609E8B21C301CDC00B72BCC /* QMQThemesViewController.m in Sources */,
+				56F48C9B1C3E4EF00072822F /* ZMTrimImageViewController.m in Sources */,
 				56D6287A1C31B335001B77FB /* QMQUIImageUtils.m in Sources */,
+				56F48C921C3DFB310072822F /* UIView+Layout.m in Sources */,
 				56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */,
 				56CFA0221C2F9BC7000779CF /* main.m in Sources */,
 				5609E8A91C30190900B72BCC /* QMQHotNewsViewController.m in Sources */,
@@ -807,9 +859,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_TEMP_DIR = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CQ.QMQZhiHuDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -822,9 +876,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_TEMP_DIR = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = CQ.QMQZhiHuDaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";

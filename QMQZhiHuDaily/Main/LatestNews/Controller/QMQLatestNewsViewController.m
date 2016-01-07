@@ -10,6 +10,7 @@
 
 @interface QMQLatestNewsViewController ()
 
+
 @end
 
 @implementation QMQLatestNewsViewController

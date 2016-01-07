@@ -88,7 +88,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-QMQZhiHuDaily/CocoaLumberjack.framework"
   install_framework "Pods-QMQZhiHuDaily/Masonry.framework"
   install_framework "Pods-QMQZhiHuDaily/ReactiveCocoa.framework"
-  install_framework "Pods-QMQZhiHuDaily/Result.framework"
   install_framework "Pods-QMQZhiHuDaily/SDWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -96,6 +95,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-QMQZhiHuDaily/CocoaLumberjack.framework"
   install_framework "Pods-QMQZhiHuDaily/Masonry.framework"
   install_framework "Pods-QMQZhiHuDaily/ReactiveCocoa.framework"
-  install_framework "Pods-QMQZhiHuDaily/Result.framework"
   install_framework "Pods-QMQZhiHuDaily/SDWebImage.framework"
 fi
