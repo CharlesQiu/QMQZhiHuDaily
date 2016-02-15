@@ -14,14 +14,33 @@
 
 @implementation QMQHistoryNewsViewController
 
+#pragma mark - UIViewController Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"历史新闻";
-
+    self.title                = @"历史新闻";
+    
+    UIImage *normalImage = icomoonImage(kIFNavEditDate, hexString(kIFTabbarHistoryColor), kIFNavEditDateSize);
+    UIImage *disableImage = icomoonImage(kIFNavEditDate, [UIColor grayColor], kIFNavEditDateSize);
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:createNormalImageButton(normalImage, disableImage, self, @selector(tapSelect))];
 }
+
+- (void)tapSelect {
+    
+}
+
+#pragma mark - Data
+
+/// 获取历史数据
+- (void)loadYesterdayData {
+    
+}
+
+#pragma mark - 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -29,13 +48,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

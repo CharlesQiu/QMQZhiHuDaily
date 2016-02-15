@@ -16,8 +16,7 @@
 
 @implementation QMQHotNewsListModel
 
-- (instancetype)initWithDic:(NSDictionary *)dic
-{
+- (instancetype)initWithDic:(NSDictionary *)dic {
     self = [super init];
     if (!self) {
         return nil;
@@ -25,7 +24,7 @@
     
     if (dic[@"recent"]) {
         __block NSMutableArray *tempArray = [NSMutableArray array];
-        [dic[@"recent"] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [dic[@"recent"] enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
             [tempArray addObject:[[QMQHotNewsModel alloc] initWithDic:obj]];
         }];
         self.recentArray = [tempArray copy];

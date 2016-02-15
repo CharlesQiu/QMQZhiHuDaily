@@ -13,10 +13,6 @@
 
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
-#import "UIView+Layout.h"
-#import "DDLog.h"
-#import "QMQDefine.h"
-#import "QMQApiDefine.h"
-#import "DDTTYLogger.h"
-#import "QMQHttpService.h"
+#import <Foundation/Foundation.h>
+#import "Macros.h"
 #endif
