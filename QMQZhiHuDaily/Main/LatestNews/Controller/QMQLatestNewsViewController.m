@@ -7,36 +7,54 @@
 //
 
 #import "QMQLatestNewsViewController.h"
+#import "QMQLatestNewsViewModel.h"
 
 @interface QMQLatestNewsViewController ()
 
+@property(nonatomic, strong) UITableView *tabelView;
+
+@property(nonatomic, strong) QMQLatestNewsViewModel *viewModel;
 
 @end
 
 @implementation QMQLatestNewsViewController
+
+- (QMQLatestNewsViewModel *)viewModel {
+    if (!_viewModel) {
+        _viewModel = [[QMQLatestNewsViewModel alloc] init];
+    }
+    return _viewModel;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"最新文章";
-
+    self.title                = @"最新文章";
+    
+    self.tabelView            = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tabelView.rowHeight  = 100.0f;
+    self.tabelView.dataSource = self.viewModel;
+    self.tabelView.delegate   = self.viewModel;
+    
+    [self.view addSubview:self.tabelView];
+    
+    // 执行请求
+    RACSignal *requestSignal = [self.viewModel.requestCommand execute:nil];
+    
+    // 获取请求数据
+    @weakify(self);
+    [requestSignal subscribeNext:^(NSArray *x) {
+        @strongify(self);
+        self.viewModel.modelArray = x;
+        [self.tabelView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
