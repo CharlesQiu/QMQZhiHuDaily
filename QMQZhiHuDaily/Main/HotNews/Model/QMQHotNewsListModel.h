@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "QMQHotNewsModel.h"
 
 @interface QMQHotNewsListModel : NSObject
 
 @property(nonatomic, readonly, copy) NSArray *recentArray;
 
-- (instancetype)initWithDic:(NSDictionary *)dic;
+- (QMQHotNewsListModel *)initWithDic:(NSDictionary *)dic;
 
 @end

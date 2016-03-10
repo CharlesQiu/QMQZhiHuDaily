@@ -7,99 +7,115 @@
 //
 
 #import "QMQHotNewsViewController.h"
-#import "UIImageView+AFNetworking.h"
-#import "QMQHotNewsListModel.h"
-#import "Masonry.h"
-#import "ReactiveCocoa.h"
+#import "QMQHotNewsListViewModel.h"
+#import "QMQHotNewsTableViewCell.h"
 
-@interface QMQHotNewsViewController ()<UIScrollViewDelegate>
+@interface QMQHotNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) QMQHotNewsListViewModel *viewModel;
 
 @end
 
 @implementation QMQHotNewsViewController
 
+#pragma mark - UIViewController Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title                = @"热门新闻";
-    
-    //有基本四种样式
-    //    segmentedControl.segmentedControlStyle = UISegmentedControlStylePlain;//设置样式
+    self.title = @"热门新闻";
+    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarHotnewsColor);
+
+    [self initViewModel];
+    [self bindViewModel];
+    [self loadData];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    //    RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-    //        //发送请求
-    //        NSLog(@"发送上部分的请求");
-    //        //发送信号
-    //        [subscriber sendNext:@"上部分数据"];
-    //        //发送完毕
-    //        //加上后就可以上部分发送完毕后发送下半部分信号
-    ////        [subscriber sendCompleted];
-    //        return nil;
-    //    }];
-    //
-    //    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-    //        //发送请求
-    //        NSLog(@"发送下部分的请求");
-    //        //发送信号
-    //        [subscriber sendNext:@"下部分数据"];
-    //        return nil;
-    //    }];
-    //
-    //    [[signalA zipWith:signalB] subscribeNext:^(id x) {
-    //        NSLog(@"%@", x);
-    //    }];
-    
-    //    RACSignal *signalA = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
-    //        [subscriber sendNext:@"A"];
-    //        return nil;
-    //    }];
-    //    RACSignal *signalB = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
-    //        [subscriber sendNext:@"B"];
-    //        return nil;
-    //    }];
-    //    //把两个信号组合成一个信号
-    //    RACSignal *combineSignal = [signalA combineLatestWith:signalB];
-    //    //订阅组合信号
-    //    [combineSignal subscribeNext:^(id x) {
-    //        NSLog(@"%@", x);
-    //    }];
-    //    [self loadDatas];
-}
+- (void)initViewModel {
+    _viewModel = [[QMQHotNewsListViewModel alloc] init];
 
-- (void)loadDatas {
-    [QMQHttpService getWithUrl:API_HOT_NEWS param:nil responseBlock:^(QMQHttpBaseResponse *response) {
-        if (!response.success) {
-            return;
-        }
-        QMQHotNewsListModel *listModel = [[QMQHotNewsListModel alloc] initWithDic:response.originalDict];
-        
-        [listModel.recentArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
-            QMQHotNewsModel *newsModel = obj;
-            DDLogError(@"%li", newsModel.newsId);
-        }];
+    @weakify(self);
+    [_viewModel.loadCommand.executing subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
     }];
 }
+
+- (void)bindViewModel {
+
+    @weakify(self);
+    [RACObserve(self.viewModel, modelArray) subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+
+}
+
+- (void)loadData {
+    [_viewModel.loadCommand execute:nil];
+}
+
+#pragma mark - UITableView
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.rowHeight = 100.0f;
+        [_tableView registerClass:[QMQHotNewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([QMQHotNewsTableViewCell class])];
+        [self.view addSubview:_tableView];
+        @weakify(self);
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self);
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _tableView;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return self.viewModel.modelArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    QMQHotNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QMQHotNewsTableViewCell class]) forIndexPath:indexPath];
+
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+
+    return cell;
+}
+
+- (void)configureCell:(QMQHotNewsTableViewCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath {
+    QMQHotNewsModel *model = _viewModel.modelArray[indexPath.row];
+    [cell configureCell:model];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Tells the delegate that the specified row is now selected.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
+}
+
+#pragma mark -
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

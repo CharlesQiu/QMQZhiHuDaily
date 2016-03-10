@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56019DC71C913B4300BA8B5D /* QMQColumnListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56019DC61C913B4300BA8B5D /* QMQColumnListModel.m */; };
+		56019DCA1C9152AF00BA8B5D /* QMQThemeListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56019DC91C9152AF00BA8B5D /* QMQThemeListModel.m */; };
+		56019DCD1C91572400BA8B5D /* QMQHistoryNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56019DCC1C91572400BA8B5D /* QMQHistoryNewsListModel.m */; };
 		5609E88C1C2FBA0600B72BCC /* ProductAPI.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5609E88B1C2FBA0600B72BCC /* ProductAPI.plist */; };
 		5609E8A91C30190900B72BCC /* QMQHotNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8A81C30190900B72BCC /* QMQHotNewsViewController.m */; };
 		5609E8AC1C301CA100B72BCC /* QMQLatestNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8AB1C301CA100B72BCC /* QMQLatestNewsViewController.m */; };
-		5609E8B21C301CDC00B72BCC /* QMQThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8B11C301CDC00B72BCC /* QMQThemesViewController.m */; };
 		5609E8B81C301D1E00B72BCC /* QMQColumnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5609E8B71C301D1E00B72BCC /* QMQColumnViewController.m */; };
 		5612A5271C57E591001F5C18 /* UIColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612A5231C57E591001F5C18 /* UIColorUtil.m */; };
 		5612A5281C57E591001F5C18 /* UIImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5612A5261C57E591001F5C18 /* UIImageUtil.m */; };
@@ -18,6 +20,7 @@
 		5620A4481C3D73AE00EDDD27 /* QMQHotNewsListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A4471C3D73AE00EDDD27 /* QMQHotNewsListModel.m */; };
 		5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */; };
 		5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */; };
+		56753D371C7E00670037BAE0 /* QMQLatestNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56753D361C7E00670037BAE0 /* QMQLatestNewsDetailViewController.m */; };
 		56942B001C74583A0066188D /* QMQLatestNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56942AFF1C74583A0066188D /* QMQLatestNewsViewModel.m */; };
 		56942B031C746C7F0066188D /* QMQLatestNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56942B021C746C7F0066188D /* QMQLatestNewsModel.m */; };
 		56942B061C7475A70066188D /* QMQLatestNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56942B051C7475A70066188D /* QMQLatestNewsTableViewCell.m */; };
@@ -27,16 +30,30 @@
 		56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0241C2F9BC7000779CF /* AppDelegate.m */; };
 		56CFA0351C2F9BC7000779CF /* QMQZhiHuDailyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0341C2F9BC7000779CF /* QMQZhiHuDailyTests.m */; };
 		56CFA0401C2F9BC7000779CF /* QMQZhiHuDailyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA03F1C2F9BC7000779CF /* QMQZhiHuDailyUITests.m */; };
+		56D5296E1C84263F00B3964B /* QMQHistoryNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D5296D1C84263F00B3964B /* QMQHistoryNewsModel.m */; };
 		56D6286F1C31A890001B77FB /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56D6286E1C31A822001B77FB /* icomoon.ttf */; };
 		56D628761C31B262001B77FB /* QMQPublicUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D628751C31B262001B77FB /* QMQPublicUtil.m */; };
-		56ED33B01C579DE90061CA81 /* QMQIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED33AF1C579DE90061CA81 /* QMQIconFont.m */; };
+		56E70D031C84745D002B6856 /* QMQColumnViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D021C84745D002B6856 /* QMQColumnViewModel.m */; };
+		56E70D061C847486002B6856 /* QMQColumnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D051C847486002B6856 /* QMQColumnTableViewCell.m */; };
+		56E70D0C1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D0B1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m */; };
+		56E70D0F1C847503002B6856 /* QMQHistoryNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D0E1C847503002B6856 /* QMQHistoryNewsViewModel.m */; };
+		56E70D201C8475CF002B6856 /* QMQThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D161C8475CF002B6856 /* QMQThemeViewController.m */; };
+		56E70D211C8475CF002B6856 /* QMQThemeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D191C8475CF002B6856 /* QMQThemeModel.m */; };
+		56E70D221C8475CF002B6856 /* QMQThemeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D1C1C8475CF002B6856 /* QMQThemeTableViewCell.m */; };
+		56E70D231C8475CF002B6856 /* QMQThemeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D1F1C8475CF002B6856 /* QMQThemeViewModel.m */; };
 		56ED33B81C57A6A10061CA81 /* QMQHttpBaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED33B31C57A6A10061CA81 /* QMQHttpBaseResponse.m */; };
 		56ED33B91C57A6A10061CA81 /* QMQHttpBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED33B51C57A6A10061CA81 /* QMQHttpBaseService.m */; };
 		56ED33BA1C57A6A10061CA81 /* QMQHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED33B71C57A6A10061CA81 /* QMQHttpService.m */; };
 		56F1ADF91C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F1ADF81C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m */; };
+		56F2DB5C1C81DA1400D0D15F /* QMQRacHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB5B1C81DA1400D0D15F /* QMQRacHttpService.m */; };
+		56F2DB601C829D1900D0D15F /* QMQIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB5F1C829D1900D0D15F /* QMQIconFont.m */; };
+		56F2DB641C829D5F00D0D15F /* QMQRacBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB631C829D5F00D0D15F /* QMQRacBaseViewModel.m */; };
+		56F2DB671C832F1700D0D15F /* QMQHotNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB661C832F1700D0D15F /* QMQHotNewsTableViewCell.m */; };
+		56F2DB6D1C834B6C00D0D15F /* QMQColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB6C1C834B6C00D0D15F /* QMQColumnModel.m */; };
 		56F48C921C3DFB310072822F /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F48C911C3DFB310072822F /* UIView+Layout.m */; };
 		56F48C941C3E018D0072822F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56F48C931C3E018D0072822F /* Images.xcassets */; };
-		FA1DF816B5A37427A158F9DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 707F5A0770E0D3E7504914E6 /* libPods.a */; };
+		56FF56441C7F668400D53AA6 /* QMQLatestNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FF56431C7F668400D53AA6 /* QMQLatestNewsDetailModel.m */; };
+		ED19098C4D4BEE156FE57F81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EEBC261ED597358B57E4EAC /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,14 +73,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		564F9ACC1C75703E0041CD07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		2EEBC261ED597358B57E4EAC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		56019DC51C913B4300BA8B5D /* QMQColumnListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnListModel.h; sourceTree = "<group>"; };
+		56019DC61C913B4300BA8B5D /* QMQColumnListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnListModel.m; sourceTree = "<group>"; };
+		56019DC81C9152AF00BA8B5D /* QMQThemeListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeListModel.h; sourceTree = "<group>"; };
+		56019DC91C9152AF00BA8B5D /* QMQThemeListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeListModel.m; sourceTree = "<group>"; };
+		56019DCB1C91572400BA8B5D /* QMQHistoryNewsListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsListModel.h; sourceTree = "<group>"; };
+		56019DCC1C91572400BA8B5D /* QMQHistoryNewsListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsListModel.m; sourceTree = "<group>"; };
 		5609E88B1C2FBA0600B72BCC /* ProductAPI.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProductAPI.plist; sourceTree = "<group>"; };
 		5609E8A71C30190900B72BCC /* QMQHotNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsViewController.h; sourceTree = "<group>"; };
 		5609E8A81C30190900B72BCC /* QMQHotNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsViewController.m; sourceTree = "<group>"; };
 		5609E8AA1C301CA100B72BCC /* QMQLatestNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsViewController.h; sourceTree = "<group>"; };
 		5609E8AB1C301CA100B72BCC /* QMQLatestNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsViewController.m; sourceTree = "<group>"; };
-		5609E8B01C301CDC00B72BCC /* QMQThemesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemesViewController.h; sourceTree = "<group>"; };
-		5609E8B11C301CDC00B72BCC /* QMQThemesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemesViewController.m; sourceTree = "<group>"; };
 		5609E8B61C301D1E00B72BCC /* QMQColumnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnViewController.h; sourceTree = "<group>"; };
 		5609E8B71C301D1E00B72BCC /* QMQColumnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnViewController.m; sourceTree = "<group>"; };
 		5612A5221C57E591001F5C18 /* UIColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorUtil.h; sourceTree = "<group>"; };
@@ -78,6 +113,8 @@
 		5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsModel.m; sourceTree = "<group>"; };
 		5620A44C1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsListViewModel.h; sourceTree = "<group>"; };
 		5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsListViewModel.m; sourceTree = "<group>"; };
+		56753D351C7E00670037BAE0 /* QMQLatestNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsDetailViewController.h; sourceTree = "<group>"; };
+		56753D361C7E00670037BAE0 /* QMQLatestNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsDetailViewController.m; sourceTree = "<group>"; };
 		56942AFE1C74583A0066188D /* QMQLatestNewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsViewModel.h; sourceTree = "<group>"; };
 		56942AFF1C74583A0066188D /* QMQLatestNewsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsViewModel.m; sourceTree = "<group>"; };
 		56942B011C746C7F0066188D /* QMQLatestNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsModel.h; sourceTree = "<group>"; };
@@ -98,12 +135,28 @@
 		56CFA03B1C2F9BC7000779CF /* QMQZhiHuDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QMQZhiHuDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CFA03F1C2F9BC7000779CF /* QMQZhiHuDailyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QMQZhiHuDailyUITests.m; sourceTree = "<group>"; };
 		56CFA0411C2F9BC7000779CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56D5296C1C84263F00B3964B /* QMQHistoryNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsModel.h; sourceTree = "<group>"; };
+		56D5296D1C84263F00B3964B /* QMQHistoryNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsModel.m; sourceTree = "<group>"; };
 		56D6286E1C31A822001B77FB /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		56D628711C31AC08001B77FB /* QMQZhiHuDaily-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QMQZhiHuDaily-Prefix.pch"; sourceTree = "<group>"; };
 		56D628741C31B262001B77FB /* QMQPublicUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQPublicUtil.h; sourceTree = "<group>"; };
 		56D628751C31B262001B77FB /* QMQPublicUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQPublicUtil.m; sourceTree = "<group>"; };
-		56ED33AE1C579DE90061CA81 /* QMQIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQIconFont.h; sourceTree = "<group>"; };
-		56ED33AF1C579DE90061CA81 /* QMQIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQIconFont.m; sourceTree = "<group>"; };
+		56E70D011C84745D002B6856 /* QMQColumnViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnViewModel.h; sourceTree = "<group>"; };
+		56E70D021C84745D002B6856 /* QMQColumnViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnViewModel.m; sourceTree = "<group>"; };
+		56E70D041C847486002B6856 /* QMQColumnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnTableViewCell.h; sourceTree = "<group>"; };
+		56E70D051C847486002B6856 /* QMQColumnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnTableViewCell.m; sourceTree = "<group>"; };
+		56E70D0A1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsTableViewCell.h; sourceTree = "<group>"; };
+		56E70D0B1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsTableViewCell.m; sourceTree = "<group>"; };
+		56E70D0D1C847503002B6856 /* QMQHistoryNewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsViewModel.h; sourceTree = "<group>"; };
+		56E70D0E1C847503002B6856 /* QMQHistoryNewsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsViewModel.m; sourceTree = "<group>"; };
+		56E70D151C8475CF002B6856 /* QMQThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeViewController.h; sourceTree = "<group>"; };
+		56E70D161C8475CF002B6856 /* QMQThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeViewController.m; sourceTree = "<group>"; };
+		56E70D181C8475CF002B6856 /* QMQThemeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeModel.h; sourceTree = "<group>"; };
+		56E70D191C8475CF002B6856 /* QMQThemeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeModel.m; sourceTree = "<group>"; };
+		56E70D1B1C8475CF002B6856 /* QMQThemeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeTableViewCell.h; sourceTree = "<group>"; };
+		56E70D1C1C8475CF002B6856 /* QMQThemeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeTableViewCell.m; sourceTree = "<group>"; };
+		56E70D1E1C8475CF002B6856 /* QMQThemeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeViewModel.h; sourceTree = "<group>"; };
+		56E70D1F1C8475CF002B6856 /* QMQThemeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeViewModel.m; sourceTree = "<group>"; };
 		56ED33B21C57A6A10061CA81 /* QMQHttpBaseResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpBaseResponse.h; sourceTree = "<group>"; };
 		56ED33B31C57A6A10061CA81 /* QMQHttpBaseResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpBaseResponse.m; sourceTree = "<group>"; };
 		56ED33B41C57A6A10061CA81 /* QMQHttpBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpBaseService.h; sourceTree = "<group>"; };
@@ -111,17 +164,26 @@
 		56ED33B61C57A6A10061CA81 /* QMQHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHttpService.h; sourceTree = "<group>"; };
 		56ED33B71C57A6A10061CA81 /* QMQHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHttpService.m; sourceTree = "<group>"; };
 		56ED33BE1C57A8140061CA81 /* ApiMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApiMacro.h; sourceTree = "<group>"; };
-		56ED33BF1C57A8310061CA81 /* DimensMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DimensMacros.h; sourceTree = "<group>"; };
 		56ED33C01C57A8460061CA81 /* PathMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PathMacros.h; sourceTree = "<group>"; };
 		56ED33C11C57A8630061CA81 /* UtilsMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilsMacros.h; sourceTree = "<group>"; };
-		56ED33C21C57A8780061CA81 /* NotificationMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationMacros.h; sourceTree = "<group>"; };
 		56ED33C41C57A8D60061CA81 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		56F1ADF71C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebImageFadeInEffect.h"; sourceTree = "<group>"; };
 		56F1ADF81C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImageFadeInEffect.m"; sourceTree = "<group>"; };
+		56F2DB5A1C81DA1400D0D15F /* QMQRacHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQRacHttpService.h; sourceTree = "<group>"; };
+		56F2DB5B1C81DA1400D0D15F /* QMQRacHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQRacHttpService.m; sourceTree = "<group>"; };
+		56F2DB5E1C829D1900D0D15F /* QMQIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQIconFont.h; sourceTree = "<group>"; };
+		56F2DB5F1C829D1900D0D15F /* QMQIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQIconFont.m; sourceTree = "<group>"; };
+		56F2DB621C829D5F00D0D15F /* QMQRacBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQRacBaseViewModel.h; sourceTree = "<group>"; };
+		56F2DB631C829D5F00D0D15F /* QMQRacBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQRacBaseViewModel.m; sourceTree = "<group>"; };
+		56F2DB651C832F1700D0D15F /* QMQHotNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsTableViewCell.h; sourceTree = "<group>"; };
+		56F2DB661C832F1700D0D15F /* QMQHotNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsTableViewCell.m; sourceTree = "<group>"; };
+		56F2DB6B1C834B6C00D0D15F /* QMQColumnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnModel.h; sourceTree = "<group>"; };
+		56F2DB6C1C834B6C00D0D15F /* QMQColumnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnModel.m; sourceTree = "<group>"; };
 		56F48C901C3DFB310072822F /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
 		56F48C911C3DFB310072822F /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		56F48C931C3E018D0072822F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		707F5A0770E0D3E7504914E6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		56FF56421C7F668400D53AA6 /* QMQLatestNewsDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsDetailModel.h; sourceTree = "<group>"; };
+		56FF56431C7F668400D53AA6 /* QMQLatestNewsDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsDetailModel.m; sourceTree = "<group>"; };
 		A4EDD146FE73ACB078CEC730 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E86FB02A1691273C4420DCD3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1DF816B5A37427A158F9DB /* libPods.a in Frameworks */,
+				ED19098C4D4BEE156FE57F81 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,10 +214,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56019DCE1C91E6E900BA8B5D /* icon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = icon;
+			path = Images.xcassets/icon;
+			sourceTree = "<group>";
+		};
 		5609E8931C3018F100B72BCC /* Column */ = {
 			isa = PBXGroup;
 			children = (
 				5609E8941C3018F100B72BCC /* Controller */,
+				56F2DB681C834AF600D0D15F /* ViewModel */,
 				5609E8951C3018F100B72BCC /* Model */,
 				5609E8961C3018F100B72BCC /* View */,
 			);
@@ -174,6 +245,10 @@
 		5609E8951C3018F100B72BCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				56019DC51C913B4300BA8B5D /* QMQColumnListModel.h */,
+				56019DC61C913B4300BA8B5D /* QMQColumnListModel.m */,
+				56F2DB6B1C834B6C00D0D15F /* QMQColumnModel.h */,
+				56F2DB6C1C834B6C00D0D15F /* QMQColumnModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -181,6 +256,8 @@
 		5609E8961C3018F100B72BCC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56E70D041C847486002B6856 /* QMQColumnTableViewCell.h */,
+				56E70D051C847486002B6856 /* QMQColumnTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,8 +266,8 @@
 			isa = PBXGroup;
 			children = (
 				5609E8981C3018F100B72BCC /* Controller */,
-				5609E8991C3018F100B72BCC /* Model */,
 				5620A4441C3D4DB900EDDD27 /* ViewModel */,
+				5609E8991C3018F100B72BCC /* Model */,
 				5609E89A1C3018F100B72BCC /* View */,
 			);
 			path = HotNews;
@@ -219,6 +296,8 @@
 		5609E89A1C3018F100B72BCC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56F2DB651C832F1700D0D15F /* QMQHotNewsTableViewCell.h */,
+				56F2DB661C832F1700D0D15F /* QMQHotNewsTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +318,8 @@
 			children = (
 				5609E8AA1C301CA100B72BCC /* QMQLatestNewsViewController.h */,
 				5609E8AB1C301CA100B72BCC /* QMQLatestNewsViewController.m */,
+				56753D351C7E00670037BAE0 /* QMQLatestNewsDetailViewController.h */,
+				56753D361C7E00670037BAE0 /* QMQLatestNewsDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +329,8 @@
 			children = (
 				56942B011C746C7F0066188D /* QMQLatestNewsModel.h */,
 				56942B021C746C7F0066188D /* QMQLatestNewsModel.m */,
+				56FF56421C7F668400D53AA6 /* QMQLatestNewsDetailModel.h */,
+				56FF56431C7F668400D53AA6 /* QMQLatestNewsDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,39 +340,6 @@
 			children = (
 				56942B041C7475A70066188D /* QMQLatestNewsTableViewCell.h */,
 				56942B051C7475A70066188D /* QMQLatestNewsTableViewCell.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		5609E8A31C3018F100B72BCC /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				5609E8A41C3018F100B72BCC /* Controller */,
-				5609E8A51C3018F100B72BCC /* Model */,
-				5609E8A61C3018F100B72BCC /* View */,
-			);
-			path = Themes;
-			sourceTree = "<group>";
-		};
-		5609E8A41C3018F100B72BCC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5609E8B01C301CDC00B72BCC /* QMQThemesViewController.h */,
-				5609E8B11C301CDC00B72BCC /* QMQThemesViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		5609E8A51C3018F100B72BCC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5609E8A61C3018F100B72BCC /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				569A5AE61C32CF400092ABA3 /* Controller */,
+				56F2DB6A1C834B2400D0D15F /* ViewModel */,
 				569A5AE91C32CF400092ABA3 /* Model */,
 				569A5AEA1C32CF400092ABA3 /* View */,
 			);
@@ -361,6 +412,10 @@
 		569A5AE91C32CF400092ABA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				56019DCB1C91572400BA8B5D /* QMQHistoryNewsListModel.h */,
+				56019DCC1C91572400BA8B5D /* QMQHistoryNewsListModel.m */,
+				56D5296C1C84263F00B3964B /* QMQHistoryNewsModel.h */,
+				56D5296D1C84263F00B3964B /* QMQHistoryNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +423,8 @@
 		569A5AEA1C32CF400092ABA3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56E70D0A1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.h */,
+				56E70D0B1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -398,7 +455,6 @@
 			isa = PBXGroup;
 			children = (
 				56CFA04D1C2F9C7E000779CF /* Main */,
-				56CFA04F1C2F9C7E000779CF /* Vender */,
 				56F48C8B1C3DF9E50072822F /* Category */,
 				56ED33BB1C57A7440061CA81 /* Macro */,
 				56D628721C31B1F1001B77FB /* Utils */,
@@ -445,7 +501,7 @@
 				5609E8971C3018F100B72BCC /* HotNews */,
 				5609E89B1C3018F100B72BCC /* LatestNews */,
 				5609E8931C3018F100B72BCC /* Column */,
-				5609E8A31C3018F100B72BCC /* Themes */,
+				56E70D131C8475CF002B6856 /* Theme */,
 				569A5AE51C32CF400092ABA3 /* HistoryNews */,
 			);
 			path = Main;
@@ -457,20 +513,16 @@
 				56D6286E1C31A822001B77FB /* icomoon.ttf */,
 				569EAD171C4DDEE3004158C9 /* iconfont.ttf */,
 				56F48C931C3E018D0072822F /* Images.xcassets */,
+				56019DCE1C91E6E900BA8B5D /* icon */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		56CFA04F1C2F9C7E000779CF /* Vender */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vender;
 			sourceTree = "<group>";
 		};
 		56D628721C31B1F1001B77FB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				56F2DB611C829D3900D0D15F /* ViewModel */,
+				56F2DB5D1C829D1900D0D15F /* IconFont */,
 				5612A5201C57E591001F5C18 /* UIButtonUtil */,
 				5612A5211C57E591001F5C18 /* UIColorUtil */,
 				5612A5241C57E591001F5C18 /* UIImageUtil */,
@@ -485,10 +537,57 @@
 			children = (
 				56D628741C31B262001B77FB /* QMQPublicUtil.h */,
 				56D628751C31B262001B77FB /* QMQPublicUtil.m */,
-				56ED33AE1C579DE90061CA81 /* QMQIconFont.h */,
-				56ED33AF1C579DE90061CA81 /* QMQIconFont.m */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		56E70D131C8475CF002B6856 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				56E70D141C8475CF002B6856 /* Controller */,
+				56E70D1D1C8475CF002B6856 /* ViewModel */,
+				56E70D171C8475CF002B6856 /* Model */,
+				56E70D1A1C8475CF002B6856 /* View */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		56E70D141C8475CF002B6856 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56E70D151C8475CF002B6856 /* QMQThemeViewController.h */,
+				56E70D161C8475CF002B6856 /* QMQThemeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56E70D171C8475CF002B6856 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56019DC81C9152AF00BA8B5D /* QMQThemeListModel.h */,
+				56019DC91C9152AF00BA8B5D /* QMQThemeListModel.m */,
+				56E70D181C8475CF002B6856 /* QMQThemeModel.h */,
+				56E70D191C8475CF002B6856 /* QMQThemeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56E70D1A1C8475CF002B6856 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56E70D1B1C8475CF002B6856 /* QMQThemeTableViewCell.h */,
+				56E70D1C1C8475CF002B6856 /* QMQThemeTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56E70D1D1C8475CF002B6856 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56E70D1E1C8475CF002B6856 /* QMQThemeViewModel.h */,
+				56E70D1F1C8475CF002B6856 /* QMQThemeViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		56ED33B11C57A6A10061CA81 /* Network */ = {
@@ -500,6 +599,8 @@
 				56ED33B51C57A6A10061CA81 /* QMQHttpBaseService.m */,
 				56ED33B61C57A6A10061CA81 /* QMQHttpService.h */,
 				56ED33B71C57A6A10061CA81 /* QMQHttpService.m */,
+				56F2DB5A1C81DA1400D0D15F /* QMQRacHttpService.h */,
+				56F2DB5B1C81DA1400D0D15F /* QMQRacHttpService.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -508,10 +609,8 @@
 			isa = PBXGroup;
 			children = (
 				56ED33BE1C57A8140061CA81 /* ApiMacro.h */,
-				56ED33BF1C57A8310061CA81 /* DimensMacros.h */,
 				56ED33C01C57A8460061CA81 /* PathMacros.h */,
 				56ED33C11C57A8630061CA81 /* UtilsMacros.h */,
-				56ED33C21C57A8780061CA81 /* NotificationMacros.h */,
 				56ED33C41C57A8D60061CA81 /* Macros.h */,
 			);
 			path = Macro;
@@ -524,6 +623,42 @@
 				56F1ADF81C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m */,
 			);
 			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		56F2DB5D1C829D1900D0D15F /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				56F2DB5E1C829D1900D0D15F /* QMQIconFont.h */,
+				56F2DB5F1C829D1900D0D15F /* QMQIconFont.m */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
+		56F2DB611C829D3900D0D15F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56F2DB621C829D5F00D0D15F /* QMQRacBaseViewModel.h */,
+				56F2DB631C829D5F00D0D15F /* QMQRacBaseViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56F2DB681C834AF600D0D15F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56E70D011C84745D002B6856 /* QMQColumnViewModel.h */,
+				56E70D021C84745D002B6856 /* QMQColumnViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56F2DB6A1C834B2400D0D15F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56E70D0D1C847503002B6856 /* QMQHistoryNewsViewModel.h */,
+				56E70D0E1C847503002B6856 /* QMQHistoryNewsViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		56F48C8B1C3DF9E50072822F /* Category */ = {
@@ -547,7 +682,7 @@
 		D4B9DA578CE0827B8E8BC09B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				707F5A0770E0D3E7504914E6 /* libPods.a */,
+				2EEBC261ED597358B57E4EAC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -575,6 +710,8 @@
 				8A085364D2D2B868C5A9526E /* Embed Pods Frameworks */,
 				E54AC602E8FE7AE4A2652562 /* Copy Pods Resources */,
 				566CAB831C3A58A10085D76C /* TODO as warning */,
+				564F9ACC1C75703E0041CD07 /* Embed Frameworks */,
+				5685E4B81C8DD33D00D5BC3B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -708,6 +845,19 @@
 			shellPath = /bin/sh;
 			shellScript = "KEYWORDS=\"TODO:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($KEYWORDS).*\\$\" | perl -p -e \"s/($KEYWORDS)/ warning: \\$1/\"";
 		};
+		5685E4B81C8DD33D00D5BC3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 54a172ef52b310c2daea55130d5694f4480d3a9a 6ff6474510b2850ff8f40d2040f5ce2fef8c53bf319538d602818444bb3f58a3";
+		};
 		5E55A88939FA45FCEE3E52FD /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -762,26 +912,43 @@
 			files = (
 				5609E8B81C301D1E00B72BCC /* QMQColumnViewController.m in Sources */,
 				569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */,
+				56F2DB671C832F1700D0D15F /* QMQHotNewsTableViewCell.m in Sources */,
 				56ED33BA1C57A6A10061CA81 /* QMQHttpService.m in Sources */,
 				5612A5271C57E591001F5C18 /* UIColorUtil.m in Sources */,
+				56F2DB6D1C834B6C00D0D15F /* QMQColumnModel.m in Sources */,
 				56942B001C74583A0066188D /* QMQLatestNewsViewModel.m in Sources */,
-				56ED33B01C579DE90061CA81 /* QMQIconFont.m in Sources */,
+				56E70D221C8475CF002B6856 /* QMQThemeTableViewCell.m in Sources */,
 				5612A5281C57E591001F5C18 /* UIImageUtil.m in Sources */,
 				5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */,
 				5612A52B1C57E641001F5C18 /* UIButtonUtil.m in Sources */,
 				56F1ADF91C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m in Sources */,
+				56F2DB601C829D1900D0D15F /* QMQIconFont.m in Sources */,
+				56F2DB5C1C81DA1400D0D15F /* QMQRacHttpService.m in Sources */,
 				56942B031C746C7F0066188D /* QMQLatestNewsModel.m in Sources */,
 				5609E8AC1C301CA100B72BCC /* QMQLatestNewsViewController.m in Sources */,
+				56E70D231C8475CF002B6856 /* QMQThemeViewModel.m in Sources */,
+				56E70D0C1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m in Sources */,
+				56E70D211C8475CF002B6856 /* QMQThemeModel.m in Sources */,
 				5620A4481C3D73AE00EDDD27 /* QMQHotNewsListModel.m in Sources */,
 				5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */,
 				56942B061C7475A70066188D /* QMQLatestNewsTableViewCell.m in Sources */,
 				56D628761C31B262001B77FB /* QMQPublicUtil.m in Sources */,
-				5609E8B21C301CDC00B72BCC /* QMQThemesViewController.m in Sources */,
+				56019DCD1C91572400BA8B5D /* QMQHistoryNewsListModel.m in Sources */,
+				56E70D201C8475CF002B6856 /* QMQThemeViewController.m in Sources */,
+				56753D371C7E00670037BAE0 /* QMQLatestNewsDetailViewController.m in Sources */,
+				56D5296E1C84263F00B3964B /* QMQHistoryNewsModel.m in Sources */,
+				56F2DB641C829D5F00D0D15F /* QMQRacBaseViewModel.m in Sources */,
+				56019DC71C913B4300BA8B5D /* QMQColumnListModel.m in Sources */,
+				56E70D031C84745D002B6856 /* QMQColumnViewModel.m in Sources */,
 				56ED33B91C57A6A10061CA81 /* QMQHttpBaseService.m in Sources */,
 				56F48C921C3DFB310072822F /* UIView+Layout.m in Sources */,
+				56019DCA1C9152AF00BA8B5D /* QMQThemeListModel.m in Sources */,
 				56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */,
+				56FF56441C7F668400D53AA6 /* QMQLatestNewsDetailModel.m in Sources */,
 				56CFA0221C2F9BC7000779CF /* main.m in Sources */,
+				56E70D061C847486002B6856 /* QMQColumnTableViewCell.m in Sources */,
 				56ED33B81C57A6A10061CA81 /* QMQHttpBaseResponse.m in Sources */,
+				56E70D0F1C847503002B6856 /* QMQHistoryNewsViewModel.m in Sources */,
 				5609E8A91C30190900B72BCC /* QMQHotNewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,12 +1074,19 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.qmqzhihudaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -928,12 +1102,18 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CONFIGURATION_TEMP_DIR = "$(PROJECT_TEMP_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.qmqzhihudaily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

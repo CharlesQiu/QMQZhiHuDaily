@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QMQLatestNewsModel.h"
 
 @interface QMQLatestNewsTableViewCell : UITableViewCell
 
-@property(nonatomic, strong) UIImageView *customImageView;
-@property(nonatomic, strong) UILabel     *titleLabel;
+- (void)configureCell:(QMQLatestNewsModel *)model;
 
 @end

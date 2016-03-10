@@ -7,7 +7,16 @@
 //
 
 #import "QMQLatestNewsTableViewCell.h"
-#import "Masonry.h"
+#import "UIImageView+WebImageFadeInEffect.h"
+
+@interface QMQLatestNewsTableViewCell ()
+
+/// 图片
+@property(nonatomic, strong) UIImageView *customImageView;
+/// 标题
+@property(nonatomic, strong) UILabel *titleLabel;
+
+@end
 
 @implementation QMQLatestNewsTableViewCell
 
@@ -26,7 +35,6 @@
     if (self) {
         
         self.customImageView               = [[UIImageView alloc] init];
-        self.customImageView.contentMode   = UIViewContentModeScaleAspectFill;
         self.customImageView.clipsToBounds = YES;
         [self.contentView addSubview:self.customImageView];
         
@@ -48,6 +56,11 @@
         }];
     }
     return self;
+}
+
+- (void)configureCell:(QMQLatestNewsModel *)model {
+    [self.customImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:icomoonImage(kIFTabbarLatestnews, hexString(kIFTabbarLatestnewsColor), 25.0f) fadeInWithDuration:0.33f];
+    self.titleLabel.text = model.title;
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "QMQHotNewsListModel.h"
+#import "QMQHotNewsModel.h"
 
 @interface QMQHotNewsListModel ()
 
@@ -16,7 +17,7 @@
 
 @implementation QMQHotNewsListModel
 
-- (instancetype)initWithDic:(NSDictionary *)dic {
+- (QMQHotNewsListModel *)initWithDic:(NSDictionary *)dic {
     self = [super init];
     if (!self) {
         return nil;

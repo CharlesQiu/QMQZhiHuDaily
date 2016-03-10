@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface QMQLatestNewsViewModel : NSObject<UITableViewDataSource, UITableViewDelegate>
+@interface QMQLatestNewsViewModel : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 /// 请求命令
 @property(nonatomic, readonly, strong) RACCommand *requestCommand;
 /// 模型数组
 @property(nonatomic, strong) NSArray *modelArray;
+/// 点击的cell的新闻id
+@property(nonatomic, readonly, assign) NSUInteger tapCellNewsId;
 
 @end

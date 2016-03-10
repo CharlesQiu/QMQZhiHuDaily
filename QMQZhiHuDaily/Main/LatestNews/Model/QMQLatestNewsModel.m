@@ -10,7 +10,7 @@
 
 @interface QMQLatestNewsModel ()
 
-@property(nonatomic, assign) NSInteger newsId;
+@property(nonatomic, assign) NSUInteger newsId;
 @property(nonatomic, strong) NSString  *title;
 @property(nonatomic, strong) NSString  *imageUrl;
 
@@ -24,7 +24,7 @@
         return nil;
     }
     
-    self.newsId   = [dic[@"id"] integerValue];
+    self.newsId   = [dic[@"id"] unsignedIntegerValue];
     self.title    = dic[@"title"];
     self.imageUrl = dic[@"images"][0];
     

@@ -8,7 +8,7 @@
 
 #import "QMQHttpBaseResponse.h"
 
-@interface QMQHttpBaseResponse()
+@interface QMQHttpBaseResponse ()
 
 @property (nonatomic, copy) NSDictionary *originalDict;
 
@@ -20,8 +20,6 @@
     self = [super init];
     if (self) {
         self.originalDict = dic;
-        
-        
     }
     return self;
 }

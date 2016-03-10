@@ -7,8 +7,13 @@
 //
 
 #import "QMQColumnViewController.h"
+#import "QMQColumnViewModel.h"
+#import "QMQColumnTableViewCell.h"
 
-@interface QMQColumnViewController ()
+@interface QMQColumnViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) QMQColumnViewModel *viewModel;
 
 @end
 
@@ -20,7 +25,88 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"专栏文章";
+    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarColumnColor);
+    
+    [self initViewModel];
+    [self bindViewModel];
+    [self loadData];
+}
 
+- (void)initViewModel {
+    _viewModel = [[QMQColumnViewModel alloc] init];
+    
+    @weakify(self);
+    [_viewModel.loadCommand.executing subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+}
+
+- (void)bindViewModel {
+    
+    @weakify(self);
+    [RACObserve(self.viewModel, modelArray) subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+    
+}
+
+- (void)loadData {
+    [_viewModel.loadCommand execute:nil];
+}
+
+#pragma mark - UITableView
+
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.rowHeight = 100.0f;
+        [_tableView registerClass:[QMQColumnTableViewCell class] forCellReuseIdentifier:NSStringFromClass([QMQColumnTableViewCell class])];
+        [self.view addSubview:_tableView];
+        @weakify(self);
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self);
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _tableView;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return self.viewModel.modelArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    QMQColumnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QMQColumnTableViewCell class]) forIndexPath:indexPath];
+    
+    [self configureCell:cell forRowAtIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (void)configureCell:(QMQColumnTableViewCell *)cell
+    forRowAtIndexPath:(NSIndexPath *)indexPath {
+    QMQColumnModel *model = _viewModel.modelArray[indexPath.row];
+    [cell configureCell:model];
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Tells the delegate that the specified row is now selected.
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

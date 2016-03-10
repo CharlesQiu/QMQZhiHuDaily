@@ -6,8 +6,6 @@
 //  Copyright © 2016 Charles.Qiu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif

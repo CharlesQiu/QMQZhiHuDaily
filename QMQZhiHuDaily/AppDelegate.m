@@ -11,7 +11,10 @@
 #import "QMQColumnViewController.h"
 #import "QMQLatestNewsViewController.h"
 #import "QMQHistoryNewsViewController.h"
-#import "QMQThemesViewController.h"
+#import "QMQThemeViewController.h"
+
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -63,8 +66,8 @@
                                   imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     columnNAV.tabBarItem.title = @"专栏文章";
     
-    QMQThemesViewController *themesVC  = [[QMQThemesViewController alloc] init];
-    UINavigationController  *themesNAV = [[UINavigationController alloc] initWithRootViewController:themesVC];
+    QMQThemeViewController *themesVC  = [[QMQThemeViewController alloc] init];
+    UINavigationController *themesNAV = [[UINavigationController alloc] initWithRootViewController:themesVC];
     themesNAV.tabBarItem.image = [icomoonImage(kIFTabbarThemes, hexString(kIFTabbarThemesColor), kIFTabbarSize)
                                   imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     themesNAV.tabBarItem.title = @"主题文章";
@@ -76,7 +79,9 @@
     historyNewsNAV.tabBarItem.title = @"历史新闻";
     
     tabBarController.viewControllers = @[hotNewsNAV, latestNAV, columnNAV, themesNAV, historyNewsNAV];
-
+    tabBarController.selectedIndex   = 0;
+    
+    [Fabric with:@[[Crashlytics class], [Answers class]]];
     return YES;
 }
 

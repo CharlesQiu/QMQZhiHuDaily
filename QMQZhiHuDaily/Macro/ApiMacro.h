@@ -29,6 +29,8 @@
 /// 专题新闻
 #define API_SECTIONS    [API_BASE_URL_STRING stringByAppendingFormat:@"3/sections"]
 /// 历史新闻
-#define API_BEFORE_NEWS(date) [API_HISTORY_URL_STRING stringByAppendingFormat:@"%@4/news/before/%@", date]
+#define API_BEFORE_NEWS(date) [API_HISTORY_URL_STRING stringByAppendingFormat:@"4/news/before/%@", date]
+
+#define API_GET_NEWS_DETAIL(newsId) [API_BASE_URL_STRING stringByAppendingFormat:@"4/news/%lu", newsId]
 
 #endif /* ApiMacro_h */

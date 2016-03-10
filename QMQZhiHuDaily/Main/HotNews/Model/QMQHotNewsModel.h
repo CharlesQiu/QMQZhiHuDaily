@@ -10,12 +10,12 @@
 
 @interface QMQHotNewsModel : NSObject
 
-@property (nonatomic, readonly, assign) NSInteger newsId;
+@property(nonatomic, readonly, assign) NSInteger newsId;
 /// 文章配图URL
-@property (nonatomic, readonly, copy  ) NSString  *thumbNail;
-@property (nonatomic, readonly, copy  ) NSString  *title;
+@property(nonatomic, readonly, copy) NSString *thumbNail;
+@property(nonatomic, readonly, copy) NSString *title;
 /// 文章详细URL
-@property (nonatomic, readonly, copy  ) NSString  *url;
+@property(nonatomic, readonly, copy) NSString *url;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

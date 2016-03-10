@@ -7,10 +7,14 @@
 //
 
 #import "QMQLatestNewsViewModel.h"
-#import "QMQHttpService.h"
-#import "QMQLatestNewsModel.h"
 #import "QMQLatestNewsTableViewCell.h"
 #import "UIImageView+WebImageFadeInEffect.h"
+
+@interface QMQLatestNewsViewModel ()
+
+@property(nonatomic, assign) NSUInteger tapCellNewsId;
+
+@end
 
 @implementation QMQLatestNewsViewModel
 
@@ -27,7 +31,7 @@
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         RACSignal *requestSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
             [QMQHttpService getWithUrl:API_LATEST_NEWS param:nil responseBlock:^(QMQHttpBaseResponse *response) {
-                VerboseLog(response);
+                LOG_VERBOSE(response);
                 if (response.success) {
                     [subscriber sendNext:response.originalDict];
                     [subscriber sendCompleted];
@@ -37,7 +41,7 @@
         }];
         
         return [requestSignal map:^id (NSDictionary *value) {
-            NSMutableArray *dictArray = value[@"stories"];
+            NSArray *dictArray = value[@"stories"];
             NSArray *modelArr = [[dictArray.rac_sequence map:^id (id value) {
                 QMQLatestNewsModel *model = [[QMQLatestNewsModel alloc] initWithDic:value];
                 return model;
@@ -53,23 +57,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString            *ID   = @"cell";
+    NSString                   *ID   = NSStringFromClass([QMQLatestNewsTableViewCell class]);
     QMQLatestNewsTableViewCell *cell = (QMQLatestNewsTableViewCell *)[tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
         cell = [[QMQLatestNewsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
     
-    QMQLatestNewsModel *model = self.modelArray[indexPath.row];
-    
-    [cell.customImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:icomoonImage(kIFTabbarLatestnews, hexString(kIFTabbarLatestnewsColor), 25.0f) fadeInWithDuration:0.33f];
-    cell.titleLabel.text = model.title;
-    
+    [cell configureCell:self.modelArray[indexPath.row]];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    QMQLatestNewsModel *model = self.modelArray[indexPath.row];
+    self.tapCellNewsId = model.newsId;
 }
 
 @end
