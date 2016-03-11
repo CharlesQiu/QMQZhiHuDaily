@@ -14,6 +14,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DTCoreText.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DTFoundation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +47,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>07191F85197FB6424D0BDF59B736CEF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>12E2BC28C62976C425F4B71C2723F0B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31443AFD7691E9CDD60A3AC93CABD3A0</key>
+		<key>1950562BD3EB23B0ACF74A6AA9CD6A3C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30AF7BF23816B350BBAECB0EDE91E401</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>54D5716994BCD8C820B735B971C61D83</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5EE6E6513F2CE3C47AE42C5AE776D2BD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>928353533005A4198EBDA5B700D37B64</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B62E4A83FA1A936B6138A21800D6F6F0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FD68BF14BCF4B06781391D723340A181</key>
 		<dict>
 			<key>primary</key>
 			<true/>
