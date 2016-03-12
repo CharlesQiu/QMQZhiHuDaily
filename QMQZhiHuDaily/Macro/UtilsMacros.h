@@ -37,6 +37,7 @@ static const int ddLogLevel = DDLogLevelOff;
  *  @brief A better version of NSLog
  */
 #ifdef DEBUG
+
 #define LOGDEBUG(msg) DDLogDebug(@"\n--------------------\nCLASS:%s <> LINE:%d\n--------------------\nMETHOD:%s\n--------------------\n%@\n--------------------", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __func__, msg);
 #define LOGERROR(msg) DDLogError(@"\n--------------------\nCLASS:%s <> LINE:%d\n--------------------\nMETHOD:%s\n--------------------\n%@\n--------------------", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __func__, msg);
 #define LOGINFO(msg) DDLogInfo(@"\n--------------------\nCLASS:%s <> LINE:%d\n--------------------\nMETHOD:%s\n--------------------\n%@\n--------------------", [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __func__, msg);
@@ -45,7 +46,9 @@ static const int ddLogLevel = DDLogLevelOff;
 #define LOGCGRECT(description, rect) DDLogWarn(@"\n++++++%@++++++\n{ %.1f(x) , %.1f(y) , %.1f(w) , %.1f(h) }\n------%@------\n", description, rect.origin.x, rect.origin.y, rect.size.width, rect.size.height, description);
 #define LOGCGSIZE(description, size) DDLogInfo(@"\n++++++%@++++++\n{ %.1f(w) , %.1f(h) }\n------%@------\n", description, size.width, size.height, description);
 #define LOGCGPOINT(description, point) DDLogVerbose(@"\n++++++%@++++++\n{ %.1f(x) , %.1f(y) }\n------%@------\n", description, point.x, point.y, description);
+
 #else
+
 #define LOGDEBUG(msg)
 #define LOGERROR(msg)
 #define LOGINFO(msg)
@@ -54,7 +57,7 @@ static const int ddLogLevel = DDLogLevelOff;
 #define LOGCGRECT(description, rect)
 #define LOGCGSIZE(description, size)
 #define LOGCGPOINT(description, point)
-#define NSLog(...)
+
 #endif
 
 #endif /* UtilsMacros_h */
