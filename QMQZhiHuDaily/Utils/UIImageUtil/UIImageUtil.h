@@ -6,18 +6,20 @@
 //  Copyright © 2015 Charles.Qiu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+@interface UIImageUtil : NSObject
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-    
-    /// icomoon的iconfont
-    UIImage *icomoonImage(NSString *code, UIColor *color, CGFloat fontSize);
-    
-    /// 颜色图片
-    UIImage *imageWithColor(UIColor *color);
-#ifdef __cplusplus
-}
-#endif
+/**
+ *  把icomoon字体文件中的code转成图片。
+ *  @param code     图片code
+ *  @param color    图片颜色
+ *  @param fontSize 图片大小
+ *  @return UIImage
+ */
++ (UIImage *)imageWithIconFontCode:(NSString *)code color:(UIColor *)color fontSize:(CGFloat)fontSize;
+
+/**
+ *  生成纯颜色的图片
+ */
++ (UIImage *)imageWithColor:(UIColor *)color;
+
+@end

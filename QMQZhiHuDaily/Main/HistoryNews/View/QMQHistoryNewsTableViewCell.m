@@ -51,7 +51,7 @@
 
 - (void)configureCell:(QMQHistoryNewsModel *)model {
     [self.customImageView sd_setImageWithURL:[NSURL URLWithString:model.imageArr[0] ? : nil]
-                            placeholderImage:icomoonImage(kIFTabbarLatestnews, hexString(kIFTabbarLatestnewsColor), 25.0f)
+                            placeholderImage:nil
                           fadeInWithDuration:0.33f];
     self.titleLabel.text = model.title;
 }

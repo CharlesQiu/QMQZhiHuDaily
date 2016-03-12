@@ -59,7 +59,9 @@
 }
 
 - (void)configureCell:(QMQLatestNewsModel *)model {
-    [self.customImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:icomoonImage(kIFTabbarLatestnews, hexString(kIFTabbarLatestnewsColor), 25.0f) fadeInWithDuration:0.33f];
+    [self.customImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl]
+                            placeholderImage:nil
+                          fadeInWithDuration:0.33f];
     self.titleLabel.text = model.title;
 }
 

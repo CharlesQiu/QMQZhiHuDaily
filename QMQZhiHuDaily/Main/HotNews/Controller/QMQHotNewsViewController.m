@@ -12,7 +12,7 @@
 
 @interface QMQHotNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UITableView             *tableView;
 @property(nonatomic, strong) QMQHotNewsListViewModel *viewModel;
 
 @end
@@ -24,11 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.title = @"热门新闻";
-    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarHotnewsColor);
-
+    
     [self initViewModel];
     [self bindViewModel];
     [self loadData];
@@ -36,7 +34,7 @@
 
 - (void)initViewModel {
     _viewModel = [[QMQHotNewsListViewModel alloc] init];
-
+    
     @weakify(self);
     [_viewModel.loadCommand.executing subscribeNext:^(id x) {
         @strongify(self);
@@ -45,13 +43,13 @@
 }
 
 - (void)bindViewModel {
-
+    
     @weakify(self);
     [RACObserve(self.viewModel, modelArray) subscribeNext:^(id x) {
         @strongify(self);
         [self.tableView reloadData];
     }];
-
+    
 }
 
 - (void)loadData {
@@ -62,10 +60,10 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
+        _tableView            = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate   = self;
         _tableView.dataSource = self;
-        _tableView.rowHeight = 100.0f;
+        _tableView.rowHeight  = 100.0f;
         [_tableView registerClass:[QMQHotNewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([QMQHotNewsTableViewCell class])];
         [self.view addSubview:_tableView];
         @weakify(self);
@@ -83,17 +81,17 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)   tableView:(UITableView *)tableView
+    numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.modelArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QMQHotNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QMQHotNewsTableViewCell class]) forIndexPath:indexPath];
-
+    
     [self configureCell:cell forRowAtIndexPath:indexPath];
-
+    
     return cell;
 }
 
@@ -108,7 +106,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Tells the delegate that the specified row is now selected.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
+    
 }
 
 #pragma mark -

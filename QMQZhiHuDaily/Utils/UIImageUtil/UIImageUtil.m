@@ -8,15 +8,16 @@
 
 #import "UIImageUtil.h"
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+@implementation UIImageUtil
 
-UIImage *iconWithInfo(NSString *string, UIColor *color, NSString *fontName, CGFloat fontSize) {
-    
++ (UIImage *)iconWithFontName:(NSString *)fontName
+                         code:(NSString *)code
+                        color:(UIColor *)color
+                     fontSize:(CGFloat)fontSize {
     UILabel *label = [[UILabel alloc] init];
     label.font = [UIFont fontWithName:fontName
                                  size:fontSize];
-    label.text      = string;
+    label.text      = code;
     label.textColor = color;
     [label sizeToFit];
     
@@ -28,11 +29,15 @@ UIImage *iconWithInfo(NSString *string, UIColor *color, NSString *fontName, CGFl
     return image;
 }
 
-UIImage *icomoonImage(NSString *code, UIColor *color, CGFloat fontSize) {
-    return iconWithInfo(code, color, @"icomoon", fontSize);
++ (UIImage *)imageWithIconFontCode:(NSString *)code
+                             color:(UIColor *)color
+                          fontSize:(CGFloat)fontSize {
+    return [self iconWithFontName:@"icomoon"
+                             code:code color:color
+                         fontSize:fontSize];
 }
 
-UIImage *imageWithColor(UIColor *color) {
++ (UIImage *)imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -45,4 +50,5 @@ UIImage *imageWithColor(UIColor *color) {
     
     return image;
 }
-#pragma clang diagnostic pop
+
+@end

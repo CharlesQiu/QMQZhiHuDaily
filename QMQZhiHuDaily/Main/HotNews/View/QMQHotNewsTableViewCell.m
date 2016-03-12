@@ -30,7 +30,7 @@
         [self.contentView addSubview:self.customImageView];
         
         self.titleLabel               = [[UILabel alloc] init];
-        self.titleLabel.font          = [UIFont systemFontOfSize:15.0f];
+        self.titleLabel.font          = [UIFont fontWithName:FONT_DEFAULT size:16.0];
         self.titleLabel.numberOfLines = 0;
         [self.contentView addSubview:self.titleLabel];
         
@@ -50,8 +50,12 @@
 }
 
 - (void)configureCell:(QMQHotNewsModel *)model {
+    UIImage *placeholderImage = [UIImage imageNamed:@"icon_text"];
+    [placeholderImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.customImageView sd_setImageWithURL:[NSURL URLWithString:model.thumbNail]
-                            placeholderImage:icomoonImage(kIFTabbarLatestnews, hexString(kIFTabbarLatestnewsColor), 25.0f)
+                            placeholderImage:[UIImageUtil imageWithIconFontCode:kIFTabbarLatestnews
+                                                                          color:[UIColor colorWithHexString:kIFTabbarLatestnewsColor]
+                                                                       fontSize:25.0f]
                           fadeInWithDuration:0.33f];
     self.titleLabel.text = model.title;
 }

@@ -41,42 +41,54 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
+        
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.delegate           = self;
     tabBarController.tabBar.translucent = YES;
     self.window.rootViewController      = tabBarController;
     
-    QMQHotNewsViewController *hotNewsVC  = [[QMQHotNewsViewController alloc] init];
-    UINavigationController   *hotNewsNAV = [[UINavigationController alloc] initWithRootViewController:hotNewsVC];
-    hotNewsNAV.tabBarItem.image = [icomoonImage(kIFTabbarHotnews, hexString(kIFTabbarHotnewsColor), kIFTabbarSize)
-                                   imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    QMQHotNewsViewController *hotNewsVC    = [[QMQHotNewsViewController alloc] init];
+    UINavigationController   *hotNewsNAV   = [[UINavigationController alloc] initWithRootViewController:hotNewsVC];
+    UIImage                  *hotNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarHotnews
+                                                                          color:[UIColor colorWithHexString:kIFTabbarHotnewsColor]
+                                                                       fontSize:kIFTabbarSize];
+    hotNewsNAV.tabBarItem.image = [hotNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     hotNewsNAV.tabBarItem.title = @"热门新闻";
     
-    QMQLatestNewsViewController *latestVC  = [[QMQLatestNewsViewController alloc] init];
-    UINavigationController      *latestNAV = [[UINavigationController alloc] initWithRootViewController:latestVC];
-    latestNAV.tabBarItem.image = [icomoonImage(kIFTabbarLatestnews, hexString(kIFTabbarLatestnewsColor), kIFTabbarSize)
-                                  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    QMQLatestNewsViewController *latestVC        = [[QMQLatestNewsViewController alloc] init];
+    UINavigationController      *latestNAV       = [[UINavigationController alloc] initWithRootViewController:latestVC];
+    UIImage                     *latestNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarLatestnews
+                                                                                color:[UIColor colorWithHexString:kIFTabbarLatestnewsColor]
+                                                                             fontSize:kIFTabbarSize];
+    latestNAV.tabBarItem.image = [latestNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     latestNAV.tabBarItem.title = @"最新新闻";
     
     
-    QMQColumnViewController *columnVC  = [[QMQColumnViewController alloc] init];
-    UINavigationController  *columnNAV = [[UINavigationController alloc] initWithRootViewController:columnVC];
-    columnNAV.tabBarItem.image = [icomoonImage(kIFTabbarColumn, hexString(kIFTabbarColumnColor), kIFTabbarSize)
-                                  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    QMQColumnViewController *columnVC        = [[QMQColumnViewController alloc] init];
+    UINavigationController  *columnNAV       = [[UINavigationController alloc] initWithRootViewController:columnVC];
+    UIImage                 *columnNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarColumn
+                                                                            color:[UIColor colorWithHexString:kIFTabbarColumnColor]
+                                                                         fontSize:kIFTabbarSize];
+    columnNAV.tabBarItem.image = [columnNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     columnNAV.tabBarItem.title = @"专栏文章";
     
-    QMQThemeViewController *themesVC  = [[QMQThemeViewController alloc] init];
-    UINavigationController *themesNAV = [[UINavigationController alloc] initWithRootViewController:themesVC];
-    themesNAV.tabBarItem.image = [icomoonImage(kIFTabbarThemes, hexString(kIFTabbarThemesColor), kIFTabbarSize)
-                                  imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    QMQThemeViewController *themesVC       = [[QMQThemeViewController alloc] init];
+    UINavigationController *themesNAV      = [[UINavigationController alloc] initWithRootViewController:themesVC];
+    UIImage                *themeNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarThemes
+                                                                          color:[UIColor colorWithHexString:kIFTabbarThemesColor]
+                                                                       fontSize:kIFTabbarSize];
+    themesNAV.tabBarItem.image = [themeNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     themesNAV.tabBarItem.title = @"主题文章";
     
-    QMQHistoryNewsViewController *historyNewsVC  = [[QMQHistoryNewsViewController alloc] init];
-    UINavigationController       *historyNewsNAV = [[UINavigationController alloc] initWithRootViewController:historyNewsVC];
-    historyNewsNAV.tabBarItem.image = [icomoonImage(kIFTabbarHistory, hexString(kIFTabbarHistoryColor), kIFTabbarSize)
-                                       imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    QMQHistoryNewsViewController *historyNewsVC    = [[QMQHistoryNewsViewController alloc] init];
+    UINavigationController       *historyNewsNAV   = [[UINavigationController alloc] initWithRootViewController:historyNewsVC];
+    UIImage                      *historyNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarHistory
+                                                                                  color:[UIColor colorWithHexString:kIFTabbarHistoryColor]
+                                                                               fontSize:kIFTabbarSize];
+    historyNewsNAV.tabBarItem.image = [historyNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     historyNewsNAV.tabBarItem.title = @"历史新闻";
+    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithHexString:kIFTabbarHistoryColor]];
     
     tabBarController.viewControllers = @[hotNewsNAV, latestNAV, columnNAV, themesNAV, historyNewsNAV];
     tabBarController.selectedIndex   = 0;

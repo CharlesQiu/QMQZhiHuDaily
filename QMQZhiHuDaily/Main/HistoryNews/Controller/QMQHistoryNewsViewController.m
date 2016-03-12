@@ -12,7 +12,7 @@
 
 @interface QMQHistoryNewsViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UITableView             *tableView;
 @property(nonatomic, strong) QMQHistoryNewsViewModel *viewModel;
 
 @end
@@ -25,22 +25,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor                            = [UIColor whiteColor];
-    self.title                                           = @"历史新闻";
-    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarHistoryColor);
+    self.title = @"历史新闻";
     
-    UIImage *normalImage  = icomoonImage(kIFNavEditDate, [UIColor whiteColor], kIFNavEditDateSize);
-    UIImage *disableImage = icomoonImage(kIFNavEditDate, [UIColor grayColor], kIFNavEditDateSize);
+    UIImage *normalImage = [UIImageUtil imageWithIconFontCode:kIFNavEditDate
+                                                        color:[UIColor whiteColor]
+                                                     fontSize:kIFNavEditDateSize];
+    UIImage *disableImage = [UIImageUtil imageWithIconFontCode:kIFNavEditDate
+                                                         color:[UIColor grayColor]
+                                                      fontSize:kIFNavEditDateSize];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:createNormalImageButton(normalImage, disableImage, self, @selector(tapSelect))];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:normalImage
+            forState:UIControlStateNormal];
+    [button setImage:disableImage
+            forState:UIControlStateDisabled];
+    [button sizeToFit];
+    [[button rac_signalForControlEvents:UIControlEventTouchUpInside]
+     subscribeNext:^(UIButton *button) {
+         NSLog(@"----tap button");
+     }];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     [self initViewModel];
     [self bindViewModel];
     [self loadData];
-}
-
-- (void)tapSelect {
-    
 }
 
 - (void)initViewModel {
@@ -71,11 +80,12 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
+        _tableView            = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate   = self;
         _tableView.dataSource = self;
-        _tableView.rowHeight = 100.0f;
-        [_tableView registerClass:[QMQHistoryNewsTableViewCell class] forCellReuseIdentifier:NSStringFromClass([QMQHistoryNewsTableViewCell class])];
+        _tableView.rowHeight  = 100.0f;
+        [_tableView registerClass:[QMQHistoryNewsTableViewCell class]
+           forCellReuseIdentifier:NSStringFromClass([QMQHistoryNewsTableViewCell class])];
         [self.view addSubview:_tableView];
         @weakify(self);
         [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -92,14 +102,15 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)   tableView:(UITableView *)tableView
+    numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.modelArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    QMQHistoryNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QMQHistoryNewsTableViewCell class]) forIndexPath:indexPath];
+    QMQHistoryNewsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QMQHistoryNewsTableViewCell class])
+                                                                        forIndexPath:indexPath];
     
     [self configureCell:cell forRowAtIndexPath:indexPath];
     

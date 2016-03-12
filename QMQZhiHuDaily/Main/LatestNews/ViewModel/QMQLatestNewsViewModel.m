@@ -31,7 +31,7 @@
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         RACSignal *requestSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
             [QMQHttpService getWithUrl:API_LATEST_NEWS param:nil responseBlock:^(QMQHttpBaseResponse *response) {
-                LOG_VERBOSE(response);
+                LOGVERBOSE(response);
                 if (response.success) {
                     [subscriber sendNext:response.originalDict];
                     [subscriber sendCompleted];

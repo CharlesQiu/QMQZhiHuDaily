@@ -12,7 +12,7 @@
 
 @interface QMQColumnViewController ()<UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, strong) UITableView        *tableView;
 @property(nonatomic, strong) QMQColumnViewModel *viewModel;
 
 @end
@@ -23,9 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"专栏文章";
-    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarColumnColor);
     
     [self initViewModel];
     [self bindViewModel];
@@ -60,10 +58,10 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
+        _tableView            = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.delegate   = self;
         _tableView.dataSource = self;
-        _tableView.rowHeight = 100.0f;
+        _tableView.rowHeight  = 100.0f;
         [_tableView registerClass:[QMQColumnTableViewCell class] forCellReuseIdentifier:NSStringFromClass([QMQColumnTableViewCell class])];
         [self.view addSubview:_tableView];
         @weakify(self);
@@ -81,8 +79,8 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)   tableView:(UITableView *)tableView
+    numberOfRowsInSection:(NSInteger)section {
     return self.viewModel.modelArray.count;
 }
 
@@ -115,13 +113,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

@@ -68,7 +68,7 @@
                      if (!response.success) {
                          return;
                      }
-                     LOG_VERBOSE(response.originalDict);
+                     LOGVERBOSE(response.originalDict);
                      QMQLatestNewsDetailModel *model = [[QMQLatestNewsDetailModel alloc] initWithDic:response.originalDict];
                      [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:nil fadeInWithDuration:0.3f];
                  }];

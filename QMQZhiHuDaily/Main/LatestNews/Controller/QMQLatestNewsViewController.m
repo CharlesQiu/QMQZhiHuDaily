@@ -26,16 +26,17 @@
     if (!_viewModel) {
         _viewModel = [[QMQLatestNewsViewModel alloc] init];
         @weakify(self);
-        [[RACObserve(_viewModel, tapCellNewsId) filter:^BOOL(id value) {
+        [[RACObserve(_viewModel, tapCellNewsId) filter:^BOOL (id value) {
             return [value boolValue];
         }] subscribeNext:^(id newsId) {
             @strongify(self)
             QMQLatestNewsDetailViewController *vc = [[QMQLatestNewsDetailViewController alloc] init];
-            vc.newsDetailSignal = [RACSignal createSignal:^RACDisposable *(id <RACSubscriber> subscriber) {
+            vc.newsDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
                 [subscriber sendNext:newsId];
                 [subscriber sendCompleted];
                 return nil;
             }];
+            [vc setHidesBottomBarWhenPushed:YES];
             [self.navigationController pushViewController:vc animated:YES];
         }];
     }
@@ -47,22 +48,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.title = @"最新文章";
-    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarLatestnewsColor);
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-
-    self.tabelView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    self.tabelView.rowHeight = 100.0f;
+    
+    self.tabelView            = [[UITableView alloc] initWithFrame:self.view.bounds];
+    self.tabelView.rowHeight  = 100.0f;
     self.tabelView.dataSource = self.viewModel;
-    self.tabelView.delegate = self.viewModel;
-
+    self.tabelView.delegate   = self.viewModel;
+    
     [self.view addSubview:self.tabelView];
-
+    
     // 执行请求
     RACSignal *requestSignal = [self.viewModel.requestCommand execute:nil];
-
+    
     // 获取请求数据
     @weakify(self);
     [requestSignal subscribeNext:^(NSArray *x) {
@@ -70,12 +68,6 @@
         self.viewModel.modelArray = x;
         [self.tabelView reloadData];
     }];
-}
-
-#pragma mark - To News Detail Page
-
-- (void)pushToNewsDetail {
-
 }
 
 #pragma mark -

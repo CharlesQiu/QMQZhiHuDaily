@@ -10,8 +10,6 @@
 #define Macros_h
 
 #import "UIView+Layout.h"
-#import "UIColorUtil.h"
-#import "UIButtonUtil.h"
 #import "QMQIconFont.h"
 
 #import <CocoaLumberjack/CocoaLumberjack.h>
@@ -20,11 +18,13 @@
 #import "ApiMacro.h"
 #import "PathMacros.h"
 #import "UtilsMacros.h"
+#import "FontMacros.h"
 
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
 
 #import "QMQHttpService.h"
 #import "QMQRacHttpService.h"
+#import "UIColor+Extensions.h"
 
 #endif /* Macros_h */

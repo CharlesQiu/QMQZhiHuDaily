@@ -23,9 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor                            = [UIColor whiteColor];
-    self.title                                           = @"专题文章";
-    self.navigationController.navigationBar.barTintColor = hexString(kIFTabbarThemesColor);
+    self.title = @"专题文章";
     
     [self initViewModel];
     [self bindViewModel];
