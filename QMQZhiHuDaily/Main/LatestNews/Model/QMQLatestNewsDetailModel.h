@@ -10,7 +10,16 @@
 
 @interface QMQLatestNewsDetailModel : NSObject
 
-@property(nonatomic, readonly, copy) NSString *imageUrl;
+/// 题图
+@property (nonatomic, readonly, copy) NSString *imageUrl;
+/// 图片来源
+@property (nonatomic, readonly, copy) NSString *imageSource;
+/// 内容
+@property (nonatomic, readonly, copy) NSString *body;
+/// 标题
+@property (nonatomic, readonly, copy) NSString *title;
+/// css
+@property (nonatomic, readonly, copy) NSString *css;
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 

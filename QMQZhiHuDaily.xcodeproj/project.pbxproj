@@ -25,6 +25,8 @@
 		56942B061C7475A70066188D /* QMQLatestNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56942B051C7475A70066188D /* QMQLatestNewsTableViewCell.m */; };
 		569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */; };
 		56A8F68B1C9350D3007D34FE /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F68A1C9350D3007D34FE /* UIViewController+Swizzling.m */; };
+		56A8F68E1C947293007D34FE /* QMQLatestNewsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */; };
+		56A8F6911C94846D007D34FE /* QMQLatestNewsDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F6901C94846D007D34FE /* QMQLatestNewsDetailCell.m */; };
 		56CFA0221C2F9BC7000779CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0211C2F9BC7000779CF /* main.m */; };
 		56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0241C2F9BC7000779CF /* AppDelegate.m */; };
 		56CFA0351C2F9BC7000779CF /* QMQZhiHuDailyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0341C2F9BC7000779CF /* QMQZhiHuDailyTests.m */; };
@@ -122,6 +124,10 @@
 		569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsViewController.m; sourceTree = "<group>"; };
 		56A8F6891C9350D3007D34FE /* UIViewController+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzling.h"; sourceTree = "<group>"; };
 		56A8F68A1C9350D3007D34FE /* UIViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling.m"; sourceTree = "<group>"; };
+		56A8F68C1C947293007D34FE /* QMQLatestNewsDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsDetailViewModel.h; sourceTree = "<group>"; };
+		56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsDetailViewModel.m; sourceTree = "<group>"; };
+		56A8F68F1C94846D007D34FE /* QMQLatestNewsDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsDetailCell.h; sourceTree = "<group>"; };
+		56A8F6901C94846D007D34FE /* QMQLatestNewsDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsDetailCell.m; sourceTree = "<group>"; };
 		56CFA01D1C2F9BC7000779CF /* QMQZhiHuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QMQZhiHuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CFA0211C2F9BC7000779CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56CFA0231C2F9BC7000779CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -312,8 +318,8 @@
 			children = (
 				5609E89C1C3018F100B72BCC /* Controller */,
 				56942AFD1C7457DE0066188D /* ViewModel */,
-				5609E89D1C3018F100B72BCC /* Model */,
 				5609E89E1C3018F100B72BCC /* View */,
+				5609E89D1C3018F100B72BCC /* Model */,
 			);
 			path = LatestNews;
 			sourceTree = "<group>";
@@ -345,6 +351,8 @@
 			children = (
 				56942B041C7475A70066188D /* QMQLatestNewsTableViewCell.h */,
 				56942B051C7475A70066188D /* QMQLatestNewsTableViewCell.m */,
+				56A8F68F1C94846D007D34FE /* QMQLatestNewsDetailCell.h */,
+				56A8F6901C94846D007D34FE /* QMQLatestNewsDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -372,6 +380,8 @@
 			children = (
 				56942AFE1C74583A0066188D /* QMQLatestNewsViewModel.h */,
 				56942AFF1C74583A0066188D /* QMQLatestNewsViewModel.m */,
+				56A8F68C1C947293007D34FE /* QMQLatestNewsDetailViewModel.h */,
+				56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -899,6 +909,7 @@
 				569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */,
 				56F2DB671C832F1700D0D15F /* QMQHotNewsTableViewCell.m in Sources */,
 				56ED33BA1C57A6A10061CA81 /* QMQHttpService.m in Sources */,
+				56A8F68E1C947293007D34FE /* QMQLatestNewsDetailViewModel.m in Sources */,
 				56F2DB6D1C834B6C00D0D15F /* QMQColumnModel.m in Sources */,
 				56A8F68B1C9350D3007D34FE /* UIViewController+Swizzling.m in Sources */,
 				56942B001C74583A0066188D /* QMQLatestNewsViewModel.m in Sources */,
@@ -922,6 +933,7 @@
 				56753D371C7E00670037BAE0 /* QMQLatestNewsDetailViewController.m in Sources */,
 				56D5296E1C84263F00B3964B /* QMQHistoryNewsModel.m in Sources */,
 				56F2DB641C829D5F00D0D15F /* QMQRacBaseViewModel.m in Sources */,
+				56A8F6911C94846D007D34FE /* QMQLatestNewsDetailCell.m in Sources */,
 				56019DC71C913B4300BA8B5D /* QMQColumnListModel.m in Sources */,
 				56E70D031C84745D002B6856 /* QMQColumnViewModel.m in Sources */,
 				56ED33B91C57A6A10061CA81 /* QMQHttpBaseService.m in Sources */,

@@ -10,7 +10,11 @@
 
 @interface QMQLatestNewsDetailModel ()
 
-@property(nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) NSString *imageUrl;
+@property (nonatomic, copy) NSString *imageSource;
+@property (nonatomic, copy) NSString *body;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *css;
 
 @end
 
@@ -22,7 +26,11 @@
         return nil;
     }
     
-    self.imageUrl = dic[@"image"];
+    self.title       = dic[@"title"];
+    self.imageUrl    = dic[@"image"];
+    self.imageSource = dic[@"image_source"];
+    self.body        = dic[@"body"];
+    self.css         = [dic[@"css"] firstObject];
     
     return self;
 }

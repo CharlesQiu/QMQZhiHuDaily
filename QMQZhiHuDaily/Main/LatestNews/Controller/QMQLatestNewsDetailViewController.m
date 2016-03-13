@@ -8,13 +8,22 @@
 
 #import "QMQLatestNewsDetailViewController.h"
 #import "QMQLatestNewsDetailModel.h"
+#import "QMQLatestNewsDetailViewModel.h"
+#import "QMQLatestNewsDetailCell.h"
 
 #import "UIImageView+WebImageFadeInEffect.h"
 
-@interface QMQLatestNewsDetailViewController ()
+@import WebKit;
 
-@property(nonatomic, strong) UIImageView *coverImageView;
+@interface QMQLatestNewsDetailViewController ()<UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) UIImageView                  *coverImageView;
+@property (nonatomic, strong) WKWebView                    *webView;
+@property (nonatomic, strong) UIImage                      *headerImage;
+@property (nonatomic, strong) UITableView                  *tableView;
+@property (nonatomic, strong) QMQLatestNewsDetailViewModel *viewModel;
+@property (nonatomic, strong) QMQLatestNewsDetailModel     *model;
+@property (nonatomic, copy) NSString                       *css;
 @end
 @implementation QMQLatestNewsDetailViewController
 
@@ -23,25 +32,107 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor                 = [UIColor whiteColor];
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
-
+    
+    //    [self tableView];
+    [self webView];
     @weakify(self);
     [self.newsDetailSignal subscribeNext:^(id x) {
         @strongify(self);
-        [self loadData:[x unsignedIntegerValue]];
+        self.viewModel = [[QMQLatestNewsDetailViewModel alloc] init];
+        [self.viewModel.requestCommand execute:x];
     }];
-
-    self.coverImageView = [[UIImageView alloc] init];
-    [self.view addSubview:self.coverImageView];
-    [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    
+    [[[[RACObserve(self.viewModel, model) ignore:nil] flattenMap:^RACStream *(QMQLatestNewsDetailModel *model) {
         @strongify(self);
-        make.left.top.right.equalTo(self.view);
-        make.top.equalTo(self.view);
-        make.right.equalTo(self.view);
+        if (!model) {
+            return nil;
+        }
+        return [self loadImageWithUrl:self.viewModel.model.imageUrl];
+    }] deliverOn:[RACQueueScheduler mainThreadScheduler]] subscribeNext:^(UIImage *headerImage) {
+        @strongify(self);
+        NSString *htmlString = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" type=\"text/css\" href=%@ /></head><body>%@</body></html>", self.css, self.viewModel.model.body];
+        [self.webView loadHTMLString:htmlString baseURL:nil];
+        
+        if (headerImage) {
+            
+            self.coverImageView.image = headerImage;
+            CGSize imageSize = headerImage.size;
+            self.webView.scrollView.contentInset = UIEdgeInsetsMake(imageSize.height, 0.0, 0.0, 0.0);
+            [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.trailing.bottom.equalTo(self.webView.scrollView);
+                make.height.equalTo(self.webView.scrollView).multipliedBy(0.6);
+            }];
+        }
     }];
+}
+
+- (RACSignal *)loadImageWithUrl:(NSString *)url {
+    return [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
+        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderUseNSURLCache progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            
+        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+            [subscriber sendNext:image];
+        }];
+        
+        return nil;
+    }];
+}
+
+#pragma mark - Lazy load
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView            = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView.dataSource = self;
+        _tableView.delegate   = self;
+        _tableView.rowHeight  = 1000.0f;
+        [_tableView registerClass:[QMQLatestNewsDetailCell class] forCellReuseIdentifier:NSStringFromClass([QMQLatestNewsDetailCell class])];
+        [self.view addSubview:_tableView];
+        @weakify(self);
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self);
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _tableView;
+}
+
+- (WKWebView *)webView {
+    if (!_webView) {
+        _webView = [WKWebView new];
+        [self.view addSubview:_webView];
+        @weakify(self);
+        [_webView mas_makeConstraints:^(MASConstraintMaker *make) {
+            @strongify(self);
+            make.edges.equalTo(self.view);
+        }];
+    }
+    return _webView;
+}
+
+- (UIImageView *)coverImageView {
+    if (!_coverImageView) {
+        _coverImageView               = [UIImageView new];
+        _coverImageView.clipsToBounds = YES;
+        [self.webView.scrollView addSubview:_coverImageView];
+    }
+    return _coverImageView;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    QMQLatestNewsDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QMQLatestNewsDetailCell class]) forIndexPath:indexPath];
+    
+    [cell configureCell:self.model];
+    
+    return cell;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -55,23 +146,6 @@
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
-}
-
-#pragma mark - Request Data
-
-- (void)loadData:(NSUInteger)newsId {
-    @weakify(self);
-    [QMQHttpService getWithUrl:API_GET_NEWS_DETAIL(newsId)
-                         param:nil
-                 responseBlock:^(QMQHttpBaseResponse *response) {
-                     @strongify(self);
-                     if (!response.success) {
-                         return;
-                     }
-                     LOGVERBOSE(response.originalDict);
-                     QMQLatestNewsDetailModel *model = [[QMQLatestNewsDetailModel alloc] initWithDic:response.originalDict];
-                     [self.coverImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:nil fadeInWithDuration:0.3f];
-                 }];
 }
 
 #pragma mark -

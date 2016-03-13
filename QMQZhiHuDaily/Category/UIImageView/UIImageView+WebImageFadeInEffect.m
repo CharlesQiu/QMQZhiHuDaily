@@ -24,7 +24,7 @@
                     [strongSelf setImage:image];
                 });
             } else {
-                strongSelf.alpha = 0.0f;
+                strongSelf.alpha = 0.2f;
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIView transitionWithView:strongSelf duration:duration options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                         strongSelf.alpha = 1.0f;
