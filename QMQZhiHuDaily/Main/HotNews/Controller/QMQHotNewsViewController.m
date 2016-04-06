@@ -9,6 +9,8 @@
 #import "QMQHotNewsViewController.h"
 #import "QMQHotNewsListViewModel.h"
 #import "QMQHotNewsTableViewCell.h"
+#import "QMQCommonDetailNewsViewController.h"
+#import "QMQHotNewsModel.h"
 
 @interface QMQHotNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -60,7 +62,7 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView            = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView            = [UITableView new];
         _tableView.delegate   = self;
         _tableView.dataSource = self;
         _tableView.rowHeight  = 100.0f;
@@ -107,6 +109,17 @@
     // Tells the delegate that the specified row is now selected.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    QMQHotNewsModel *model = self.viewModel.modelArray[indexPath.row];
+    
+    QMQCommonDetailNewsViewController *vc = [[QMQCommonDetailNewsViewController alloc] init];
+    vc.newsDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
+        [subscriber sendNext:@(model.newsId)];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    [vc setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 #pragma mark -

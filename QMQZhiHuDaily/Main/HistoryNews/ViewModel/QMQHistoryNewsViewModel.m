@@ -27,8 +27,8 @@
 }
 
 - (void)initCommand {
-    _loadCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [QMQRacHttpService racGet:API_BEFORE_NEWS(@"20160229") param:nil];
+    _loadCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(NSString *date) {
+        return [QMQRacHttpService racGet:API_BEFORE_NEWS(date) param:nil];
     }];
 }
 

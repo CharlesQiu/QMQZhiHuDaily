@@ -41,6 +41,9 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    // 全局导航栏白色
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
         
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.delegate           = self;

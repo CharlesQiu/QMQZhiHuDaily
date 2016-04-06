@@ -14,5 +14,7 @@
 @property(nonatomic, readonly, strong) RACCommand *loadCommand;
 /// 新闻model数组
 @property(nonatomic, readonly, copy) NSArray *modelArray;
+/// 点击的cell的新闻id
+@property(nonatomic, readonly, assign) NSUInteger tapCellNewsId;
 
 @end

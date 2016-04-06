@@ -9,6 +9,8 @@
 #import "QMQColumnViewController.h"
 #import "QMQColumnViewModel.h"
 #import "QMQColumnTableViewCell.h"
+#import "QMQCommonDetailNewsViewController.h"
+#import "QMQColumnModel.h"
 
 @interface QMQColumnViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -105,6 +107,16 @@
     // Tells the delegate that the specified row is now selected.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    QMQColumnModel *model = self.viewModel.modelArray[indexPath.row];
+    
+    QMQCommonDetailNewsViewController *vc = [[QMQCommonDetailNewsViewController alloc] init];
+    vc.newsDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
+        [subscriber sendNext:@(model.columnId)];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    [vc setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

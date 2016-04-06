@@ -374,7 +374,7 @@
 		if (listStyle.type != DTCSSListStyleTypeNone)
 		{
 			// first tab is to right-align bullet, numbering against
-			CGFloat tabOffset = paragraphStyle.headIndent - (CGFloat)5.0; // TODO: change with font size
+			CGFloat tabOffset = paragraphStyle.headIndent - (CGFloat)5.0; 
 			[paragraphStyle addTabStopAtPosition:tabOffset alignment:kCTRightTextAlignment];
 		}
 		

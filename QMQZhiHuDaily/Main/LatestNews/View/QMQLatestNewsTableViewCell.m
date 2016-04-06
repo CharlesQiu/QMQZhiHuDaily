@@ -34,11 +34,11 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.customImageView               = [[UIImageView alloc] init];
+        self.customImageView               = [UIImageView new];
         self.customImageView.clipsToBounds = YES;
         [self.contentView addSubview:self.customImageView];
         
-        self.titleLabel               = [[UILabel alloc] init];
+        self.titleLabel               = [UILabel new];
         self.titleLabel.font          = [UIFont systemFontOfSize:15.0f];
         self.titleLabel.numberOfLines = 0;
         [self.contentView addSubview:self.titleLabel];

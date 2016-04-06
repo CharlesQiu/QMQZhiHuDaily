@@ -30,7 +30,15 @@
     self.imageUrl    = dic[@"image"];
     self.imageSource = dic[@"image_source"];
     self.body        = dic[@"body"];
-    self.css         = [dic[@"css"] firstObject];
+//    NSString *originalBody = dic[@"body"];
+//    if ([originalBody containsString:@"<div class=\"img-place-holder\"></div>"]) {
+//        NSString *tempStr = [NSString stringWithFormat:@"<div class=\"img-place-holder\"> <img src=\"%@\"</div>", dic[@"image"]];
+//        self.body = [originalBody stringByReplacingOccurrencesOfString:@"<div class=\"img-place-holder\"></div>" withString:tempStr];
+//        
+//    } else {
+//        self.body = originalBody;
+//    }
+    self.css = [dic[@"css"] firstObject];
     
     return self;
 }

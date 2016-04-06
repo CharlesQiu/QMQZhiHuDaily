@@ -138,8 +138,8 @@
 		}
 		
 		// first tab is to right-align bullet, numbering against
-		CGFloat tabOffset = paragraphStyle.headIndent - (CGFloat)5.0; // TODO: change with font size
-		[paragraphStyle addTabStopAtPosition:tabOffset alignment:kCTRightTextAlignment];
+		CGFloat tabOffset = paragraphStyle.headIndent - (CGFloat)5.0;
+        [paragraphStyle addTabStopAtPosition:tabOffset alignment:kCTRightTextAlignment];
 	}
 	
 	// second tab is for the beginning of first line after bullet

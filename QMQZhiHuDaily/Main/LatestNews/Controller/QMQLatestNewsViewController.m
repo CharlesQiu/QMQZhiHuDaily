@@ -8,7 +8,7 @@
 
 #import "QMQLatestNewsViewController.h"
 #import "QMQLatestNewsViewModel.h"
-#import "QMQLatestNewsDetailViewController.h"
+#import "QMQCommonDetailNewsViewController.h"
 
 @interface QMQLatestNewsViewController ()
 
@@ -30,7 +30,7 @@
             return [value boolValue];
         }] subscribeNext:^(id newsId) {
             @strongify(self)
-            QMQLatestNewsDetailViewController *vc = [[QMQLatestNewsDetailViewController alloc] init];
+            QMQCommonDetailNewsViewController *vc = [[QMQCommonDetailNewsViewController alloc] init];
             vc.newsDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
                 [subscriber sendNext:newsId];
                 [subscriber sendCompleted];

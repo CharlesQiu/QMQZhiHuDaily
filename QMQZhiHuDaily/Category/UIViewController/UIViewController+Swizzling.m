@@ -71,7 +71,7 @@
     self.view.backgroundColor                                   = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor        = [UIColor colorWithHexString:kIFTabbarHotnewsColor];
     self.navigationController.navigationBar.barStyle            = UIBarStyleBlack;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont fontWithName:FONT_DEFAULT_BOLD size:20.0f]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont fontWithName:FONT_DEFAULT_BOLD size:16.0f]};
 }
 
 @end

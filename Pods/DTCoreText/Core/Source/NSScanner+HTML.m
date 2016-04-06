@@ -91,7 +91,7 @@
 			// skip ending quote
 			[self scanString:quote intoString:NULL];
 			
-			//TODO: decode unicode sequences like "\2022"
+			// decode unicode sequences like "\2022"
 		}
 		else
 		{

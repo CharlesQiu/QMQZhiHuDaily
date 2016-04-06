@@ -1,8 +1,8 @@
 //
-//  QMQLatestNewsDetailViewController.h
+//  QMQCommonDetailNewsViewController.h
 //  QMQZhiHuDaily
 //
-//  Created by Charles on 2/24/16.
+//  Created by Charles on 4/1/16.
 //  Copyright © 2016 Charles.Qiu. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 @class RACSignal;
 
-@interface QMQLatestNewsDetailViewController : UIViewController
+@interface QMQCommonDetailNewsViewController : UIViewController
 
 /// 最新新闻详情
 @property(nonatomic, strong) RACSignal *newsDetailSignal;
