@@ -11,6 +11,7 @@
 #import "QMQLatestNewsDetailViewModel.h"
 
 #import "UIImageView+WebImageFadeInEffect.h"
+#import <UIImageView+WebCache.h>
 
 @import WebKit;
 

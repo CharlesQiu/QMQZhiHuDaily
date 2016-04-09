@@ -6,10 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface UIImageView (WebImageFadeInEffect)
 
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage fadeInWithDuration:(CGFloat)duration;
+/**
+ *  网络图片渐变展现
+ *  @param url              图片地址
+ *  @param placeholderImage 占位图
+ *  @param duration         渐变时间
+ */
+- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage fadeInWithDuration:(NSTimeInterval)duration;
 
 @end

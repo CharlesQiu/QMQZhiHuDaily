@@ -6,10 +6,11 @@
 //
 
 #import "UIImageView+WebImageFadeInEffect.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation UIImageView (WebImageFadeInEffect)
 
-- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage fadeInWithDuration:(CGFloat)duration {
+- (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage fadeInWithDuration:(NSTimeInterval)duration {
     
     self.userInteractionEnabled    = NO;
     self.contentMode               = UIViewContentModeScaleAspectFit;

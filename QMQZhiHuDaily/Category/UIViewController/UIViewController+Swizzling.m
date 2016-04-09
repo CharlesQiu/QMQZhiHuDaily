@@ -54,6 +54,9 @@
     LOGDEBUG(([NSString stringWithFormat:@"%@ will appear", className]));
 }
 
+/**
+ *  统一修改主页几个viewcontroller的导航栏设置
+ */
 - (void)mainpageViewDidLoad {
     [self mainpageViewDidLoad];
     
