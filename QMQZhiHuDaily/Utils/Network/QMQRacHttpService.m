@@ -15,9 +15,11 @@
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [QMQHttpBaseService get:url params:param success:^(NSInteger statusCode, id responseObj) {
             QMQHttpBaseResponse *response = [[QMQHttpBaseResponse alloc] initWithDic:responseObj];
+            response.success = YES;
             [subscriber sendNext:response];
             [subscriber sendCompleted];
         } failure:^(NSError *error) {
+            
             [subscriber sendError:error];
         }];
         

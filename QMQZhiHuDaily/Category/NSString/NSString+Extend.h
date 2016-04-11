@@ -9,6 +9,13 @@
 
 @interface NSString (Extend)
 
+/**
+ *  判断是否空字符串
+ */
 + (BOOL)isEmptyString:(NSString *)string;
 
+/**
+ *  十进制转十六进制
+ */
++ (NSString *)toHex:(NSInteger)decimalNum;
 @end

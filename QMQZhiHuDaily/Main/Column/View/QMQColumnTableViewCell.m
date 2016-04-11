@@ -93,6 +93,7 @@ static CGFloat const kTitleAndDescriptionSpacing = 5.0;
                             placeholderImage:nil
                           fadeInWithDuration:0.3f];
     self.titleLabel.text = model.name;
+    
     if ([NSString isEmptyString:model.columnDescription]) {
         [self.cTitleLabelBottom activate];
         [self.cDescriptionTop activate];

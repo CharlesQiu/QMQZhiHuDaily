@@ -11,12 +11,12 @@
 #import "QMQHotNewsTableViewCell.h"
 #import "QMQCommonDetailNewsViewController.h"
 #import "QMQHotNewsModel.h"
+#import "QMQLoginViewController.h"
 
 @interface QMQHotNewsViewController () <UITableViewDataSource, UITableViewDelegate>
 
-@property(nonatomic, strong) UITableView             *tableView;
-@property(nonatomic, strong) QMQHotNewsListViewModel *viewModel;
-
+@property (nonatomic, strong) UITableView             *tableView;
+@property (nonatomic, strong) QMQHotNewsListViewModel *viewModel;
 @end
 
 @implementation QMQHotNewsViewController
@@ -27,7 +27,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"热门新闻";
+    self.title = @"热门文章";
+    
+    UIImage *normalImage = [UIImageUtil imageWithIconFontCode:QMQIconUser
+                                                        color:[UIColor whiteColor]
+                                                     fontSize:QMQNavigationBarIconSize];
+    UIImage *disableImage = [UIImageUtil imageWithIconFontCode:QMQIconUser
+                                                         color:[UIColor grayColor]
+                                                      fontSize:QMQNavigationBarIconSize];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:normalImage
+            forState:UIControlStateNormal];
+    [button setImage:disableImage
+            forState:UIControlStateDisabled];
+    [button sizeToFit];
+    
+    @weakify(self);
+    [[button rac_signalForControlEvents:UIControlEventTouchUpInside]
+     subscribeNext:^(UIButton *button) {
+         @strongify(self);
+         QMQLoginViewController *loginVC = [[QMQLoginViewController alloc] init];
+         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+         nav.navigationBar.tintColor = [UIColor blueColor];
+         [self.navigationController presentViewController:nav animated:YES completion:nil];
+     }];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
     [self initViewModel];
     [self bindViewModel];
@@ -119,7 +145,7 @@
     }];
     [vc setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:vc animated:YES];
-
+    
 }
 
 #pragma mark -

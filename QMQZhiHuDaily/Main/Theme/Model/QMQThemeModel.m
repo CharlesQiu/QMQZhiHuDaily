@@ -7,6 +7,7 @@
 //
 
 #import "QMQThemeModel.h"
+#import "NSString+Extend.h"
 
 @interface QMQThemeModel ()
 
@@ -29,7 +30,7 @@
     self.name             = dic[@"name"];
     self.thumbnail        = dic[@"thumbnail"];
     self.themeDescription = dic[@"description"];
-    self.color            = dic[@"color"];
+    self.color            = [NSString toHex:[dic[@"color"] integerValue]];
     
     return self;
 }

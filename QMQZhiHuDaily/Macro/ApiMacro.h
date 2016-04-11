@@ -26,8 +26,12 @@
 #define API_LATEST_NEWS [API_BASE_URL_STRING stringByAppendingFormat:@"4/news/latest"]
 /// 主题新闻
 #define API_THEMES      [API_BASE_URL_STRING stringByAppendingFormat:@"4/themes"]
+/// 主题详细
+#define API_THEME_DETAIL(id) [API_BASE_URL_STRING stringByAppendingFormat:@"4/theme/%@", id]
 /// 专题新闻
 #define API_SECTIONS    [API_BASE_URL_STRING stringByAppendingFormat:@"3/sections"]
+/// 专题详细
+#define API_SECTION_DETAIL(id) [API_BASE_URL_STRING stringByAppendingFormat:@"3/section/%@", id]
 /// 历史新闻
 #define API_BEFORE_NEWS(date) [API_HISTORY_URL_STRING stringByAppendingFormat:@"4/news/before/%@", date]
 

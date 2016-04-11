@@ -10,35 +10,50 @@
 
 #pragma mark - Icon Font Name
 
-extern NSString *const kIconFontNameIcomoon;
-extern NSString *const kIconFontNameIconFont;
+extern NSString *const QMQIconFontName;
 
 #pragma mark - Tabbar
 /// tabbar 尺寸
-extern CGFloat const kIFTabbarSize;
+extern CGFloat const QMQTabarIconSize;
 /// 热门新闻
-extern NSString *const kIFTabbarHotnews;
+extern NSString *const QMQIconHotNews;
 /// 最新新闻
-extern NSString *const kIFTabbarLatestnews;
+extern NSString *const QMQIconLatestNews;
 /// 专栏文章
-extern NSString *const kIFTabbarColumn;
+extern NSString *const QMQIconColumn;
 /// 主题文章
-extern NSString *const kIFTabbarThemes;
+extern NSString *const QMQIconTheme;
 /// 历史文章
-extern NSString *const kIFTabbarHistory;
-/// 热门新闻 颜色 (dd4348 红色)
-extern NSString *const kIFTabbarHotnewsColor;
-/// 最新新闻 颜色（93c867 绿色）
-extern NSString *const kIFTabbarLatestnewsColor;
-/// 专栏文章 颜色（00afca 兰色）
-extern NSString *const kIFTabbarColumnColor;
-/// 主题文章 颜色（fcd20a 黄色）
-extern NSString *const kIFTabbarThemesColor;
-/// 历史文章 颜色（d28f5b 褐色）
-extern NSString *const kIFTabbarHistoryColor;
+extern NSString *const QMQIconHistory;
+/// 整体风格的颜色（蓝色）
+extern NSString *const QMQStyleColor;
 
 #pragma mark - Navigation Bar
 /// 选择历史日期
-extern NSString *const kIFNavEditDate;
+extern NSString *const QMQIconEdit;
 /// 选择历史日期 尺寸
-extern CGFloat const kIFNavEditDateSize;
+extern CGFloat const QMQNavigationBarIconSize;
+/// 未登陆图标
+extern NSString *const QMQIconUser;
+/// 关闭按钮（X）
+extern NSString *const QMQIconCross;
+/// 返回按钮（<）
+extern NSString *const QMQIconBack;
+
+#pragma mark - Login 
+/// QQ
+extern NSString *const QMQIconQQ;
+/// 微信
+extern NSString *const QMQIconWeixin;
+/// 微博
+extern NSString *const QMQIconWeibo;
+
+
+
+
+
+
+
+
+
+

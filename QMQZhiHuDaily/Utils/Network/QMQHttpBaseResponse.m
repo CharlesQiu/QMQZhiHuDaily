@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         self.originalDict = dic;
+        
     }
     return self;
 }

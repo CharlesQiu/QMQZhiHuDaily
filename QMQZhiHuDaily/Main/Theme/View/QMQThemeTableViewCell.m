@@ -92,6 +92,7 @@ static CGFloat const kTitleAndDescriptionSpacing = 5.0;
                             placeholderImage:nil
                           fadeInWithDuration:0.33f];
     self.titleLabel.text = model.name;
+    self.titleLabel.textColor = [UIColor colorWithHexString:model.color];
     if ([NSString isEmptyString:model.themeDescription]) {
         [self.cTitleLabelBottom activate];
         [self.cDescriptionTop activate];

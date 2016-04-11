@@ -32,7 +32,7 @@
 + (UIImage *)imageWithIconFontCode:(NSString *)code
                              color:(UIColor *)color
                           fontSize:(CGFloat)fontSize {
-    return [self iconWithFontName:@"icomoon"
+    return [self iconWithFontName:@"iconfont"
                              code:code color:color
                          fontSize:fontSize];
 }

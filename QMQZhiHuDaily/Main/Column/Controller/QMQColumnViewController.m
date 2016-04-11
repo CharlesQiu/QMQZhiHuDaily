@@ -9,8 +9,8 @@
 #import "QMQColumnViewController.h"
 #import "QMQColumnViewModel.h"
 #import "QMQColumnTableViewCell.h"
-#import "QMQCommonDetailNewsViewController.h"
 #import "QMQColumnModel.h"
+#import "QMQColumnListViewController.h"
 
 @interface QMQColumnViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     self.title = @"专栏文章";
     
     [self initViewModel];
@@ -49,7 +49,6 @@
         @strongify(self);
         [self.tableView reloadData];
     }];
-    
 }
 
 - (void)loadData {
@@ -109,9 +108,9 @@
     
     QMQColumnModel *model = self.viewModel.modelArray[indexPath.row];
     
-    QMQCommonDetailNewsViewController *vc = [[QMQCommonDetailNewsViewController alloc] init];
-    vc.newsDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
-        [subscriber sendNext:@(model.columnId)];
+    QMQColumnListViewController *vc = [[QMQColumnListViewController alloc] init];
+    vc.getColumnDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
+        [subscriber sendNext:model];
         [subscriber sendCompleted];
         return nil;
     }];

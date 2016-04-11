@@ -13,9 +13,9 @@
 /// 专栏ID
 @property(nonatomic, readonly, assign) NSUInteger columnId;
 /// 专栏name
-@property(nonatomic, readonly, copy) NSString  *name;
+@property(nonatomic, readonly, copy) NSString *name;
 /// 专栏图片
-@property(nonatomic, readonly, copy) NSString  *thumbnail;
+@property(nonatomic, readonly, copy) NSString *thumbnail;
 /// 专栏描述
 @property(nonatomic, readonly, copy) NSString *columnDescription;
 

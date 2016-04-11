@@ -6,12 +6,8 @@
 //  Copyright © 2016 Charles.Qiu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@interface QMQHistoryNewsTableViewCell<ObjectType> : UITableViewCell
 
-@class QMQHistoryNewsModel;
-
-@interface QMQHistoryNewsTableViewCell : UITableViewCell
-
-- (void)configureCell:(QMQHistoryNewsModel *)model;
+- (void)configureCell:(ObjectType)model;
 
 @end

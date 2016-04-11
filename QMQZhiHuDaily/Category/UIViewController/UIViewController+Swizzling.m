@@ -65,16 +65,17 @@
     || [NSStringFromClass([self class]) isEqualToString:@"QMQLatestNewsViewController"]
     || [NSStringFromClass([self class]) isEqualToString:@"QMQColumnViewController"]
     || [NSStringFromClass([self class]) isEqualToString:@"QMQThemeViewController"]
-    || [NSStringFromClass([self class]) isEqualToString:@"QMQHistoryNewsViewController"];
+    || [NSStringFromClass([self class]) isEqualToString:@"QMQHistoryNewsViewController"]
+    || [NSStringFromClass([self class]) isEqualToString:@"QMQLoginViewController"];
     
     if (!isSwizzling) {
         return;
     }
     
     self.view.backgroundColor                                   = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor        = [UIColor colorWithHexString:kIFTabbarHotnewsColor];
+    self.navigationController.navigationBar.barTintColor        = [UIColor colorWithHexString:QMQStyleColor];
     self.navigationController.navigationBar.barStyle            = UIBarStyleBlack;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont fontWithName:FONT_DEFAULT_BOLD size:16.0f]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont fontWithName:FONT_DEFAULT_LIGHT size:20.0f]};
 }
 
 @end

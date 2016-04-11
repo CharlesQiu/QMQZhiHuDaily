@@ -53,7 +53,7 @@ DEPENDENCIES:
   - CocoaLumberjack (~> 2.2)
   - Crashlytics
   - DTCoreText (~> 1.6.17)
-  - Fabric (~> 1.6.7)
+  - Fabric
   - Masonry (~> 0.6.4)
   - ReactiveCocoa (= 2.5)
   - SDWebImage (~> 3.7.3)

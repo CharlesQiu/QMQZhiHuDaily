@@ -15,6 +15,7 @@
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -50,48 +51,50 @@
     tabBarController.tabBar.translucent = YES;
     self.window.rootViewController      = tabBarController;
     
+    UIColor *styleColor = [UIColor colorWithHexString:QMQStyleColor];
+    
     QMQHotNewsViewController *hotNewsVC    = [[QMQHotNewsViewController alloc] init];
     UINavigationController   *hotNewsNAV   = [[UINavigationController alloc] initWithRootViewController:hotNewsVC];
-    UIImage                  *hotNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarHotnews
-                                                                          color:[UIColor colorWithHexString:kIFTabbarHotnewsColor]
-                                                                       fontSize:kIFTabbarSize];
+    UIImage                  *hotNewsImage = [UIImageUtil imageWithIconFontCode:QMQIconHotNews
+                                                                          color:styleColor
+                                                                       fontSize:QMQTabarIconSize];
     hotNewsNAV.tabBarItem.image = [hotNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    hotNewsNAV.tabBarItem.title = @"热门新闻";
+    hotNewsNAV.tabBarItem.title = @"热门文章";
     
     QMQLatestNewsViewController *latestVC        = [[QMQLatestNewsViewController alloc] init];
     UINavigationController      *latestNAV       = [[UINavigationController alloc] initWithRootViewController:latestVC];
-    UIImage                     *latestNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarLatestnews
-                                                                                color:[UIColor colorWithHexString:kIFTabbarLatestnewsColor]
-                                                                             fontSize:kIFTabbarSize];
+    UIImage                     *latestNewsImage = [UIImageUtil imageWithIconFontCode:QMQIconLatestNews
+                                                                                color:styleColor
+                                                                             fontSize:QMQTabarIconSize];
     latestNAV.tabBarItem.image = [latestNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    latestNAV.tabBarItem.title = @"最新新闻";
+    latestNAV.tabBarItem.title = @"最新文章";
     
     
     QMQColumnViewController *columnVC        = [[QMQColumnViewController alloc] init];
     UINavigationController  *columnNAV       = [[UINavigationController alloc] initWithRootViewController:columnVC];
-    UIImage                 *columnNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarColumn
-                                                                            color:[UIColor colorWithHexString:kIFTabbarColumnColor]
-                                                                         fontSize:kIFTabbarSize];
+    UIImage                 *columnNewsImage = [UIImageUtil imageWithIconFontCode:QMQIconColumn
+                                                                            color:styleColor
+                                                                         fontSize:QMQTabarIconSize];
     columnNAV.tabBarItem.image = [columnNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     columnNAV.tabBarItem.title = @"专栏文章";
     
     QMQThemeViewController *themesVC       = [[QMQThemeViewController alloc] init];
     UINavigationController *themesNAV      = [[UINavigationController alloc] initWithRootViewController:themesVC];
-    UIImage                *themeNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarThemes
-                                                                          color:[UIColor colorWithHexString:kIFTabbarThemesColor]
-                                                                       fontSize:kIFTabbarSize];
+    UIImage                *themeNewsImage = [UIImageUtil imageWithIconFontCode:QMQIconTheme
+                                                                          color:styleColor
+                                                                       fontSize:QMQTabarIconSize];
     themesNAV.tabBarItem.image = [themeNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     themesNAV.tabBarItem.title = @"主题文章";
     
     QMQHistoryNewsViewController *historyNewsVC    = [[QMQHistoryNewsViewController alloc] init];
     UINavigationController       *historyNewsNAV   = [[UINavigationController alloc] initWithRootViewController:historyNewsVC];
-    UIImage                      *historyNewsImage = [UIImageUtil imageWithIconFontCode:kIFTabbarHistory
-                                                                                  color:[UIColor colorWithHexString:kIFTabbarHistoryColor]
-                                                                               fontSize:kIFTabbarSize];
+    UIImage                      *historyNewsImage = [UIImageUtil imageWithIconFontCode:QMQIconHistory
+                                                                                  color:styleColor
+                                                                               fontSize:QMQTabarIconSize];
     historyNewsNAV.tabBarItem.image = [historyNewsImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    historyNewsNAV.tabBarItem.title = @"历史新闻";
+    historyNewsNAV.tabBarItem.title = @"历史文章";
     
-    [[UITabBar appearance] setTintColor:[UIColor colorWithHexString:kIFTabbarHistoryColor]];
+    [[UITabBar appearance] setTintColor:styleColor];
     
     tabBarController.viewControllers = @[hotNewsNAV, latestNAV, columnNAV, themesNAV, historyNewsNAV];
     tabBarController.selectedIndex   = 0;
@@ -108,6 +111,14 @@
     transition.subtype        = kCATransitionFromRight;
     [tabBarController.view.layer addAnimation:transition forKey:@"reveal"];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [TencentOAuth HandleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    return [TencentOAuth HandleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

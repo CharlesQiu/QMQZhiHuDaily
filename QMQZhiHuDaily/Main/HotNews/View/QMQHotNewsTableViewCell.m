@@ -53,9 +53,7 @@
     UIImage *placeholderImage = [UIImage imageNamed:@"icon_text"];
     [placeholderImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.customImageView sd_setImageWithURL:[NSURL URLWithString:model.thumbNail]
-                            placeholderImage:[UIImageUtil imageWithIconFontCode:kIFTabbarLatestnews
-                                                                          color:[UIColor colorWithHexString:kIFTabbarLatestnewsColor]
-                                                                       fontSize:25.0f]
+                            placeholderImage:nil
                           fadeInWithDuration:0.33f];
     self.titleLabel.text = model.title;
 }

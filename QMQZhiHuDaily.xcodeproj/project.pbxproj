@@ -20,6 +20,7 @@
 		5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44A1C3D740400EDDD27 /* QMQHotNewsModel.m */; };
 		5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */; };
 		565259F11CAE3FAE00CE56E5 /* QMQCommonDetailNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565259F01CAE3FAE00CE56E5 /* QMQCommonDetailNewsViewController.m */; };
+		567B12D11CBB7DCD001F695E /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 567B12D01CBB7DCD001F695E /* iconfont.ttf */; };
 		568B92581CB89EDE008374F5 /* NSString+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 568B92571CB89EDE008374F5 /* NSString+Extend.m */; };
 		56942B001C74583A0066188D /* QMQLatestNewsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56942AFF1C74583A0066188D /* QMQLatestNewsViewModel.m */; };
 		56942B031C746C7F0066188D /* QMQLatestNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56942B021C746C7F0066188D /* QMQLatestNewsModel.m */; };
@@ -27,12 +28,31 @@
 		569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */; };
 		56A8F68B1C9350D3007D34FE /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F68A1C9350D3007D34FE /* UIViewController+Swizzling.m */; };
 		56A8F68E1C947293007D34FE /* QMQLatestNewsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */; };
+		56C841DF1CBA25D2002CF776 /* QMQThemeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841DE1CBA25D2002CF776 /* QMQThemeListViewController.m */; };
+		56C841E21CBA2620002CF776 /* QMQColumnListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841E11CBA2620002CF776 /* QMQColumnListViewController.m */; };
+		56C841E51CBA28FB002CF776 /* QMQColumnListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841E41CBA28FB002CF776 /* QMQColumnListViewModel.m */; };
+		56C841EF1CBA32F3002CF776 /* QMQCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841EE1CBA32F3002CF776 /* QMQCommonTableViewCell.m */; };
+		56C841F31CBA37D1002CF776 /* QMQCommonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841F21CBA37D1002CF776 /* QMQCommonModel.m */; };
+		56C841F61CBA3C56002CF776 /* QMQCommonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841F51CBA3C56002CF776 /* QMQCommonListModel.m */; };
+		56C841F91CBA446E002CF776 /* QMQCommonCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841F81CBA446E002CF776 /* QMQCommonCellModel.m */; };
+		56C841FC1CBA8CBD002CF776 /* QMQThemeListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841FB1CBA8CBD002CF776 /* QMQThemeListViewModel.m */; };
+		56C842001CBAB083002CF776 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C841FF1CBAB083002CF776 /* Security.framework */; };
+		56C842021CBAB0FD002CF776 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C842011CBAB0FD002CF776 /* SystemConfiguration.framework */; };
+		56C842041CBAB10C002CF776 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C842031CBAB10C002CF776 /* CoreGraphics.framework */; };
+		56C842061CBAB122002CF776 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C842051CBAB122002CF776 /* libsqlite3.tbd */; };
+		56C842081CBAB131002CF776 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C842071CBAB131002CF776 /* CoreTelephony.framework */; };
+		56C8420A1CBAB142002CF776 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C842091CBAB142002CF776 /* libstdc++.tbd */; };
+		56C8420E1CBAB15C002CF776 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C8420D1CBAB15C002CF776 /* libiconv.tbd */; };
+		56C842171CBAB301002CF776 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C842151CBAB301002CF776 /* TencentOpenAPI.framework */; };
+		56C842181CBAB301002CF776 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 56C842161CBAB301002CF776 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		56C842191CBAB4BC002CF776 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 56C8420B1CBAB14F002CF776 /* libz.tbd */; };
+		56C8421C1CBAB8B0002CF776 /* QMQTencentLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C8421B1CBAB8B0002CF776 /* QMQTencentLogin.m */; };
+		56CDFB531CBB4A8F0068658D /* QMQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CDFB521CBB4A8F0068658D /* QMQLoginViewController.m */; };
 		56CFA0221C2F9BC7000779CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0211C2F9BC7000779CF /* main.m */; };
 		56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0241C2F9BC7000779CF /* AppDelegate.m */; };
 		56CFA0351C2F9BC7000779CF /* QMQZhiHuDailyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA0341C2F9BC7000779CF /* QMQZhiHuDailyTests.m */; };
 		56CFA0401C2F9BC7000779CF /* QMQZhiHuDailyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CFA03F1C2F9BC7000779CF /* QMQZhiHuDailyUITests.m */; };
 		56D5296E1C84263F00B3964B /* QMQHistoryNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D5296D1C84263F00B3964B /* QMQHistoryNewsModel.m */; };
-		56D6286F1C31A890001B77FB /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56D6286E1C31A822001B77FB /* icomoon.ttf */; };
 		56E70D031C84745D002B6856 /* QMQColumnViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D021C84745D002B6856 /* QMQColumnViewModel.m */; };
 		56E70D061C847486002B6856 /* QMQColumnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D051C847486002B6856 /* QMQColumnTableViewCell.m */; };
 		56E70D0C1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E70D0B1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m */; };
@@ -114,6 +134,7 @@
 		5620A44D1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHotNewsListViewModel.m; sourceTree = "<group>"; };
 		565259EF1CAE3FAE00CE56E5 /* QMQCommonDetailNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQCommonDetailNewsViewController.h; sourceTree = "<group>"; };
 		565259F01CAE3FAE00CE56E5 /* QMQCommonDetailNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQCommonDetailNewsViewController.m; sourceTree = "<group>"; };
+		567B12D01CBB7DCD001F695E /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = iconfont.ttf; sourceTree = "<group>"; };
 		568B92561CB89EDE008374F5 /* NSString+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extend.h"; sourceTree = "<group>"; };
 		568B92571CB89EDE008374F5 /* NSString+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extend.m"; sourceTree = "<group>"; };
 		56942AFE1C74583A0066188D /* QMQLatestNewsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsViewModel.h; sourceTree = "<group>"; };
@@ -128,6 +149,36 @@
 		56A8F68A1C9350D3007D34FE /* UIViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling.m"; sourceTree = "<group>"; };
 		56A8F68C1C947293007D34FE /* QMQLatestNewsDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsDetailViewModel.h; sourceTree = "<group>"; };
 		56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsDetailViewModel.m; sourceTree = "<group>"; };
+		56C841DD1CBA25D2002CF776 /* QMQThemeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeListViewController.h; sourceTree = "<group>"; };
+		56C841DE1CBA25D2002CF776 /* QMQThemeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeListViewController.m; sourceTree = "<group>"; };
+		56C841E01CBA2620002CF776 /* QMQColumnListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnListViewController.h; sourceTree = "<group>"; };
+		56C841E11CBA2620002CF776 /* QMQColumnListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnListViewController.m; sourceTree = "<group>"; };
+		56C841E31CBA28FB002CF776 /* QMQColumnListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnListViewModel.h; sourceTree = "<group>"; };
+		56C841E41CBA28FB002CF776 /* QMQColumnListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnListViewModel.m; sourceTree = "<group>"; };
+		56C841ED1CBA32F3002CF776 /* QMQCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQCommonTableViewCell.h; sourceTree = "<group>"; };
+		56C841EE1CBA32F3002CF776 /* QMQCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQCommonTableViewCell.m; sourceTree = "<group>"; };
+		56C841F11CBA37D1002CF776 /* QMQCommonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQCommonModel.h; sourceTree = "<group>"; };
+		56C841F21CBA37D1002CF776 /* QMQCommonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQCommonModel.m; sourceTree = "<group>"; };
+		56C841F41CBA3C56002CF776 /* QMQCommonListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQCommonListModel.h; sourceTree = "<group>"; };
+		56C841F51CBA3C56002CF776 /* QMQCommonListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQCommonListModel.m; sourceTree = "<group>"; };
+		56C841F71CBA446E002CF776 /* QMQCommonCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQCommonCellModel.h; sourceTree = "<group>"; };
+		56C841F81CBA446E002CF776 /* QMQCommonCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQCommonCellModel.m; sourceTree = "<group>"; };
+		56C841FA1CBA8CBD002CF776 /* QMQThemeListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeListViewModel.h; sourceTree = "<group>"; };
+		56C841FB1CBA8CBD002CF776 /* QMQThemeListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeListViewModel.m; sourceTree = "<group>"; };
+		56C841FF1CBAB083002CF776 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		56C842011CBAB0FD002CF776 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		56C842031CBAB10C002CF776 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		56C842051CBAB122002CF776 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		56C842071CBAB131002CF776 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		56C842091CBAB142002CF776 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		56C8420B1CBAB14F002CF776 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		56C8420D1CBAB15C002CF776 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		56C842151CBAB301002CF776 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		56C842161CBAB301002CF776 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		56C8421A1CBAB8B0002CF776 /* QMQTencentLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQTencentLogin.h; sourceTree = "<group>"; };
+		56C8421B1CBAB8B0002CF776 /* QMQTencentLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQTencentLogin.m; sourceTree = "<group>"; };
+		56CDFB511CBB4A8F0068658D /* QMQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLoginViewController.h; sourceTree = "<group>"; };
+		56CDFB521CBB4A8F0068658D /* QMQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLoginViewController.m; sourceTree = "<group>"; };
 		56CFA01D1C2F9BC7000779CF /* QMQZhiHuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QMQZhiHuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56CFA0211C2F9BC7000779CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		56CFA0231C2F9BC7000779CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,7 +192,6 @@
 		56CFA0411C2F9BC7000779CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56D5296C1C84263F00B3964B /* QMQHistoryNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHistoryNewsModel.h; sourceTree = "<group>"; };
 		56D5296D1C84263F00B3964B /* QMQHistoryNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQHistoryNewsModel.m; sourceTree = "<group>"; };
-		56D6286E1C31A822001B77FB /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		56D628711C31AC08001B77FB /* QMQZhiHuDaily-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QMQZhiHuDaily-Prefix.pch"; sourceTree = "<group>"; };
 		56E70D011C84745D002B6856 /* QMQColumnViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnViewModel.h; sourceTree = "<group>"; };
 		56E70D021C84745D002B6856 /* QMQColumnViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQColumnViewModel.m; sourceTree = "<group>"; };
@@ -195,6 +245,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C842191CBAB4BC002CF776 /* libz.tbd in Frameworks */,
+				56C8420E1CBAB15C002CF776 /* libiconv.tbd in Frameworks */,
+				56C8420A1CBAB142002CF776 /* libstdc++.tbd in Frameworks */,
+				56C842081CBAB131002CF776 /* CoreTelephony.framework in Frameworks */,
+				56C842061CBAB122002CF776 /* libsqlite3.tbd in Frameworks */,
+				56C842041CBAB10C002CF776 /* CoreGraphics.framework in Frameworks */,
+				56C842021CBAB0FD002CF776 /* SystemConfiguration.framework in Frameworks */,
+				56C842171CBAB301002CF776 /* TencentOpenAPI.framework in Frameworks */,
+				56C842001CBAB083002CF776 /* Security.framework in Frameworks */,
 				ED19098C4D4BEE156FE57F81 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,14 +275,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		56019DCE1C91E6E900BA8B5D /* icon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = icon;
-			path = Images.xcassets/icon;
-			sourceTree = "<group>";
-		};
 		56019DCF1C932F5400BA8B5D /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +300,8 @@
 			children = (
 				5609E8B61C301D1E00B72BCC /* QMQColumnViewController.h */,
 				5609E8B71C301D1E00B72BCC /* QMQColumnViewController.m */,
+				56C841E01CBA2620002CF776 /* QMQColumnListViewController.h */,
+				56C841E11CBA2620002CF776 /* QMQColumnListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +428,8 @@
 			isa = PBXGroup;
 			children = (
 				565259EE1CAE3F8C00CE56E5 /* ViewController */,
+				56C841F01CBA37BA002CF776 /* Model */,
+				56C841EC1CBA32B8002CF776 /* Cell */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -457,6 +512,81 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		56C841EC1CBA32B8002CF776 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				56C841ED1CBA32F3002CF776 /* QMQCommonTableViewCell.h */,
+				56C841EE1CBA32F3002CF776 /* QMQCommonTableViewCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		56C841F01CBA37BA002CF776 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56C841F41CBA3C56002CF776 /* QMQCommonListModel.h */,
+				56C841F51CBA3C56002CF776 /* QMQCommonListModel.m */,
+				56C841F71CBA446E002CF776 /* QMQCommonCellModel.h */,
+				56C841F81CBA446E002CF776 /* QMQCommonCellModel.m */,
+				56C841F11CBA37D1002CF776 /* QMQCommonModel.h */,
+				56C841F21CBA37D1002CF776 /* QMQCommonModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56C842131CBAB301002CF776 /* OpenSDKs */ = {
+			isa = PBXGroup;
+			children = (
+				56C842141CBAB301002CF776 /* TencentOpenSDK */,
+			);
+			name = OpenSDKs;
+			path = QMQZhiHuDaily/OpenSDKs;
+			sourceTree = SOURCE_ROOT;
+		};
+		56C842141CBAB301002CF776 /* TencentOpenSDK */ = {
+			isa = PBXGroup;
+			children = (
+				56C8421A1CBAB8B0002CF776 /* QMQTencentLogin.h */,
+				56C8421B1CBAB8B0002CF776 /* QMQTencentLogin.m */,
+				56C842151CBAB301002CF776 /* TencentOpenAPI.framework */,
+				56C842161CBAB301002CF776 /* TencentOpenApi_IOS_Bundle.bundle */,
+			);
+			path = TencentOpenSDK;
+			sourceTree = "<group>";
+		};
+		56CDFB4D1CBB461A0068658D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				56CDFB4E1CBB461A0068658D /* Controller */,
+				56CDFB4F1CBB461A0068658D /* Model */,
+				56CDFB501CBB461A0068658D /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		56CDFB4E1CBB461A0068658D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56CDFB511CBB4A8F0068658D /* QMQLoginViewController.h */,
+				56CDFB521CBB4A8F0068658D /* QMQLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56CDFB4F1CBB461A0068658D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56CDFB501CBB461A0068658D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		56CFA0141C2F9BC7000779CF = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +616,7 @@
 				56F48C8B1C3DF9E50072822F /* Category */,
 				56ED33BB1C57A7440061CA81 /* Macro */,
 				56D628721C31B1F1001B77FB /* Utils */,
+				56C842131CBAB301002CF776 /* OpenSDKs */,
 				56CFA04E1C2F9C7E000779CF /* Resource */,
 				56CFA0201C2F9BC7000779CF /* Supporting Files */,
 			);
@@ -531,6 +662,7 @@
 				5609E8931C3018F100B72BCC /* Column */,
 				56E70D131C8475CF002B6856 /* Theme */,
 				569A5AE51C32CF400092ABA3 /* HistoryNews */,
+				56CDFB4D1CBB461A0068658D /* Login */,
 				565259ED1CAE3F7400CE56E5 /* Common */,
 			);
 			path = Main;
@@ -539,9 +671,8 @@
 		56CFA04E1C2F9C7E000779CF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				56D6286E1C31A822001B77FB /* icomoon.ttf */,
+				567B12D01CBB7DCD001F695E /* iconfont.ttf */,
 				56F48C931C3E018D0072822F /* Images.xcassets */,
-				56019DCE1C91E6E900BA8B5D /* icon */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -573,6 +704,8 @@
 			children = (
 				56E70D151C8475CF002B6856 /* QMQThemeViewController.h */,
 				56E70D161C8475CF002B6856 /* QMQThemeViewController.m */,
+				56C841DD1CBA25D2002CF776 /* QMQThemeListViewController.h */,
+				56C841DE1CBA25D2002CF776 /* QMQThemeListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -602,6 +735,8 @@
 			children = (
 				56E70D1E1C8475CF002B6856 /* QMQThemeViewModel.h */,
 				56E70D1F1C8475CF002B6856 /* QMQThemeViewModel.m */,
+				56C841FA1CBA8CBD002CF776 /* QMQThemeListViewModel.h */,
+				56C841FB1CBA8CBD002CF776 /* QMQThemeListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -665,6 +800,8 @@
 			children = (
 				56E70D011C84745D002B6856 /* QMQColumnViewModel.h */,
 				56E70D021C84745D002B6856 /* QMQColumnViewModel.m */,
+				56C841E31CBA28FB002CF776 /* QMQColumnListViewModel.h */,
+				56C841E41CBA28FB002CF776 /* QMQColumnListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -702,6 +839,14 @@
 		D4B9DA578CE0827B8E8BC09B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				56C8420D1CBAB15C002CF776 /* libiconv.tbd */,
+				56C8420B1CBAB14F002CF776 /* libz.tbd */,
+				56C842091CBAB142002CF776 /* libstdc++.tbd */,
+				56C842071CBAB131002CF776 /* CoreTelephony.framework */,
+				56C842051CBAB122002CF776 /* libsqlite3.tbd */,
+				56C842031CBAB10C002CF776 /* CoreGraphics.framework */,
+				56C842011CBAB0FD002CF776 /* SystemConfiguration.framework */,
+				56C841FF1CBAB083002CF776 /* Security.framework */,
 				2EEBC261ED597358B57E4EAC /* libPods.a */,
 			);
 			name = Frameworks;
@@ -827,7 +972,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D6286F1C31A890001B77FB /* icomoon.ttf in Resources */,
+				567B12D11CBB7DCD001F695E /* iconfont.ttf in Resources */,
+				56C842181CBAB301002CF776 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				56F48C941C3E018D0072822F /* Images.xcassets in Resources */,
 				5609E88C1C2FBA0600B72BCC /* ProductAPI.plist in Resources */,
 			);
@@ -931,10 +1077,14 @@
 			files = (
 				5609E8B81C301D1E00B72BCC /* QMQColumnViewController.m in Sources */,
 				569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */,
+				56C841E21CBA2620002CF776 /* QMQColumnListViewController.m in Sources */,
+				56C841F31CBA37D1002CF776 /* QMQCommonModel.m in Sources */,
 				565259F11CAE3FAE00CE56E5 /* QMQCommonDetailNewsViewController.m in Sources */,
+				56C841E51CBA28FB002CF776 /* QMQColumnListViewModel.m in Sources */,
 				56F2DB671C832F1700D0D15F /* QMQHotNewsTableViewCell.m in Sources */,
 				56ED33BA1C57A6A10061CA81 /* QMQHttpService.m in Sources */,
 				56A8F68E1C947293007D34FE /* QMQLatestNewsDetailViewModel.m in Sources */,
+				56C841DF1CBA25D2002CF776 /* QMQThemeListViewController.m in Sources */,
 				56F2DB6D1C834B6C00D0D15F /* QMQColumnModel.m in Sources */,
 				56A8F68B1C9350D3007D34FE /* UIViewController+Swizzling.m in Sources */,
 				56942B001C74583A0066188D /* QMQLatestNewsViewModel.m in Sources */,
@@ -946,6 +1096,7 @@
 				56F2DB5C1C81DA1400D0D15F /* QMQRacHttpService.m in Sources */,
 				56942B031C746C7F0066188D /* QMQLatestNewsModel.m in Sources */,
 				56019DD21C932FB800BA8B5D /* UIColor+Extensions.m in Sources */,
+				56C841EF1CBA32F3002CF776 /* QMQCommonTableViewCell.m in Sources */,
 				5609E8AC1C301CA100B72BCC /* QMQLatestNewsViewController.m in Sources */,
 				56E70D231C8475CF002B6856 /* QMQThemeViewModel.m in Sources */,
 				56E70D0C1C8474DA002B6856 /* QMQHistoryNewsTableViewCell.m in Sources */,
@@ -953,17 +1104,22 @@
 				5620A4481C3D73AE00EDDD27 /* QMQHotNewsListModel.m in Sources */,
 				5620A44B1C3D740400EDDD27 /* QMQHotNewsModel.m in Sources */,
 				56942B061C7475A70066188D /* QMQLatestNewsTableViewCell.m in Sources */,
+				56C841F91CBA446E002CF776 /* QMQCommonCellModel.m in Sources */,
 				56019DCD1C91572400BA8B5D /* QMQHistoryNewsListModel.m in Sources */,
 				56E70D201C8475CF002B6856 /* QMQThemeViewController.m in Sources */,
 				56D5296E1C84263F00B3964B /* QMQHistoryNewsModel.m in Sources */,
 				56F2DB641C829D5F00D0D15F /* QMQRacBaseViewModel.m in Sources */,
+				56C841FC1CBA8CBD002CF776 /* QMQThemeListViewModel.m in Sources */,
 				56019DC71C913B4300BA8B5D /* QMQColumnListModel.m in Sources */,
 				56E70D031C84745D002B6856 /* QMQColumnViewModel.m in Sources */,
+				56C8421C1CBAB8B0002CF776 /* QMQTencentLogin.m in Sources */,
+				56CDFB531CBB4A8F0068658D /* QMQLoginViewController.m in Sources */,
 				56ED33B91C57A6A10061CA81 /* QMQHttpBaseService.m in Sources */,
 				56F48C921C3DFB310072822F /* UIView+Layout.m in Sources */,
 				568B92581CB89EDE008374F5 /* NSString+Extend.m in Sources */,
 				56019DCA1C9152AF00BA8B5D /* QMQThemeListModel.m in Sources */,
 				56CFA0251C2F9BC7000779CF /* AppDelegate.m in Sources */,
+				56C841F61CBA3C56002CF776 /* QMQCommonListModel.m in Sources */,
 				56FF56441C7F668400D53AA6 /* QMQLatestNewsDetailModel.m in Sources */,
 				56CFA0221C2F9BC7000779CF /* main.m in Sources */,
 				56E70D061C847486002B6856 /* QMQColumnTableViewCell.m in Sources */,
@@ -1098,14 +1254,51 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/QMQZhiHuDaily/OpenSDKs/TencentOpenSDK",
 				);
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"DTCoreText\"",
+					"-l\"DTFoundation\"",
+					"-l\"Masonry\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.zhihuribao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1125,14 +1318,51 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/QMQZhiHuDaily/OpenSDKs/TencentOpenSDK",
 				);
 				GCC_PREFIX_HEADER = "$SRCROOT/$PROJECT_NAME/QMQZhiHuDaily-Prefix.pch";
 				INFOPLIST_FILE = QMQZhiHuDaily/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"CocoaLumberjack\"",
+					"-l\"DTCoreText\"",
+					"-l\"DTFoundation\"",
+					"-l\"Masonry\"",
+					"-l\"ReactiveCocoa\"",
+					"-l\"SDWebImage\"",
+					"-l\"c++\"",
+					"-l\"xml2\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-fobjc-arc",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.zhihuribao;
 				PRODUCT_NAME = "$(TARGET_NAME)";

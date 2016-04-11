@@ -62,12 +62,19 @@
         [confirmButton setTitle:@"确定" forState:UIControlStateNormal];
         [confirmButton.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
         [[confirmButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            @strongify(self);
             _datePicker.hidden = YES;
             _buttonContainerView.hidden = YES;
             
             NSDateFormatter *formatter = [NSDateFormatter new];
             [formatter setDateFormat:@"yyyyMMdd"];
-            [_viewModel.loadCommand execute:[formatter stringFromDate:_datePicker.date]];
+            [[_viewModel.loadCommand execute:[formatter stringFromDate:_datePicker.date]] subscribeNext:^(QMQHttpBaseResponse *response) {
+                if (response.success) {
+                    NSDateFormatter *formatter = [NSDateFormatter new];
+                    [formatter setDateFormat:@"yyyy-MM-dd"];
+                    self.title = [formatter stringFromDate:_datePicker.date];
+                }
+            }];
         }];
         [_buttonContainerView addSubview:confirmButton];
         [confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,14 +108,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.title = @"历史新闻";
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.title = [formatter stringFromDate:[NSDate date]];
     
-    UIImage *normalImage = [UIImageUtil imageWithIconFontCode:kIFNavEditDate
+    UIImage *normalImage = [UIImageUtil imageWithIconFontCode:QMQIconEdit
                                                         color:[UIColor whiteColor]
-                                                     fontSize:kIFNavEditDateSize];
-    UIImage *disableImage = [UIImageUtil imageWithIconFontCode:kIFNavEditDate
+                                                     fontSize:QMQNavigationBarIconSize];
+    UIImage *disableImage = [UIImageUtil imageWithIconFontCode:QMQIconEdit
                                                          color:[UIColor grayColor]
-                                                      fontSize:kIFNavEditDateSize];
+                                                      fontSize:QMQNavigationBarIconSize];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:normalImage

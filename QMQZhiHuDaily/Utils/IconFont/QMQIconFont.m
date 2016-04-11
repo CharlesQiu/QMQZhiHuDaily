@@ -10,24 +10,25 @@
 
 #pragma mark - Icon Font Name
 
-NSString *const kIconFontNameIcomoon  = @"icomoon";
-NSString *const kIconFontNameIconFont = @"iconfont";
+NSString *const QMQIconFontName = @"iconfont";
 
 #pragma mark - Tabbar
-CGFloat const   kIFTabbarSize            = 25.0f;
-NSString *const kIFTabbarHotnews         = @"\U0000e9a9";
-NSString *const kIFTabbarLatestnews      = @"\U0000e91d";
-NSString *const kIFTabbarColumn          = @"\U0000e92e";
-NSString *const kIFTabbarThemes          = @"\U0000e920";
-NSString *const kIFTabbarHistory         = @"\U0000e94d";
-NSString *const kIFTabbarHotnewsColor    = @"216CC3";
-NSString *const kIFTabbarLatestnewsColor = @"216CC3";
-NSString *const kIFTabbarColumnColor     = @"216CC3";
-NSString *const kIFTabbarThemesColor     = @"216CC3";
-NSString *const kIFTabbarHistoryColor    = @"216CC3";
+CGFloat const   QMQTabarIconSize  = 26.0f;
+NSString *const QMQIconHotNews    = @"\U0000e601";
+NSString *const QMQIconLatestNews = @"\U0000e61e";
+NSString *const QMQIconColumn     = @"\U0000e626";
+NSString *const QMQIconTheme      = @"\U0000e620";
+NSString *const QMQIconHistory    = @"\U0000e600";
+NSString *const QMQStyleColor     = @"216CC3";
 
 #pragma mark - Navigation Bar
-NSString *const kIFNavEditDate     = @"\U0000e907";
-CGFloat const   kIFNavEditDateSize = 20.0f;
+NSString *const QMQIconEdit              = @"\U0000e612";
+NSString *const QMQIconUser              = @"\U0000e613";
+NSString *const QMQIconCross             = @"\U0000e602";
+NSString *const QMQIconBack              = @"\U0000e60e";
+CGFloat const   QMQNavigationBarIconSize = 25.0f;
 
-#pragma mark -
+#pragma mark - Login
+NSString *const QMQIconQQ     = @"\U0000e611";
+NSString *const QMQIconWeixin = @"\U0000e610";
+NSString *const QMQIconWeibo  = @"\U0000e60f";

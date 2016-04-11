@@ -9,6 +9,8 @@
 #import "QMQThemeViewController.h"
 #import "QMQThemeViewModel.h"
 #import "QMQThemeTableViewCell.h"
+#import "QMQThemeModel.h"
+#import "QMQThemeListViewController.h"
 
 @interface QMQThemeViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -22,8 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.title = @"专题文章";
+
+    self.title = @"主题文章";
     
     [self initViewModel];
     [self bindViewModel];
@@ -105,6 +107,16 @@
     // Tells the delegate that the specified row is now selected.
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    QMQThemeModel *model = self.viewModel.modelArray[indexPath.row];
+    
+    QMQThemeListViewController *vc = [[QMQThemeListViewController alloc] init];
+    vc.getColumnDetailSignal = [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
+        [subscriber sendNext:model];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    [vc setHidesBottomBarWhenPushed:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
