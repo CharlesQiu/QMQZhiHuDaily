@@ -66,7 +66,8 @@
     || [NSStringFromClass([self class]) isEqualToString:@"QMQColumnViewController"]
     || [NSStringFromClass([self class]) isEqualToString:@"QMQThemeViewController"]
     || [NSStringFromClass([self class]) isEqualToString:@"QMQHistoryNewsViewController"]
-    || [NSStringFromClass([self class]) isEqualToString:@"QMQLoginViewController"];
+    || [NSStringFromClass([self class]) isEqualToString:@"QMQLoginViewController"]
+    || [NSStringFromClass([self class]) isEqualToString:@"QMQUserCenterViewController"];
     
     if (!isSwizzling) {
         return;

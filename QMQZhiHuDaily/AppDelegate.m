@@ -12,10 +12,11 @@
 #import "QMQLatestNewsViewController.h"
 #import "QMQHistoryNewsViewController.h"
 #import "QMQThemeViewController.h"
+#import "QMQLoginManager.h"
+#import "OpenShareHeader.h"
 
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -45,7 +46,7 @@
     
     // 全局导航栏白色
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-        
+    
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.delegate           = self;
     tabBarController.tabBar.translucent = YES;
@@ -100,6 +101,13 @@
     tabBarController.selectedIndex   = 0;
     
     [Fabric with:@[[Crashlytics class], [Answers class]]];
+    
+    // 全局注册app ID
+    [OpenShare connectQQWithAppId:@"1105322490"];
+    [OpenShare connectWeiboWithAppKey:@"1768831431"];
+    [OpenShare connectWeixinWithAppId:@"wx1eaf4eddf5d06ac0"];
+    [OpenShare connectRenrenWithAppId:@"228525" AndAppKey:@"1dd8cba4215d4d4ab96a49d3058c1d7f"];
+    
     return YES;
 }
 
@@ -114,11 +122,12 @@
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [TencentOAuth HandleOpenURL:url];
-}
-
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
-    return [TencentOAuth HandleOpenURL:url];
+    
+    // 如果OpenShare能处理这个回调，就调用block中的方法，如果不能处理，就交给其他（比如支付宝）。
+    if ([OpenShare handleOpenURL:url]) {
+        return YES;
+    }
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

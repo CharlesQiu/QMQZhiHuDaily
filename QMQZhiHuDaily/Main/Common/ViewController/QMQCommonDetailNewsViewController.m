@@ -9,7 +9,7 @@
 #import "QMQCommonDetailNewsViewController.h"
 #import "QMQLatestNewsDetailModel.h"
 #import "QMQLatestNewsDetailViewModel.h"
-
+#import "OpenShareHeader.h"
 #import "UIImageView+WebImageFadeInEffect.h"
 #import <UIImageView+WebCache.h>
 
@@ -20,7 +20,6 @@
 @property (nonatomic, strong) UIWebView                    *webView;
 @property (nonatomic, strong) UIImage                      *headerImage;
 @property (nonatomic, strong) QMQLatestNewsDetailViewModel *viewModel;
-@property (nonatomic, strong) QMQLatestNewsDetailModel     *model;
 @property (nonatomic, copy) NSString                       *css;
 
 @end
@@ -52,6 +51,26 @@
      }];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
 
+    UIImage *shareImage = [UIImageUtil imageWithIconFontCode:QMQIconShare
+                                                       color:[UIColor colorWithHexString:QMQStyleColor]
+                                                    fontSize:QMQNavigationBarIconSize];
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [shareButton setImage:shareImage forState:UIControlStateNormal];
+    [shareButton sizeToFit];
+    [[shareButton rac_signalForControlEvents:UIControlEventTouchUpInside]
+     subscribeNext:^(id x) {
+        @strongify(self);
+         OSMessage *msg=[[OSMessage alloc] init];
+         msg.title = self.viewModel.model.shareUrl;
+         //分享到QQ
+         [OpenShare shareToQQFriends:msg Success:^(OSMessage *message) {
+             QMQLog(@"分享到QQ好友成功:%@",msg);
+         } Fail:^(OSMessage *message, NSError *error) {
+             QMQLog(@"分享到QQ好友失败:%@\n%@",msg,error);
+         }];
+    }];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
+    
     [self webView];
     [self.newsDetailSignal subscribeNext:^(id x) {
         @strongify(self);
@@ -66,18 +85,6 @@
         }
         NSString *htmlString = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" type=\"text/css\" href=%@ /></head><body>%@</body></html>", self.viewModel.model.css, self.viewModel.model.body];
         [self.webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:self.viewModel.model.css]];
-    }];
-}
-
-- (RACSignal *)loadImageWithUrl:(NSString *)url {
-    return [RACSignal createSignal:^RACDisposable *(id < RACSubscriber > subscriber) {
-        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:url] options:SDWebImageDownloaderUseNSURLCache progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-            
-        } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-            [subscriber sendNext:image];
-        }];
-        
-        return nil;
     }];
 }
 

@@ -20,7 +20,8 @@
 @property (nonatomic, readonly, copy) NSString *title;
 /// css
 @property (nonatomic, readonly, copy) NSString *css;
-
+/// 分享链接
+@property (nonatomic, readonly, copy) NSString *shareUrl;
 - (instancetype)initWithDic:(NSDictionary *)dic;
 
 @end

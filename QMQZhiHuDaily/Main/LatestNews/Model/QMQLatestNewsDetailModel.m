@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *body;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *css;
+@property (nonatomic, copy) NSString *shareUrl;
 
 @end
 
@@ -31,6 +32,7 @@
     self.imageSource = dic[@"image_source"];
     self.body        = dic[@"body"];
     self.css         = dic[@"css"][0];
+    self.shareUrl    = dic[@"share_url"];
     
     return self;
 }

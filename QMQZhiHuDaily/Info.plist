@@ -41,8 +41,19 @@
 			<string>tencentopenapi</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent222222</string>
-				<string>tencent1105322490</string>
+                <!--      微信          -->
+                <string>wx1eaf4eddf5d06ac0</string>
+                <!--       QQ         -->
+                <string>tencent1105322490</string>
+                <string>tencent1103194207</string>
+                <string>tencent1103194207.content</string>
+                <string>QQ41C1685F</string>
+                <!--微博-->
+                <string>1768831431</string>
+                <!--人人-->
+                <string>renrenshare228525</string>
+                <!--facebook-->
+                <string>fb776442542471056</string>
 			</array>
 		</dict>
 	</array>

@@ -47,8 +47,8 @@ extern NSString *const QMQIconQQ;
 extern NSString *const QMQIconWeixin;
 /// 微博
 extern NSString *const QMQIconWeibo;
-
-
+/// 分享
+extern NSString *const QMQIconShare;
 
 
 

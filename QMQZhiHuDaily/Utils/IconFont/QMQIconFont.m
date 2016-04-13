@@ -32,3 +32,5 @@ CGFloat const   QMQNavigationBarIconSize = 25.0f;
 NSString *const QMQIconQQ     = @"\U0000e611";
 NSString *const QMQIconWeixin = @"\U0000e610";
 NSString *const QMQIconWeibo  = @"\U0000e60f";
+
+NSString *const QMQIconShare = @"\U0000e609";

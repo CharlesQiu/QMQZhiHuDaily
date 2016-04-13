@@ -12,8 +12,13 @@
 #import "QMQCommonDetailNewsViewController.h"
 #import "QMQHotNewsModel.h"
 #import "QMQLoginViewController.h"
+#import "QMQLoginManager.h"
+#import "SDWebImageManager.h"
+#import "QMQAccountInfo.h"
+#import "QMQUserCenterViewController.h"
+#import "OpenShareHeader.h"
 
-@interface QMQHotNewsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface QMQHotNewsViewController () <UITableViewDataSource, UITableViewDelegate, SDWebImageManagerDelegate>
 
 @property (nonatomic, strong) UITableView             *tableView;
 @property (nonatomic, strong) QMQHotNewsListViewModel *viewModel;
@@ -29,35 +34,62 @@
     
     self.title = @"热门文章";
     
-    UIImage *normalImage = [UIImageUtil imageWithIconFontCode:QMQIconUser
-                                                        color:[UIColor whiteColor]
-                                                     fontSize:QMQNavigationBarIconSize];
-    UIImage *disableImage = [UIImageUtil imageWithIconFontCode:QMQIconUser
-                                                         color:[UIColor grayColor]
-                                                      fontSize:QMQNavigationBarIconSize];
+    [self initViewModel];
+    [self bindViewModel];
+    [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
+    if ([OpenShare isQQInstalled]) {
+        @weakify(self);
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:QMQisLogin]) {
+            QMQAccountInfo *accountInfo = [QMQLoginManager shareInstance].accountInfo;
+            [[SDWebImageManager sharedManager] downloadImageWithURL:[NSURL URLWithString:accountInfo.avatarUrlLarge] options:SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                
+            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                @strongify(self);
+                [self initUserButton:image isWebImage:YES];
+            }];
+        } else {
+            [self initUserButton:[UIImageUtil imageWithIconFontCode:QMQIconUser
+                                                              color:[UIColor whiteColor]
+                                                           fontSize:QMQNavigationBarIconSize]
+                      isWebImage:NO];
+        }
+    }
+}
+
+- (void)initUserButton:(UIImage *)image isWebImage:(BOOL)isWebImage {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:normalImage
+    [button setImage:image
             forState:UIControlStateNormal];
-    [button setImage:disableImage
-            forState:UIControlStateDisabled];
-    [button sizeToFit];
+    button.frame = CGRectMake(0, 0, 30.0, 30.0);
+    
+    if (isWebImage) {
+        button.layer.cornerRadius  = 15.0;
+        button.layer.masksToBounds = YES;
+    }
     
     @weakify(self);
     [[button rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(UIButton *button) {
          @strongify(self);
-         QMQLoginViewController *loginVC = [[QMQLoginViewController alloc] init];
-         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
-         nav.navigationBar.tintColor = [UIColor blueColor];
-         [self.navigationController presentViewController:nav animated:YES completion:nil];
+         if ([[NSUserDefaults standardUserDefaults] boolForKey:QMQisLogin]) {
+             QMQAccountInfo *accountInfo = [QMQLoginManager shareInstance].accountInfo;
+             QMQUserCenterViewController *userCenterVC = [[QMQUserCenterViewController alloc] init];
+             userCenterVC.accountInfo = accountInfo;
+             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userCenterVC];
+             [self.navigationController presentViewController:nav animated:YES completion:nil];
+             
+         } else {
+             QMQLoginViewController *loginVC = [[QMQLoginViewController alloc] init];
+             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+             [self.navigationController presentViewController:nav animated:YES completion:nil];
+         }
      }];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    
-    [self initViewModel];
-    [self bindViewModel];
-    [self loadData];
 }
 
 - (void)initViewModel {

@@ -7,23 +7,30 @@
 //
 
 #import "QMQLoginViewController.h"
-#import "QMQTencentLogin.h"
+#import "QMQUserCenterViewController.h"
+#import "QMQLoginManager.h"
+#import "QMQAccountInfo.h"
+#import "OpenShareHeader.h"
 
 @interface QMQLoginViewController ()
+
+@property (nonatomic, strong) UIButton *qqButton;
+@property (nonatomic, strong) UIButton *weixinButton;
+@property (nonatomic, strong) UIButton *weiboButton;
 
 @end
 
 /// 按钮大小
 static CGFloat const kButtonSize = 100.0;
 /// 按钮间距
-static CGFloat const kButtonSpacing = 40.0;
+static CGFloat const kButtonSpacing = 30.0;
 
 @implementation QMQLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = @"登陆";
+    self.title = @"登录";
     
     UIImage *normalImage = [UIImageUtil imageWithIconFontCode:QMQIconCross
                                                         color:[UIColor whiteColor]
@@ -51,46 +58,105 @@ static CGFloat const kButtonSpacing = 40.0;
     UIImage *qqImage = [UIImageUtil imageWithIconFontCode:QMQIconQQ
                                                     color:[UIColor colorWithHexString:QMQStyleColor]
                                                  fontSize:kButtonSize];
-    UIButton *qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [qqButton setImage:qqImage forState:UIControlStateNormal];
-    [[qqButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [[QMQTencentLogin shareInstance] loginWithTencentQQ];
+    self.qqButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.qqButton setImage:qqImage forState:UIControlStateNormal];
+    [[self.qqButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        [[QMQLoginManager shareInstance] loginWithTencentQQSuccess:^(QMQAccountInfo *accountInfo) {
+            @strongify(self);
+            
+            QMQUserCenterViewController *userCenterVC = [[QMQUserCenterViewController alloc] init];
+            userCenterVC.accountInfo = accountInfo;
+            [self.navigationController pushViewController:userCenterVC animated:YES];
+        } failure:^(NSString *failureMsg) {
+            
+        }];
     }];
-    [self.view addSubview:qqButton];
+    [self.view addSubview:self.qqButton];
     
     // 微信按钮
     UIImage *weixinImage = [UIImageUtil imageWithIconFontCode:QMQIconWeixin
-                                                    color:[UIColor colorWithHexString:QMQStyleColor]
-                                                 fontSize:kButtonSize];
-    UIButton *weixinButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [weixinButton setImage:weixinImage forState:UIControlStateNormal];
-    [[weixinButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        
-    }];
-    [self.view addSubview:weixinButton];
-
-    // 微博按钮
-    UIImage *weiboImage = [UIImageUtil imageWithIconFontCode:QMQIconWeibo
                                                         color:[UIColor colorWithHexString:QMQStyleColor]
                                                      fontSize:kButtonSize];
-    UIButton *weiboButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [weiboButton setImage:weiboImage forState:UIControlStateNormal];
-    [[weiboButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+    self.weixinButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.weixinButton setImage:weixinImage forState:UIControlStateNormal];
+    [[self.weixinButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        [[QMQLoginManager shareInstance] loginWithWeiXinSuccess:^(QMQAccountInfo *accountInfo) {
+            @strongify(self);
+            
+            QMQUserCenterViewController *userCenterVC = [[QMQUserCenterViewController alloc] init];
+            userCenterVC.accountInfo = accountInfo;
+            [self.navigationController pushViewController:userCenterVC animated:YES];
+        } failure:^(NSString *failureMsg) {
+            
+        }];
         
     }];
-    [self.view addSubview:weiboButton];
+    [self.view addSubview:self.weixinButton];
+    
+    // 微博按钮
+    UIImage *weiboImage = [UIImageUtil imageWithIconFontCode:QMQIconWeibo
+                                                       color:[UIColor colorWithHexString:QMQStyleColor]
+                                                    fontSize:kButtonSize];
+    self.weiboButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.weiboButton setImage:weiboImage forState:UIControlStateNormal];
+    [[self.weiboButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        [[QMQLoginManager shareInstance] loginWithWeiBoSuccess:^(QMQAccountInfo *accountInfo) {
+            @strongify(self);
+            
+            QMQUserCenterViewController *userCenterVC = [[QMQUserCenterViewController alloc] init];
+            userCenterVC.accountInfo = accountInfo;
+            [self.navigationController pushViewController:userCenterVC animated:YES];
+        } failure:^(NSString *failureMsg) {
+            
+        }];
 
-    [weixinButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    }];
+    [self.view addSubview:self.weiboButton];
+    
+    self.qqButton.hidden     = ![OpenShare isQQInstalled];
+    self.weixinButton.hidden = YES;
+    self.weiboButton.hidden  = YES;
+    
+    [self.qqButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
         make.center.equalTo(self.view);
+//        make.bottom.equalTo(self.mas_topLayoutGuideBottom);
     }];
-    [qqButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(weixinButton);
-        make.bottom.equalTo(weixinButton.mas_top).offset(-kButtonSpacing);
+    [self.weixinButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.qqButton.mas_bottom).offset(kButtonSpacing).priorityLow();
     }];
-    [weiboButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(weixinButton);
-        make.top.equalTo(weixinButton.mas_bottom).offset(kButtonSpacing);
+    [self.weiboButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.weixinButton.mas_bottom).offset(kButtonSpacing);
     }];
+    
+    // 告诉self.view约束需要更新
+    [self.view setNeedsUpdateConstraints];
+    // 调用此方法告诉self.view检测是否需要更新约束，若需要则更新，下面添加动画效果才起作用
+    [self.view updateConstraintsIfNeeded];
+    
+    [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:YES initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+- (void)updateViewConstraints {
+    @weakify(self);
+    [self.qqButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.center.equalTo(self.view);
+//        make.top.equalTo(self.mas_topLayoutGuideBottom).offset(15.0);
+    }];
+    
+    [super updateViewConstraints];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,13 +165,13 @@ static CGFloat const kButtonSpacing = 40.0;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
