@@ -92,7 +92,6 @@ static QMQLoginManager *_instance = nil;
 }
 
 - (void)loginWithWeiBoSuccess:(LoginSuccess)success failure:(LoginFailure)failure {
-    @weakify(self);
     [OpenShare WeiboAuth:@"all"
              redirectURI:@"https://github.com/CharlesQiu/QMQZhiHuDaily"
                  Success:^(NSDictionary *message) {

@@ -28,7 +28,7 @@
 
 - (void)initCommand {
     _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [QMQRacHttpService racGet:API_GET_NEWS_DETAIL([input unsignedIntegerValue]) param:nil];
+        return [QMQRacHttpService racGet:API_GET_NEWS_DETAIL((unsigned long)[input unsignedIntegerValue]) param:nil];
     }];
 }
 

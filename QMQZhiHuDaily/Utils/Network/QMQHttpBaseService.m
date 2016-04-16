@@ -7,15 +7,16 @@
 //
 
 #import "QMQHttpBaseService.h"
+#import "QMQDotNetAPIClient.h"
 
 @implementation QMQHttpBaseService
 
 #pragma mark - Init AFHTTPSessionManager
 + (AFHTTPSessionManager *)getRequestManager {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    QMQDotNetAPIClient *manager = [QMQDotNetAPIClient sharedClient];
     manager.requestSerializer.timeoutInterval = 10;
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
     return manager;
 }
 
@@ -52,7 +53,7 @@
         if (error.userInfo) {
             DDLogError(@"\n++++Network Error++++\nDomain : %@\nError Description : %@\n----Network Error-----\n", error.userInfo[@"NSErrorFailingURLStringKey"], error.userInfo[@"NSLocalizedDescription"]);
         } else {
-            DDLogError(@"\n++++Network Error++++\nDomain : %@\nError Description : %@\nError Code : %li\nHeaders : %@\n----Network Error-----\n", urlResponse.URL, error.localizedDescription, error.code, [self formatJsonData:urlResponse.allHeaderFields]);
+            DDLogError(@"\n++++Network Error++++\nDomain : %@\nError Description : %@\nError Code : %li\nHeaders : %@\n----Network Error-----\n", urlResponse.URL, error.localizedDescription, (long)error.code, [self formatJsonData:urlResponse.allHeaderFields]);
         }
     } else {
         DDLogVerbose(@"\n++++++++++\nDomain : %@\nHeaders : %@\nSuccess Response : %@\n---------", urlResponse.URL, [self formatJsonData:urlResponse.allHeaderFields], response ? [self formatJsonData:response] : @"No Response");
