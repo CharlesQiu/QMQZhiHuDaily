@@ -71,15 +71,18 @@
         return;
     }
     
+    @weakify(self);
     [manager GET:url
       parameters:params
         progress:^(NSProgress * _Nonnull downloadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            @strongify(self);
             NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
             [self printUrlResponse:urlResponse response:responseObject];
             !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            @strongify(self);
             NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
             [self printUrlResponse:urlResponse response:error];
             !failureBlock ? : failureBlock(error);
@@ -95,13 +98,17 @@
         !failureBlock ? : failureBlock(nil);
         return;
     }
+    
+    @weakify(self);
     [manager POST:url parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        @strongify(self);
         NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
         [self printUrlResponse:urlResponse response:responseObject];
         !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        @strongify(self);
         NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
         [self printUrlResponse:urlResponse response:error];
         !failureBlock ? : failureBlock(error);
@@ -117,11 +124,15 @@
         !failureBlock ? : failureBlock(nil);
         return;
     }
+    
+    @weakify(self);
     [manager PUT:url parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        @strongify(self);
         NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
         [self printUrlResponse:urlResponse response:responseObject];
         !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        @strongify(self);
         NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
         [self printUrlResponse:urlResponse response:error];
         !failureBlock ? : failureBlock(error);
@@ -138,14 +149,17 @@
         return;
     }
     
+    @weakify(self);
     [manager DELETE:url
          parameters:params
             success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                @strongify(self);
                 NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
                 [self printUrlResponse:urlResponse response:responseObject];
                 !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
             }
             failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                @strongify(self);
                 NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
                 [self printUrlResponse:urlResponse response:error];
                 !failureBlock ? : failureBlock(error);

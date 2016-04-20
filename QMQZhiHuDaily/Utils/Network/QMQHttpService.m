@@ -26,10 +26,13 @@
 
 + (void)getWithUrl:(NSString *)url param:(id)param responseBlock:(responseOperator)responseDataBlock {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    @weakify(self);
     [QMQHttpBaseService get:url params:param success:^(NSInteger statusCode, id responseObj) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:responseObj error:nil statusCode:statusCode]);
     } failure:^(NSError *error) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:nil error:error statusCode:error.code]);
     }];
@@ -37,10 +40,13 @@
 
 + (void)postWithUrl:(NSString *)url param:(id)param responseBlock:(responseOperator)responseDataBlock {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    @weakify(self);
     [QMQHttpBaseService post:url params:param success:^(NSInteger statusCode, id responseObj) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:responseObj error:nil statusCode:statusCode]);
     } failure:^(NSError *error) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:nil error:error statusCode:error.code]);
     }];
@@ -48,10 +54,13 @@
 
 + (void)putWithUrl:(NSString *)url param:(id)param responseBlock:(responseOperator)responseDataBlock {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    @weakify(self);
     [QMQHttpBaseService put:url params:param success:^(NSInteger statusCode, id responseObj) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:responseObj error:nil statusCode:statusCode]);
     } failure:^(NSError *error) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:nil error:error statusCode:error.code]);
     }];
@@ -59,10 +68,13 @@
 
 + (void)deleteWithUrl:(NSString *)url param:(id)param responseBlock:(responseOperator)responseDataBlock {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    @weakify(self);
     [QMQHttpBaseService deleteRequest:url params:param success:^(NSInteger statusCode, id responseObj) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:responseObj error:nil statusCode:statusCode]);
     } failure:^(NSError *error) {
+        @strongify(self);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         !responseDataBlock ? : responseDataBlock([self operateResponseObj:nil error:error statusCode:error.code]);
     }];
