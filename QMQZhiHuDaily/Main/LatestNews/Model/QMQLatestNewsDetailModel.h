@@ -22,6 +22,8 @@
 @property (nonatomic, readonly, copy) NSString *css;
 /// 分享链接
 @property (nonatomic, readonly, copy) NSString *shareUrl;
+/// 处理过的Body
+@property (nonatomic, readonly, copy) NSString *bodyNew;
 - (instancetype)initWithDic:(NSDictionary *)dic;
 
 @end

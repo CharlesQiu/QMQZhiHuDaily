@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *css;
 @property (nonatomic, copy) NSString *shareUrl;
+@property (nonatomic, copy) NSString *bodyNew;
 
 @end
 
@@ -30,9 +31,19 @@
     self.title       = dic[@"title"];
     self.imageUrl    = dic[@"image"];
     self.imageSource = dic[@"image_source"];
-    self.body        = dic[@"body"];
     self.css         = dic[@"css"][0];
     self.shareUrl    = dic[@"share_url"];
+
+    
+    if ([dic[@"body"] rangeOfString:@"img-place-holder"].length != 0) {
+        
+        self.body = [dic[@"body"] stringByReplacingOccurrencesOfString:@"class=\"img-place-holder\"" withString:@""];
+//        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+//        self.body = [dic[@"body"] stringByReplacingOccurrencesOfString:@"class=\"img-place-holder\"" withString:[NSString stringWithFormat:@"class=\"headline\"><img src=\"%@\" height=\"%f\" width=\"%f\"/", self.imageUrl, 200.0, screenWidth]];
+    } else {
+        self.body = dic[@"body"];
+    }
+    self.bodyNew = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" type=\"text/css\" href=%@ /></head><body>%@</body></html>", self.css, self.body];
     
     return self;
 }

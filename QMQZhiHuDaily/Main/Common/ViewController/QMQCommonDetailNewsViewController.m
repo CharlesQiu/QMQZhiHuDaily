@@ -18,11 +18,14 @@
 @interface QMQCommonDetailNewsViewController ()
 
 @property (nonatomic, strong) UIWebView                    *webView;
+@property (nonatomic, strong) UIImageView                  *topImageView;
 @property (nonatomic, strong) UIImage                      *headerImage;
 @property (nonatomic, strong) QMQLatestNewsDetailViewModel *viewModel;
 @property (nonatomic, copy) NSString                       *css;
 
 @end
+
+static CGFloat const kTopImageHeight = 200.0;
 
 @implementation QMQCommonDetailNewsViewController
 
@@ -33,7 +36,7 @@
     // Do any additional setup after loading the view.
     
     self.automaticallyAdjustsScrollViewInsets = NO;
-
+    
     UIImage *normalImage = [UIImageUtil imageWithIconFontCode:QMQIconBack
                                                         color:[UIColor colorWithHexString:QMQStyleColor]
                                                      fontSize:QMQNavigationBarIconSize];
@@ -50,25 +53,25 @@
          [self.navigationController popViewControllerAnimated:YES];
      }];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-
+    
     UIImage *shareImage = [UIImageUtil imageWithIconFontCode:QMQIconShare
-                                                       color:[UIColor colorWithHexString:QMQStyleColor]
+                                                       color:[UIColor whiteColor]
                                                     fontSize:QMQNavigationBarIconSize];
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [shareButton setImage:shareImage forState:UIControlStateNormal];
     [shareButton sizeToFit];
     [[shareButton rac_signalForControlEvents:UIControlEventTouchUpInside]
      subscribeNext:^(id x) {
-        @strongify(self);
-         OSMessage *msg=[[OSMessage alloc] init];
+         @strongify(self);
+         OSMessage *msg = [[OSMessage alloc] init];
          msg.title = self.viewModel.model.shareUrl;
          //分享到QQ
          [OpenShare shareToQQFriends:msg Success:^(OSMessage *message) {
-             QMQLog(@"分享到QQ好友成功:%@",msg);
+             QMQLog(@"分享到QQ好友成功:%@", msg);
          } Fail:^(OSMessage *message, NSError *error) {
-             QMQLog(@"分享到QQ好友失败:%@\n%@",msg,error);
+             QMQLog(@"分享到QQ好友失败:%@\n%@", msg, error);
          }];
-    }];
+     }];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
     
     [self webView];
@@ -83,8 +86,8 @@
         if (!model) {
             return;
         }
-        NSString *htmlString = [NSString stringWithFormat:@"<html><head><link rel=\"stylesheet\" type=\"text/css\" href=%@ /></head><body>%@</body></html>", self.viewModel.model.css, self.viewModel.model.body];
-        [self.webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:self.viewModel.model.css]];
+        [self.webView loadHTMLString:self.viewModel.model.bodyNew baseURL:[NSURL URLWithString:self.viewModel.model.css]];
+        [self.topImageView sd_setImageWithURL:[NSURL URLWithString:self.viewModel.model.imageUrl] placeholderImage:nil fadeInWithDuration:0.3];
     }];
 }
 
@@ -92,7 +95,18 @@
 
 - (UIWebView *)webView {
     if (!_webView) {
-        _webView = [UIWebView new];
+        _webView                         = [UIWebView new];
+        _webView.scrollView.contentInset = UIEdgeInsetsMake(kTopImageHeight, 0.0, 0.0, 0.0);
+        
+        _topImageView                 = [UIImageView new];
+        _topImageView.clipsToBounds   = YES;
+        [_webView.scrollView addSubview:_topImageView];
+        [_topImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.trailing.equalTo(_webView).insets(UIEdgeInsetsZero);
+            make.top.equalTo(_webView.scrollView).offset(-kTopImageHeight);
+            make.height.equalTo(@(kTopImageHeight));
+        }];
+        
         [self.view addSubview:_webView];
         @weakify(self);
         [_webView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,17 +121,16 @@
     [super viewWillAppear:animated];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
-    self.navigationController.navigationBar.tintColor = [UIColor colorWithHexString:QMQStyleColor];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:nil];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
-
 
 #pragma mark -
 - (void)didReceiveMemoryWarning {
