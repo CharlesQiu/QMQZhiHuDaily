@@ -32,6 +32,7 @@
 		569A5AEB1C32CF400092ABA3 /* QMQHistoryNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 569A5AE81C32CF400092ABA3 /* QMQHistoryNewsViewController.m */; };
 		56A8F68B1C9350D3007D34FE /* UIViewController+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F68A1C9350D3007D34FE /* UIViewController+Swizzling.m */; };
 		56A8F68E1C947293007D34FE /* QMQLatestNewsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */; };
+		56B01B1A1CEB01B400CDB22A /* QMQIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 56B01B191CEB01B400CDB22A /* QMQIconFont.m */; };
 		56C841DF1CBA25D2002CF776 /* QMQThemeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841DE1CBA25D2002CF776 /* QMQThemeListViewController.m */; };
 		56C841E21CBA2620002CF776 /* QMQColumnListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841E11CBA2620002CF776 /* QMQColumnListViewController.m */; };
 		56C841E51CBA28FB002CF776 /* QMQColumnListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C841E41CBA28FB002CF776 /* QMQColumnListViewModel.m */; };
@@ -59,7 +60,6 @@
 		56ED33BA1C57A6A10061CA81 /* QMQHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 56ED33B71C57A6A10061CA81 /* QMQHttpService.m */; };
 		56F1ADF91C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F1ADF81C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m */; };
 		56F2DB5C1C81DA1400D0D15F /* QMQRacHttpService.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB5B1C81DA1400D0D15F /* QMQRacHttpService.m */; };
-		56F2DB601C829D1900D0D15F /* QMQIconFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB5F1C829D1900D0D15F /* QMQIconFont.m */; };
 		56F2DB641C829D5F00D0D15F /* QMQRacBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB631C829D5F00D0D15F /* QMQRacBaseViewModel.m */; };
 		56F2DB671C832F1700D0D15F /* QMQHotNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB661C832F1700D0D15F /* QMQHotNewsTableViewCell.m */; };
 		56F2DB6D1C834B6C00D0D15F /* QMQColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 56F2DB6C1C834B6C00D0D15F /* QMQColumnModel.m */; };
@@ -151,6 +151,8 @@
 		56A8F68A1C9350D3007D34FE /* UIViewController+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzling.m"; sourceTree = "<group>"; };
 		56A8F68C1C947293007D34FE /* QMQLatestNewsDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQLatestNewsDetailViewModel.h; sourceTree = "<group>"; };
 		56A8F68D1C947293007D34FE /* QMQLatestNewsDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQLatestNewsDetailViewModel.m; sourceTree = "<group>"; };
+		56B01B181CEB01B400CDB22A /* QMQIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQIconFont.h; sourceTree = "<group>"; };
+		56B01B191CEB01B400CDB22A /* QMQIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQIconFont.m; sourceTree = "<group>"; };
 		56C841DD1CBA25D2002CF776 /* QMQThemeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQThemeListViewController.h; sourceTree = "<group>"; };
 		56C841DE1CBA25D2002CF776 /* QMQThemeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQThemeListViewController.m; sourceTree = "<group>"; };
 		56C841E01CBA2620002CF776 /* QMQColumnListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQColumnListViewController.h; sourceTree = "<group>"; };
@@ -221,8 +223,6 @@
 		56F1ADF81C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebImageFadeInEffect.m"; sourceTree = "<group>"; };
 		56F2DB5A1C81DA1400D0D15F /* QMQRacHttpService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQRacHttpService.h; sourceTree = "<group>"; };
 		56F2DB5B1C81DA1400D0D15F /* QMQRacHttpService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQRacHttpService.m; sourceTree = "<group>"; };
-		56F2DB5E1C829D1900D0D15F /* QMQIconFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQIconFont.h; sourceTree = "<group>"; };
-		56F2DB5F1C829D1900D0D15F /* QMQIconFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQIconFont.m; sourceTree = "<group>"; };
 		56F2DB621C829D5F00D0D15F /* QMQRacBaseViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQRacBaseViewModel.h; sourceTree = "<group>"; };
 		56F2DB631C829D5F00D0D15F /* QMQRacBaseViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QMQRacBaseViewModel.m; sourceTree = "<group>"; };
 		56F2DB651C832F1700D0D15F /* QMQHotNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QMQHotNewsTableViewCell.h; sourceTree = "<group>"; };
@@ -502,6 +502,15 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		56B01B171CEB01B400CDB22A /* IconFont */ = {
+			isa = PBXGroup;
+			children = (
+				56B01B181CEB01B400CDB22A /* QMQIconFont.h */,
+				56B01B191CEB01B400CDB22A /* QMQIconFont.m */,
+			);
+			path = IconFont;
+			sourceTree = "<group>";
+		};
 		56C841EC1CBA32B8002CF776 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -656,8 +665,8 @@
 		56D628721C31B1F1001B77FB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				56B01B171CEB01B400CDB22A /* IconFont */,
 				56F2DB611C829D3900D0D15F /* ViewModel */,
-				56F2DB5D1C829D1900D0D15F /* IconFont */,
 				5612A5241C57E591001F5C18 /* UIImageUtil */,
 				56ED33B11C57A6A10061CA81 /* Network */,
 			);
@@ -753,15 +762,6 @@
 				56F1ADF81C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m */,
 			);
 			path = UIImageView;
-			sourceTree = "<group>";
-		};
-		56F2DB5D1C829D1900D0D15F /* IconFont */ = {
-			isa = PBXGroup;
-			children = (
-				56F2DB5E1C829D1900D0D15F /* QMQIconFont.h */,
-				56F2DB5F1C829D1900D0D15F /* QMQIconFont.m */,
-			);
-			path = IconFont;
 			sourceTree = "<group>";
 		};
 		56F2DB611C829D3900D0D15F /* ViewModel */ = {
@@ -1064,13 +1064,13 @@
 				56A8F68E1C947293007D34FE /* QMQLatestNewsDetailViewModel.m in Sources */,
 				56C841DF1CBA25D2002CF776 /* QMQThemeListViewController.m in Sources */,
 				56F2DB6D1C834B6C00D0D15F /* QMQColumnModel.m in Sources */,
+				56B01B1A1CEB01B400CDB22A /* QMQIconFont.m in Sources */,
 				56A8F68B1C9350D3007D34FE /* UIViewController+Swizzling.m in Sources */,
 				56942B001C74583A0066188D /* QMQLatestNewsViewModel.m in Sources */,
 				56E70D221C8475CF002B6856 /* QMQThemeTableViewCell.m in Sources */,
 				5612A5281C57E591001F5C18 /* UIImageUtil.m in Sources */,
 				5620A44E1C3D7B2400EDDD27 /* QMQHotNewsListViewModel.m in Sources */,
 				56F1ADF91C74A5C000DCA66C /* UIImageView+WebImageFadeInEffect.m in Sources */,
-				56F2DB601C829D1900D0D15F /* QMQIconFont.m in Sources */,
 				56F2DB5C1C81DA1400D0D15F /* QMQRacHttpService.m in Sources */,
 				56942B031C746C7F0066188D /* QMQLatestNewsModel.m in Sources */,
 				56019DD21C932FB800BA8B5D /* UIColor+Extensions.m in Sources */,

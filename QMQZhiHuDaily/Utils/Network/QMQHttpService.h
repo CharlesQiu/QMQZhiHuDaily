@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "QMQHttpBaseResponse.h"
 
-typedef void(^responseOperator)(QMQHttpBaseResponse *response);
+typedef void (^responseOperator)(QMQHttpBaseResponse *response);
 
 @interface QMQHttpService : NSObject
 

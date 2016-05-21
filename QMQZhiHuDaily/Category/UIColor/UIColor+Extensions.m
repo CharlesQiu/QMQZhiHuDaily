@@ -30,7 +30,7 @@
     CGFloat g = strtol([[rgb substringWithRange:NSMakeRange(2, 2)] cStringUsingEncoding:NSUTF8StringEncoding], NULL, 16);
     CGFloat b = strtol([[rgb substringWithRange:NSMakeRange(4, 2)] cStringUsingEncoding:NSUTF8StringEncoding], NULL, 16);
     
-    return hexRGBA(r, g, b, 255);
+    return [UIColor colorWithRed:r green:g blue:b alpha:1.0];
 }
 
 @end

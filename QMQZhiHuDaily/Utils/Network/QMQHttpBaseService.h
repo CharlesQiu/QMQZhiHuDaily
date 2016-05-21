@@ -10,9 +10,9 @@
 #import "AFNetworking.h"
 
 /// Request success.
-typedef void(^requestSuccessBlock)(NSInteger statusCode, id responseObj);
+typedef void (^requestSuccessBlock)(NSInteger statusCode, id responseObj);
 /// Request fail
-typedef void(^requestFailureBlock)(NSError *error);
+typedef void (^requestFailureBlock)(NSError *error);
 
 @interface QMQHttpBaseService : NSObject
 
