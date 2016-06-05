@@ -14,7 +14,7 @@ static NSString *schema=@"Weibo";
     [self set:schema Keys:@{@"appKey":appKey}];
 }
 +(BOOL)isWeiboInstalled{
-    return [self canOpen:@"sinaweibo://request"];
+    return [self canOpen:@"weibosdk://request"];
 }
 +(void)shareToWeibo:(OSMessage*)msg Success:(shareSuccess)success Fail:(shareFail)fail{
     if (![self beginShare:schema Message:msg Success:success Fail:fail]) {

@@ -331,7 +331,7 @@
 	return rect;
 }
 
-// fix indices if the stringRange is modified
+// TODO: fix indices if the stringRange is modified
 - (NSArray *)stringIndices 
 {
 	if (!_stringIndices) 
