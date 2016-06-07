@@ -8,6 +8,7 @@
 
 #import "QMQHttpBaseService.h"
 #import "QMQDotNetAPIClient.h"
+#import "QMQSpinner.h"
 
 @implementation QMQHttpBaseService
 
@@ -21,24 +22,32 @@
 }
 
 + (BOOL)beforeHttpRequest:(AFHTTPSessionManager *)manager {
-    __block BOOL isNetworkValid = YES;
-    NSOperationQueue *operationQueue = manager.operationQueue;
-    [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        switch (status) {
-            case AFNetworkReachabilityStatusReachableViaWWAN:
-            case AFNetworkReachabilityStatusReachableViaWiFi:
-                [operationQueue setSuspended:NO];
-                isNetworkValid = YES;
+    AFNetworkReachabilityManager *afNetworkReachabilityManager = [AFNetworkReachabilityManager sharedManager];
+    [afNetworkReachabilityManager startMonitoring];  //开启网络监视器；
+    [afNetworkReachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        switch(status) {
+            case AFNetworkReachabilityStatusNotReachable: {
+                DDLogInfo(@"网络不通");
                 break;
+            }
+            case AFNetworkReachabilityStatusReachableViaWiFi: {
+                DDLogInfo(@"网络通过WIFI连接");
+                break;
+            }
                 
+            case AFNetworkReachabilityStatusReachableViaWWAN: {
+                DDLogInfo(@"网络通过无线连接");
+                break;
+            }
             default:
-                [operationQueue setSuspended:YES];
-                isNetworkValid = NO;
                 break;
         }
+        
+        DDLogInfo(@"网络状态数字返回：%li", status);
+        DDLogInfo(@"网络状态返回: %@", AFStringFromNetworkReachabilityStatus(status));
     }];
-    [manager.reachabilityManager startMonitoring];
-    return isNetworkValid;
+    return [AFNetworkReachabilityManager sharedManager].isReachable;
 }
 
 #pragma mark - Print debug log
@@ -65,28 +74,38 @@
      params:(NSDictionary *)params
     success:(requestSuccessBlock)successBlock
     failure:(requestFailureBlock)failureBlock {
-    AFHTTPSessionManager *manager = [self getRequestManager];
-    if (![self beforeHttpRequest:manager]) {
-        !failureBlock ? : failureBlock(nil);
-        return;
-    }
     
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     @weakify(self);
-    [manager GET:url
-      parameters:params
-        progress:^(NSProgress * _Nonnull downloadProgress) {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        DDLogInfo(@"网络状态返回: %@", AFStringFromNetworkReachabilityStatus(status));
+
+        if (status == AFNetworkReachabilityStatusReachableViaWiFi ||
+            status == AFNetworkReachabilityStatusReachableViaWWAN) {
             
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            @strongify(self);
-            NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
-            [self printUrlResponse:urlResponse response:responseObject];
-            !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            @strongify(self);
-            NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
-            [self printUrlResponse:urlResponse response:error];
-            !failureBlock ? : failureBlock(error);
-        }];
+            AFHTTPSessionManager *manager = [self getRequestManager];
+            [manager GET:url
+              parameters:params
+                progress:^(NSProgress * _Nonnull downloadProgress) {
+                    
+                } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                    @strongify(self);
+                    NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+                    [self printUrlResponse:urlResponse response:responseObject];
+                    !successBlock ? : successBlock(urlResponse.statusCode, responseObject);
+                } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                    @strongify(self);
+                    NSHTTPURLResponse *urlResponse = (NSHTTPURLResponse *)task.response;
+                    [self printUrlResponse:urlResponse response:error];
+                    !failureBlock ? : failureBlock(error);
+                }];
+
+        } else {
+            [QMQSpinner showBriefAlert:@"网络连接失败！"];
+            !failureBlock ? : failureBlock(nil);
+        }
+    }];
 }
 
 + (void)post:(NSString *)url
