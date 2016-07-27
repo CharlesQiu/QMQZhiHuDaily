@@ -38,8 +38,6 @@
     if ([dic[@"body"] rangeOfString:@"img-place-holder"].length != 0) {
         
         self.body = [dic[@"body"] stringByReplacingOccurrencesOfString:@"class=\"img-place-holder\"" withString:@""];
-//        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-//        self.body = [dic[@"body"] stringByReplacingOccurrencesOfString:@"class=\"img-place-holder\"" withString:[NSString stringWithFormat:@"class=\"headline\"><img src=\"%@\" height=\"%f\" width=\"%f\"/", self.imageUrl, 200.0, screenWidth]];
     } else {
         self.body = dic[@"body"];
     }
