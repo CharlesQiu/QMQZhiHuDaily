@@ -9,7 +9,6 @@ pod 'Masonry', '~> 0.6.4'
 pod 'SDWebImage', '~> 3.7.3'
 pod 'Fabric'
 pod 'Crashlytics'
-pod 'DTCoreText', '~> 1.6.17'
 pod 'OpenShare', '~> 0.0'
 pod 'MBProgressHUD', '~> 0.9.2'
 

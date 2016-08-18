@@ -926,6 +926,7 @@
 				TargetAttributes = {
 					56CFA01C1C2F9BC7000779CF = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = JEKF94U8QB;
 					};
 					56CFA02F1C2F9BC7000779CF = {
 						CreatedOnToolsVersion = 7.2;
@@ -1260,8 +1261,6 @@
 					"-ObjC",
 					"-l\"AFNetworking\"",
 					"-l\"CocoaLumberjack\"",
-					"-l\"DTCoreText\"",
-					"-l\"DTFoundation\"",
 					"-l\"Masonry\"",
 					"-l\"ReactiveCocoa\"",
 					"-l\"SDWebImage\"",
@@ -1296,7 +1295,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.zhihuribao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "369f44fd-078f-4b75-9ef6-7e9955d71883";
 			};
 			name = Debug;
 		};
@@ -1324,8 +1323,6 @@
 					"-ObjC",
 					"-l\"AFNetworking\"",
 					"-l\"CocoaLumberjack\"",
-					"-l\"DTCoreText\"",
-					"-l\"DTFoundation\"",
 					"-l\"Masonry\"",
 					"-l\"ReactiveCocoa\"",
 					"-l\"SDWebImage\"",
@@ -1360,7 +1357,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.charles.zhihuribao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "369f44fd-078f-4b75-9ef6-7e9955d71883";
 			};
 			name = Release;
 		};

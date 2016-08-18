@@ -14,16 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>DTCoreText.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>DTFoundation.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1950562BD3EB23B0ACF74A6AA9CD6A3C</key>
+		<key>4BE126EAC19F33D1F90BA199EB4225CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,17 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>54D5716994BCD8C820B735B971C61D83</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>857496D8C0F3EE1182838C9F6BB4B437</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>91B476865CBC91C704C44AEA70DD909E</key>
+		<key>5CE6E13EC8F4ED2F4670886962A7BCED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,12 +72,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D79C5D02C5B82672F3342670170FC25C</key>
+		<key>AFB045FF7185B2CD4DEECEAA1A58500C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F1AC730B9B8611092395DB9A29116451</key>
+		<key>D79C5D02C5B82672F3342670170FC25C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
